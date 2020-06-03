@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head") %> 
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <%- include("./partials/header") %>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Right Side Cart Area ##### -->
+    <div class="cart-bg-overlay"></div>
+
+    <div class="right-side-cart-area">
+
+        <!-- Cart Button -->
+        <div class="cart-button">
+            <a href="#" id="rightSideCart"><img src="/essence/img/core-img/bag.svg" alt=""> <span>3</span></a>
+        </div>
+
+        <div class="cart-content d-flex">
+
+            <!-- Cart List Area -->
+            <div class="cart-list">
+                <!-- Single Cart Item -->
+                <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="img/product-img/product-1.jpg" class="cart-thumb" alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">Mango</span>
+                            <h6>Button Through Strap Mini Dress</h6>
+                            <p class="size">Size: S</p>
+                            <p class="color">Color: Red</p>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Cart Item -->
+                <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="img/product-img/product-2.jpg" class="cart-thumb" alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">Mango</span>
+                            <h6>Button Through Strap Mini Dress</h6>
+                            <p class="size">Size: S</p>
+                            <p class="color">Color: Red</p>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Single Cart Item -->
+                <div class="single-cart-item">
+                    <a href="#" class="product-image">
+                        <img src="img/product-img/product-3.jpg" class="cart-thumb" alt="">
+                        <!-- Cart Item Desc -->
+                        <div class="cart-item-desc">
+                          <span class="product-remove"><i class="fa fa-close" aria-hidden="true"></i></span>
+                            <span class="badge">Mango</span>
+                            <h6>Button Through Strap Mini Dress</h6>
+                            <p class="size">Size: S</p>
+                            <p class="color">Color: Red</p>
+                            <p class="price">$45.00</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cart Summary -->
+            <div class="cart-amount-summary">
+
+                <h2>Summary</h2>
+                <ul class="summary-table">
+                    <li><span>subtotal:</span> <span>$274.00</span></li>
+                    <li><span>delivery:</span> <span>Free</span></li>
+                    <li><span>discount:</span> <span>-15%</span></li>
+                    <li><span>total:</span> <span>$232.00</span></li>
+                </ul>
+                <div class="checkout-btn mt-100">
+                    <a href="checkout.html" class="btn essence-btn">check out</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Right Side Cart End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="breadcumb_area bg-img" style="background-image: url(/essence/img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>Registrate en Mercado Libro</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+
+    <!-- ##### Checkout Area Start ##### -->
+    <div class="checkout_area section-padding-80">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <div class="checkout_details_area mt-50 clearfix">
+
+                        <div class="cart-page-heading mb-30">
+                            <h5>Datos de contacto</h5>
+                        </div>
+
+                        <form action="#" method="post">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="first_name">Nombre <span>*</span></label>
+                                    <input type="text" class="form-control" id="first_name" value="" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="last_name">Apellido<span>*</span></label>
+                                    <input type="text" class="form-control" id="last_name" value="" required>
+                                </div>
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="country">Provincia <span>*</span></label>
+                                    <select class="w-100" id="country">
+                                        <option value="cba">Córdoba</option>
+                                        <option value="ba">Buenos Aires</option>
+                                        <option value="sfe">Santa Fe</option>
+                                        <option value="juj">Jujuy</option>
+                                        <option value="sal">Salta</option>
+                                        <option value="tuc">Tucumán</option>
+                                        <option value="sgo">Santiago del Estero</option>
+                                        <option value="sju">San Juan</option>
+                                        <option value="co">Corrientes</option>
+                                        <option value="mis">Misiones</option>
+                                        <option value="pam">La Pampa</option>
+                                        <option value="eri">Entre Rios</option>
+                                        <option value="chu">Chubut</option>
+                                        <option value="tie">Tierra del Fuego</option>
+                                        <option value="cha">Chaco</option>
+                                        <option value="mza">Mendoza</option>
+                                        <option value="slu">San Luis</option>
+                                        <option value="lar">La Rioja</option>
+                                        <option value="for">Formosa</option>
+                                        <option value="cat">Catamarca</option>
+                                        <option value="neu">Neuquen</option>
+                                        <option value="rio">Rio Negro</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="city">Localidad <span>*</span></label>
+                                    <input type="text" class="form-control" id="city" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="street_address">Dirección <span>*</span></label>
+                                    <input type="text" class="form-control mb-3" id="street_address" value="">
+                                    <input type="text" class="form-control" id="street_address2" value="">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="postcode">Código Postal <span>*</span></label>
+                                    <input type="text" class="form-control" id="postcode" value="">
+                                </div>
+                              
+                
+                                <div class="col-12 mb-3">
+                                    <label for="phone_number">Número de teléfono <span>*</span></label>
+                                    <input type="number" class="form-control" id="phone_number" min="0" value="">
+                                </div>
+                                <div class="col-12 mb-4">
+                                    <label for="email_address">Email <span>*</span></label>
+                                    <input type="email" class="form-control" id="email_address" value="">
+                                </div>
+
+                                <div class="col-12">
+                                    <div class="custom-control custom-checkbox d-block mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                        <label class="custom-control-label" for="customCheck1">Acepto términos y condiciones</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-block mb-2">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                        <label class="custom-control-label" for="customCheck2">Crear mi cuenta</label>
+                                    </div>
+                                    <div class="custom-control custom-checkbox d-block">
+                                        <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                        <label class="custom-control-label" for="customCheck3">Subscribirme para recibir novedades</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-5 ml-lg-auto">
+                    <div class="order-details-confirmation">
+
+                      
+
+                        <a href="#" class="btn essence-btn">Place Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Checkout Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <%- include("./partials/footer") %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="/essence/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/essence/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/essence/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="/essence/js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="/essence/js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="/essence/js/active.js"></script>
+
+</body>
+
+</html>

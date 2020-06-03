@@ -1,0 +1,339 @@
+[
+    {
+    "ID": 1,
+    "Titulo": "Contrapedagogías de la crueldad",
+    "Autor/a": "Rita Segato",
+    "Editorial": "Prometeo",
+    "Categoría": "Sociología",
+    "Año de publicación": "2018"
+},
+{
+    "ID": 2,
+    "Titulo": "El intruso",
+    "Autor/a": "Jean Luc Nancy",
+    "Editorial": "Amorrotu",
+    "Categoría": "Filosofía",
+    "Año de publicación": "2000"
+},
+{
+    "ID": 3,
+    "Titulo": "El poder, una bestia magnífica",
+    "Autor/a": "Michel Foucault",
+    "Editorial": "Siglo XXI editores",
+    "Categoría": "Filosofía",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 4,
+    "Titulo": "Escenas de la vida postmoderna",
+    "Autor/a": "Beatriz Sarlo",
+    "Editorial": "Ariel",
+    "Categoría": "Sociología",
+    "Año de publicación": "1994"
+},
+{
+    "ID": 4,
+    "Titulo": "Formas comunes. Animalidad, cultura y biopolítica",
+    "Autor/a": "Gabriel Giorgi",
+    "Editorial": "Eterna Cadencia",
+    "Categoría": "Crítica literaria",
+    "Año de publicación": "2014"
+},
+{ 
+    "ID": 5,
+    "Titulo": "Fracturas de la memoria. Arte y pensamiento crítico",
+    "Autor/a": "Nelly Richard",
+    "Editorial": "Siglo XXI editores",
+    "Categoría": "Fiolosofía",
+    "Año de publicación": "2007"
+},
+{
+    "ID": 6,
+    "Titulo": "La comunidad desobrada",
+    "Autor/a": "Jean Luc Nancy",
+    "Editorial": "Arena Libros",
+    "Categoría": "Filosofía",
+    "Año de publicación": "1986"
+},
+{
+    "ID": 7,
+    "Titulo": "La escritura en el cuerpo",
+    "Autor/a": "Rita Segato",
+    "Editorial": "Cegal",
+    "Categoría": "Sociología",
+    "Año de publicación": "2006"
+},
+{
+    "ID": 8,
+    "Titulo": "La ética del pensamiento",
+    "Autor/a": "Michel Foucualt",
+    "Editorial": "Biblioteca Nueva",
+    "Categoría": "Fiolosofía",
+    "Año de publicación": "2016"
+},
+{
+    "ID": 9,
+    "Titulo": "La guerra contra las mujeres",
+    "Autor/a": "Rita Segato",
+    "Editorial": "Prometeo",
+    "Categoría": "Sociología",
+    "Año de publicación": "2016"
+},
+{
+    "ID": 10,
+    "Titulo": "La intimidad pública",
+    "Autor/a": "Beatriz Sarlo",
+    "Editorial": "Seix Barral",
+    "Categoría": "Sociología",
+    "Año de publicación": "2018"
+},
+{
+    "ID": 11,
+    "Titulo": "Márgenes de la filosofía",
+    "Autor/a": "Jacques Derrida",
+    "Editorial": "Catedra",
+    "Categoría": "Filosofía",
+    "Año de publicación": "1972"
+},
+{
+    "ID": 12,
+    "Titulo": "Pedagoría del oprimido",
+    "Autor/a": "Paulo Freire",
+    "Editorial": "Siglo XXI editores",
+    "Categoría": "Sociología",
+    "Año de publicación": "1968"
+},
+{
+    "ID": 13,
+    "Titulo": "Seminario 5. Las formaciones del inconsciente",
+    "Autor/a": "Jacques Lacan",
+    "Editorial": "Paidós",
+    "Categoría": "Psicoanálisis",
+    "Año de publicación": "1999"
+},
+{
+    "ID": 14,
+    "Titulo": "Sinceramente",
+    "Autor/a": "Cristina Kirchner",
+    "Editorial": "Sudamericana",
+    "Categoría": "Política",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 15, 
+    "Titulo": "Viajes",
+    "Autor/a": "Beatriz Sarlo",
+    "Editorial": "Seix Barral",
+    "Categoría": "Crítica literaria",
+    "Año de publicación": "2014"
+},
+{
+    "ID": 16, 
+    "Titulo": "Tengo miedo torero",
+    "Autor/a": "Pedro Lemebel",
+    "Editorial": "Seix Barral",
+    "Categoría": "Ficción",
+    "Año de publicación": "2001"
+},
+{
+    "ID": 17, 
+    "Titulo": "El mundo de Lyna",
+    "Autor/a": "Lyna Vallejos",
+    "Editorial": "Alte Aguilar",
+    "Categoría": "Infanto juvenil",
+    "Año de publicación": "2020"
+},
+{
+    "ID": 18, 
+    "Titulo": "La madre de Frankenstein",
+    "Autor/a": "Almudena Grandes",
+    "Editorial": "Tusquets",
+    "Categoría": "Ficción",
+    "Año de publicación": "2020"
+},
+{
+    "ID": 20, 
+    "Titulo": "Catderales",
+    "Autor/a": "Claudia Piñeiro",
+    "Editorial": "Alfaguara",
+    "Categoría": "Ficción",
+    "Año de publicación": "2020"
+},
+{
+    "ID": 21, 
+    "Titulo": "El precio de la pasión",
+    "Autor/a": "Gabriel Rolón",
+    "Editorial": "Planeta",
+    "Categoría": "Psicoanálisis",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 22, 
+    "Titulo": "Belgrano",
+    "Autor/a": "Daniel Balmaceda",
+    "Editorial": "Sudamericana",
+    "Categoría": "Historia",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 23, 
+    "Titulo": "El libro negro de la nueva izquierda",
+    "Autor/a": "Nicolas Marquez",
+    "Editorial": "Grupo union S.R.L",
+    "Categoría": "Política",
+    "Año de publicación": "2016"
+},
+{
+    "ID": 24, 
+    "Titulo": "Filosofía a martillazos",
+    "Autor/a": "Darío Sztajnszrajber",
+    "Editorial": "Paidos",
+    "Categoría": "Filosofía",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 25, 
+    "Titulo": "Destroza este diario",
+    "Autor/a": "Keri Smith",
+    "Editorial": "Paidos",
+    "Categoría": "Infanto juvenil",
+    "Año de publicación": "2013"
+},
+{
+    "ID": 26, 
+    "Titulo": "El instituto",
+    "Autor/a": "Stephen King",
+    "Editorial": "Plaza & Janes",
+    "Categoría": "Ficción",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 27, 
+    "Titulo": "Cómo hago fotografía",
+    "Autor/a": "Joel Meyerowitz",
+    "Editorial": "Gustavo Gili",
+    "Categoría": "Diseño y fotografía",
+    "Año de publicación": "2020"
+},
+{
+    "ID": 28, 
+    "Titulo": "La imagen digital. De la tecnología a la estética",
+    "Autor/a": "Jullier Laurent",
+    "Editorial": "La marca editora",
+    "Categoría": "Diseño y fotografía",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 29, 
+    "Titulo": "La luz para los artistas visuales",
+    "Autor/a": "Yot Richard",
+    "Editorial": "Blume",
+    "Categoría": "Diseño y fotografía",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 30, 
+    "Titulo": "Fotografía de moda y lifestyle",
+    "Autor/a": "Dixon Dixie",
+    "Editorial": "Promopress",
+    "Categoría": "Diseño y fotografía",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 31, 
+    "Titulo": "Argentina: el gran libro",
+    "Autor/a": "",
+    "Editorial": "Catapulta",
+    "Categoría": "Diseño y fotografia",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 32, 
+    "Titulo": "Modelado de moda sobre maniquí",
+    "Autor/a": "Danilo Attardi",
+    "Editorial": "Promopress",
+    "Categoría": "Diseño y fotografía",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 33, 
+    "Titulo": "Las chicas buenas",
+    "Autor/a": "Sara Shepard",
+    "Editorial": "Montena",
+    "Categoría": "Infanto juvenil",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 34, 
+    "Titulo": "Una chica como ella",
+    "Autor/a": "Tanaz Bhathena",
+    "Editorial": "Plataforma editorial",
+    "Categoría": "Infanto juvenil",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 35, 
+    "Titulo": "Futuro presente",
+    "Autor/a": "Graciela Speranza",
+    "Editorial": "Siglo XXI",
+    "Categoría": "Política",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 36, 
+    "Titulo": "El partido y la revolución",
+    "Autor/a": "Nahuel Moreno",
+    "Editorial": "Limonero",
+    "Categoría": "Política",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 37, 
+    "Titulo": "Comunismo para todos",
+    "Autor/a": "Bini Adamczak",
+    "Editorial": "Akal Editores",
+    "Categoría": "Política",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 38, 
+    "Titulo": "Crisis de la república",
+    "Autor/a": "Hannah Arendt",
+    "Editorial": "Trotta",
+    "Categoría": "Política",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 39, 
+    "Titulo": "Fuera de clase",
+    "Autor/a": "Marina Garces",
+    "Editorial": "Galaxia",
+    "Categoría": "Política",
+    "Año de publicación": "2016"
+},
+{
+    "ID": 40, 
+    "Titulo": "Diario de Moscú",
+    "Autor/a": "Walter Benjamin",
+    "Editorial": "Ediciones Godot",
+    "Categoría": "Política",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 41, 
+    "Titulo": "¿Por qué funciona el populismo?",
+    "Autor/a": "María Esperanza Casullo",
+    "Editorial": "Siglo XXI",
+    "Categoría": "Política",
+    "Año de publicación": "2019"
+},
+{
+    "ID": 42, 
+    "Titulo": "Contra el fascismo",
+    "Autor/a": "Umberto Eco",
+    "Editorial": "Lumen",
+    "Categoría": "Política",
+    "Año de publicación": "2019"
+}
+
+]

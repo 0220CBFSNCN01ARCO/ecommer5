@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "primer nombre": "Claudian",
+    "apellido": "Toye",
+    "email": "ctoye0@ameblo.jp",
+    "contraseña": "OrrtLuDtlI5a",
+    "categoria": "user",
+    "imagen": "user_1.jpg"
+  },
+  {
+    "id": 2,
+    "primer nombre": "Johannah",
+    "apellido": "Whisker",
+    "email": "jwhisker1@fema.gov",
+    "contraseña": "DNDo2CsHyA",
+    "categoria": "user",
+    "imagen": "user_2.jpg"
+  },
+  {
+    "id": 3,
+    "primer nombre": "Lucas",
+    "apellido": "Hellwich",
+    "email": "lhellwich2@bloomberg.com",
+    "contraseña": "OPs4OIXfxc60",
+    "categoria": "user",
+    "imagen": "user_3.jpg"
+  },
+  {
+    "id": 4,
+    "primer nombre": "Philly",
+    "apellido": "Pohlak",
+    "email": "ppohlak3@state.gov",
+    "contraseña": "hsVo85U3U",
+    "categoria": "user",
+    "imagen": "user_4.jpg"
+  },
+  {
+    "id": 5,
+    "primer nombre": "Minnaminnie",
+    "apellido": "Newarte",
+    "email": "mnewarte4@prlog.org",
+    "contraseña": "Qoti1eRta",
+    "categoria": "user",
+    "imagen": "user_5.jpg"
+  },
+  {
+    "id": 6,
+    "primer nombre": "Gennifer",
+    "apellido": "Eccleston",
+    "email": "geccleston5@bbc.co.uk",
+    "contraseña": "a8F5Db",
+    "categoria": "user",
+    "imagen": "user_6.jpg"
+  },
+  {
+    "id": 7,
+    "primer nombre": "Raul",
+    "apellido": "Newbury",
+    "email": "rnewbury6@theatlantic.com",
+    "contraseña": "5GRijwqzbwm",
+    "categoria": "user",
+    "imagen": "user_7.jpg"
+  },
+  {
+    "id": 8,
+    "primer nombre": "Toby",
+    "apellido": "Martin",
+    "email": "tmartin7@hp.com",
+    "contraseña": "flIWwCV9Z",
+    "categoria": "user",
+    "imagen": "user_8.jpg"
+  },
+  {
+    "id": 9,
+    "primer nombre": "Friedrich",
+    "apellido": "Bugbee",
+    "email": "fbugbee8@intel.com",
+    "contraseña": "ZYKlt2PnSVuQ",
+    "categoria": "user",
+    "imagen": "user_9.jpg"
+  },
+  {
+    "id": 10,
+    "primer nombre": "Arnoldo",
+    "apellido": "Sporrij",
+    "email": "asporrij9@google.co.uk",
+    "contraseña": "ACx2q0Hw0wOu",
+    "categoria": "user",
+    "imagen": "user_10.jpg"
+  },
+  {
+    "id": 11,
+    "primer nombre": "Onofredo",
+    "apellido": "Dankov",
+    "email": "odankova@mapquest.com",
+    "contraseña": "ZKTUPjel",
+    "categoria": "user",
+    "imagen": "user_11.jpg"
+  },
+  {
+    "id": 12,
+    "primer nombre": "Alphonso",
+    "apellido": "Wenzel",
+    "email": "awenzelb@google.com.br",
+    "contraseña": "GWF80EUYV3KI",
+    "categoria": "user",
+    "imagen": "user_12.jpg"
+  },
+  {
+    "id": 13,
+    "primer nombre": "Bette-ann",
+    "apellido": "Bolderson",
+    "email": "bboldersonc@youtube.com",
+    "contraseña": "DAvrIGF8Wkh",
+    "categoria": "user",
+    "imagen": "user_13.jpg"
+  },
+  {
+    "id": 14,
+    "primer nombre": "Rochelle",
+    "apellido": "Dottridge",
+    "email": "rdottridged@php.net",
+    "contraseña": "cSRReakDJ1u0",
+    "categoria": "user",
+    "imagen": "user_14.jpg"
+  },
+  {
+    "id": 15,
+    "primer nombre": "Kermie",
+    "apellido": "Brouncker",
+    "email": "kbrounckere@slideshare.net",
+    "contraseña": "Ft4Awn",
+    "categoria": "user",
+    "imagen": "user_15.jpg"
+  },
+  {
+    "id": 16,
+    "primer nombre": "Sara",
+    "apellido": "Autin",
+    "email": "sautinf@bigcartel.com",
+    "contraseña": "3bSslysZD",
+    "categoria": "user",
+    "imagen": "user_16.jpg"
+  },
+  {
+    "id": 17,
+    "primer nombre": "Ophelia",
+    "apellido": "Roof",
+    "email": "oroofg@gnu.org",
+    "contraseña": "KxJot6",
+    "categoria": "user",
+    "imagen": "user_17.jpg"
+  },
+  {
+    "id": 18,
+    "primer nombre": "Hugues",
+    "apellido": "Newart",
+    "email": "hnewarth@forbes.com",
+    "contraseña": "RSapNr",
+    "categoria": "user",
+    "imagen": "user_18.jpg"
+  },
+  {
+    "id": 19,
+    "primer nombre": "Ogdon",
+    "apellido": "Fettes",
+    "email": "ofettesi@virginia.edu",
+    "contraseña": "87sAiEFqY6fV",
+    "categoria": "user",
+    "imagen": "user_19.jpg"
+  },
+  {
+    "id": 20,
+    "primer nombre": "Dorthea",
+    "apellido": "Dandison",
+    "email": "ddandisonj@admin.ch",
+    "contraseña": "Kimgx4ovxz5",
+    "categoria": "user",
+    "imagen": "user_20.jpg"
+  }
+]
