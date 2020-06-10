@@ -6,6 +6,10 @@ const registroController = {
     res.render("users")
   },
     create: function (req, res) {
+      let errors = validationResult(req);
+
+      if (errors.isEmpty()) {
+
 let usuario = {
 nombre: req.body.nombre,
 email: req.body.email,
@@ -24,8 +28,11 @@ let usuarioJSON = JSON.stringify(usuarios);
 fs.appendFileSync("users.json", usuariosJSON);
 
         res.redirect('users', {title: "Gracias por registrarte en Mercado Libro"});
+      } else {
+        return res.render('users'), ({errors: errors.errors})
       }
-}
 
+    }
+};
 
 module.exports = registroController;
