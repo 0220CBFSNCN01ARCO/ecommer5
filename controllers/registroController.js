@@ -1,9 +1,10 @@
 const fs = require('fs');
+const bcrypt = require("bcrypt");
 let { check, validationResult, body } = require('express-validator');
 
 const registroController = {
   register : function(req, res){
-    res.render("users")
+    res.render("users");
   },
     create: function (req, res) {
       let errors = validationResult(req);
