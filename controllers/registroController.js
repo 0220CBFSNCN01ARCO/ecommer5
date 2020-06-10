@@ -1,4 +1,5 @@
 const fs = require('fs');
+let { check, validationResult, body } = require('express-validator');
 
 const registroController = {
   register : function(req, res){
