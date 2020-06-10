@@ -19,7 +19,7 @@ router.post(
     check("email").isEmail().withMessage("El email debe ser uno valido"),
     check("contraseña")
       .isLength({ min: 8 })
-      .withMessage("Hasta 8 caracteres podes poner"),
+      .withMessage("Hasta 8 caracteres podés poner"),
     body("email").custom(function (value) {
       let users;
       if (userJSON == "") {
@@ -36,5 +36,6 @@ router.post(
   ],
   registroController.create
 );
+router.get("/login", registroController.login);
 
 module.exports = router;
