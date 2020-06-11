@@ -115,13 +115,24 @@
                             <h5>Datos de contacto</h5>
                         </div>
 
-               
+                        <% if (typeof errors != 'undefined') { %>
+                            <P style="color:red">ERROR</P>
+
+                            <ul>
+                                <% for (let i = 0; i < errors.length; i++) { %>
+                                    <li>
+                                        <%=errors[i].msg%>
+                                    </li>
+                               <% } %>
+                            </ul>
+                        <% } %>
+
 
                         <form action="#" method="post">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="first_name">Nombre y apellido<span>*</span></label>
-                                    <input type="text" class="form-control" id="nombre" name = "nombre" value="" required>
+                                    <input type="text" class="form-control" id="nombre" name = "nombre" value="nombre" required>
                                 </div>
                               
                                 
@@ -169,7 +180,7 @@
                 
                                 <div class="col-12 mb-3">
                                     <label for="phone_number">Número de teléfono <span>*</span></label>
-                                    <input type="number" class="form-control" id="numero" name= "numero" min="0" value="num">
+                                    <input type="number" class="form-control" id="numero" name= "numero" min="0" value="numero">
                                 </div>
                                 <div class="col-12 mb-4">
                                     <label for="email_address">Email <span>*</span></label>
