@@ -2,7 +2,7 @@ const fs = require('fs');
 const bcrypt = require("bcrypt");
 let { check, validationResult, body } = require('express-validator');
 
-const registroController = {
+const usersController = {
 
   register : function(req, res){
     res.render("register");
@@ -30,9 +30,9 @@ usuarios.push(usuario);
 let usuarioJSON = JSON.stringify(usuarios);
 fs.appendFileSync("users.json", usuariosJSON);
 
-        res.redirect('register', {title: "Gracias por registrarte en Mercado Libro"});
+        res.send('login', {title: "Gracias por registrarte en Mercado Libro"});
       } else {
-        return res.redirect('register'), ({errors: errors.errors})
+        return res.send('login'), ({errors: errors.errors})
       }
 
     },
@@ -47,12 +47,12 @@ if(archivoUsuarios == ""){
 }
 for(let i = 0; i < usuarios.length; i++){
   if(req.body.email == usuario[i].email && bcrypt.compareSync(req.body.password, usuarios[i].password)){
-    res.send("OK")
+    res.send("login", {title: "OK"})
   } else {
-    res.send("Error");
+    res.send("login", {title: "Error"});
   }
 }
     }
 };
 
-module.exports = registroController;
+module.exports = usersController;
