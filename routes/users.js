@@ -10,7 +10,7 @@ let { check, validationResult, body } = require("express-validator");
 router.get("/register", usersController.register);
 router.post(
   "/register",
- //logDBMiddleware,
+ logDBMiddleware,
   [
     check("nombre").isLength().withMessage("Este campo debe estar completo"),
     check("prov").isLength().withMessage("Te falto la provincia"),

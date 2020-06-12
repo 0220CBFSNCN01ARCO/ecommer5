@@ -1,4 +1,6 @@
 const fs = require('fs');
+const path = require("path");
+const productsPath = path.join(".", "data", "users.json");
 const bcrypt = require("bcrypt");
 let { check, validationResult, body } = require('express-validator');
 
@@ -27,7 +29,7 @@ if(archivoUsuarios == ""){
 }
 usuarios.push(usuario);
 
-let usuarioJSON = JSON.stringify(usuarios);
+let usuariosJSON = JSON.stringify(usuarios);
 fs.appendFileSync("users.json", usuariosJSON);
 
         res.send('login', {title: "Gracias por registrarte en Mercado Libro"});
