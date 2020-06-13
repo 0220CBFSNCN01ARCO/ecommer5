@@ -5,7 +5,7 @@ const listadoProductos = JSON.parse(fs.readFileSync('./data/detalleProductos.jso
 
 const productosController = {
 listado : function(req, res){
-    res.render("listadoProductos", {"listadoProductos": listadoProductos});
+    res.render("products", {"products": listadoProductos});
 },
 detalle : function(req, res){
 let idProductoElegido = req.params.idProduct;
@@ -15,6 +15,9 @@ const productoAMostrar = listadoProductos.find(producto => {
     res.render("detalleProducto", {"productoClickeado": productoAMostrar});
 },
 create : function(req, res){
+    res.render("createProduct");
+},
+agregar: function(req, res){
     let producto = {
         id: req.body.id,
         titulo: req.body.titulo,
@@ -24,7 +27,7 @@ create : function(req, res){
     let productos;
 if(archivoProductos == ""){
    productos = [];
-}else{
+} else {
    productos = JSON.parse(archivoProductos);
 }
 usuarios.push(producto);
@@ -32,10 +35,10 @@ usuarios.push(producto);
 let productoJSON = JSON.stringify(productos);
 fs.appendFileSync("detalleProductos.json", productoJSON);
 
-    res.redirect("agregarProducto", {titulo: "Se agregó un nuevo producto"});
+res.redirect("/products", {title: "Se agregó un nuevo producto"})
 },
 update: function(req, res){
-    res.render("")
+    res.redirect("/products", {title: "Se modificó un producto"});
 },
 delete: function(req, res){
 

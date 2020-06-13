@@ -11,7 +11,7 @@ const usersController = {
   },
 
     create: function (req, res) {
-      let errors = validationResult(req);
+    let errors = validationResult(req);
 
       if (errors.isEmpty()) {
 
@@ -32,28 +32,30 @@ usuarios.push(usuario);
 let usuariosJSON = JSON.stringify(usuarios);
 fs.appendFileSync("users.json", usuariosJSON);
 
-        res.send('login', {title: "Gracias por registrarte en Mercado Libro"});
+        res.redirect('/users/register', {title: "Gracias por registrarte en Mercado Libro"});
       } else {
-        return res.send('login'), ({errors: errors.errors})
+        return res.redirect('/users/register'), ({errors: errors.errors})
       }
 
     },
-    
     login: function(req, res){
+    res.render("login");
+  },
+    count: function(req, res){
       let archivoUsuarios = fs.readFileSync("users.json", {encoding: "utf-8"});
-let usuarios;
-if(archivoUsuarios == ""){
-   usuarios = [];
-}else{
-   usuarios = JSON.parse(archivoUsuarios);
-}
-for(let i = 0; i < usuarios.length; i++){
-  if(req.body.email == usuario[i].email && bcrypt.compareSync(req.body.password, usuarios[i].password)){
-    res.send("login", {title: "OK"})
-  } else {
-    res.send("login", {title: "Error"});
-  }
-}
+      let usuarios;
+      if(archivoUsuarios == ""){
+         usuarios = [];
+      }else{
+         usuarios = JSON.parse(archivoUsuarios);
+      }
+      for(let i = 0; i < usuarios.length; i++){
+        if(req.body.email == usuario[i].email && bcrypt.compareSync(req.body.password, usuarios[i].password)){
+          res.render("login", {title: "OK"})
+        } else {
+          res.render("count", {title: "Error"});
+        }
+      }
     }
 };
 

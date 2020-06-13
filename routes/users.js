@@ -8,6 +8,7 @@ let { check, validationResult, body } = require("express-validator");
 
 
 router.get("/register", usersController.register);
+
 router.post(
   "/register",
  logDBMiddleware,
@@ -38,8 +39,10 @@ router.post(
       .withMessage("Hasta 8 caracteres podés poner")
   
   ],
-  usersController.create
-);
+  usersController.create);
+
 router.get("/login", usersController.login);
+
+router.post("/login", usersController.count);
 
 module.exports = router;
