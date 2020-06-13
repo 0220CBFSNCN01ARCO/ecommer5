@@ -38,18 +38,6 @@
                             <h5>Datos de contacto</h5>
                         </div>
 
-                        <% if (typeof errors != 'undefined') { %>
-                            <P style="color:red">ERROR</P>
-
-                            <ul>
-                                <% for (let i = 0; i < errors.length; i++) { %>
-                                    <li>
-                                        <%=errors[i].msg%>
-                                    </li>
-                               <% } %>
-                            </ul>
-                        <% } %>
-
 
                         <form action="/products/create" method="post">
                             <div class="row">
@@ -116,7 +104,7 @@
 
                                 <div class="col-12">
                                     
-                                    <button type = "submit" href="#" class="btn essence-btn">Registrarme</button>
+                                    <button type = "submit" href="/products/create" class="btn essence-btn">Registrarme</button>
                                 </div>
                             </div>
                         </form>

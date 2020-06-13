@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require("path");
 const productsPath = path.join(".", "data", "detalleProductos.json");
-const listadoProductos = JSON.parse(fs.readFileSync('./data/detalleProductos.json', 'utf-8'));
+
 
 const productosController = {
 listado : function(req, res){
@@ -35,7 +35,7 @@ usuarios.push(producto);
 let productoJSON = JSON.stringify(productos);
 fs.appendFileSync("detalleProductos.json", productoJSON);
 
-res.redirect("/products", {title: "Se agregó un nuevo producto"})
+res.redirect("/products", {"productoJSON": productoJSON})
 },
 update: function(req, res){
     res.redirect("/products", {title: "Se modificó un producto"});
