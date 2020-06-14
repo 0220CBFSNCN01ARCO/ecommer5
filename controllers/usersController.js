@@ -20,7 +20,7 @@ password: bcrypt.hashSync(req.body.password, 10)
 }
 
 
-let archivoUsuarios = fs.readFileSync("users.json", {encoding: "utf-8"});
+let archivoUsuarios = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
 let usuarios;
 if(archivoUsuarios == " "){
    usuarios = [];
@@ -30,7 +30,7 @@ if(archivoUsuarios == " "){
 usuarios.push(usuario);
 
 let usuariosJSON = JSON.stringify(usuarios);
-fs.appendFileSync("users.json", usuariosJSON); 
+fs.appendFileSync("./data/users.json", usuariosJSON); 
 
         res.redirect('/users/register');
       //} else {
@@ -42,7 +42,7 @@ fs.appendFileSync("users.json", usuariosJSON);
       res.render("login");
   },
     count: function(req, res){
-      let archivoUsuarios = fs.readFileSync("users.json", {encoding: "utf-8"});
+      let archivoUsuarios = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
       let usuarios;
       if(archivoUsuarios == ""){
          usuarios = [];
@@ -50,10 +50,10 @@ fs.appendFileSync("users.json", usuariosJSON);
          usuarios = JSON.parse(archivoUsuarios);
       }
       for(let i = 0; i < usuarios.length; i++){
-        if(req.body.email == usuario[i].email && bcrypt.compareSync(req.body.password, usuarios[i].password)){
-          res.render("login", {title: "OK"})
+        if(req.body.email == usuarios[i].email && bcrypt.compareSync(req.body.password, usuarios[i].password)){
+          res.render("count")
         } else {
-          res.render("count", {title: "Error"});
+          res.redirect("/users/login");
         }
       }
     }
