@@ -1,6 +1,17 @@
 const express = require("express");
 const router = express.Router();
 let fs = require("fs");
+const multer = require("multer");
+let path = require("path");
+var storage = multer.diskStorage({
+  destination: function(req, file, cb){
+    cb(null, "tmp/my-uploads")
+  } ,
+  filename: function(req, file, cb){
+    cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
+  }
+});
+var upload = multer({storage: storage});
 const listadoUsers = JSON.parse(fs.readFileSync('./data/users.json', 'utf-8'));
 const usersController = require("../controllers/usersController");
 let logDBMiddleware = require("../middleware/logDBMiddleware");
@@ -10,7 +21,7 @@ let { check, validationResult, body } = require("express-validator");
 router.get("/register", usersController.register);
 
 router.post(
-  "/register",
+  "/register", upload.any(),
  logDBMiddleware,
   [
     check("nombre").isLength().withMessage("Este campo debe estar completo"),

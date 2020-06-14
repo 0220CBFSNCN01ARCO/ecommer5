@@ -15,11 +15,12 @@ const productoAMostrar = listadoProductos.find(producto => {
 create : function(req, res){
     res.render("createProduct");
 },
-agregar: function(req, res){
+agregar: function(req, res, next){
     let producto = {
         id: req.body.id,
         titulo: req.body.titulo,
-        categoria: req.body.categoria
+        categoria: req.body.categoria,
+        imagen: req.files[0].filename
     }
     let archivoProductos = fs.readFileSync("./data/detalleProductos.json", {encoding: "utf-8"});
     let productos;

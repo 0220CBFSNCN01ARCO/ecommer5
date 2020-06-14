@@ -8,7 +8,7 @@ const usersController = {
     res.render("register");
   },
 
-    create: function (req, res) {
+    create: function (req, res, next) {
     //let errors = validationResult(req);
 
      // if (errors.isEmpty()) {
@@ -16,7 +16,10 @@ const usersController = {
 let usuario = {
 nombre: req.body.nombre,
 email: req.body.email,
-password: bcrypt.hashSync(req.body.password, 10)
+direccion: req.body.direccion,
+cp: req.body.cp,
+password: bcrypt.hashSync(req.body.password, 10),
+avatar: req.files[0].filename
 }
 
 
