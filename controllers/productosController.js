@@ -3,7 +3,7 @@ const fs = require('fs');
 
 const productosController = {
 listado : function(req, res){
-    res.render("products", {"products": listadoProductos});
+    res.render("products");
 },
 detalle : function(req, res){
 let idProductoElegido = req.params.idProduct;
@@ -31,7 +31,7 @@ if(archivoProductos == ""){
 } else {
    productos = JSON.parse(archivoProductos);
 }
-usuarios.push(producto);
+productos.push(producto);
 
 let productoJSON = JSON.stringify(productos);
 fs.appendFileSync("./data/detalleProductos.json", productoJSON);
