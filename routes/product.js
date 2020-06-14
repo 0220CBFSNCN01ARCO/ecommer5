@@ -10,12 +10,13 @@ var storage = multer.diskStorage({
     cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname))
   }
 });
+var upload = multer({storage: storage});
 const productosController = require("../controllers/productosController.js");
 
 router.get("/", productosController.listado);
 router.get("/:idProduct", productosController.detalle);
 router.get("/create", productosController.create);
-router.post("/create", productosController.agregar);
+router.post("/create", upload.any(), productosController.agregar);
 router.get("/:idProduct/edit", productosController.update);
 router.put("/:idProduct/edit", productosController.update);
 router.delete("/:idProduct/delete", productosController.delete);

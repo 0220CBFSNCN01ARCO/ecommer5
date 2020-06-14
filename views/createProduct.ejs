@@ -18,7 +18,7 @@
             <div class="row h-100 align-items-center">
                 <div class="col-12">
                     <div class="page-title text-center">
-                        <h2>Registrate en Mercado Libro</h2>
+                        <h2>Agregá un producto</h2>
                     </div>
                 </div>
             </div>
@@ -35,76 +35,41 @@
                     <div class="checkout_details_area mt-50 clearfix">
 
                         <div class="cart-page-heading mb-30">
-                            <h5>Datos de contacto</h5>
+                            <h5>Info del nuevo producto</h5>
                         </div>
 
 
-                        <form action="/products/create" method="post">
+                        <form action= "/products/createProducts" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="first_name">Nombre y apellido<span>*</span></label>
-                                    <input type="text" class="form-control" id="nombre" name = "nombre" value="" required placeholder="Nombre y apellido">
+                                    <label for="first_name">Título del libro<span>*</span></label>
+                                    <input type="text" class="form-control" id="titulo" name = "titulo" value="" required placeholder="Título del libro">
                                 </div>
                               
                                 
                                 <div class="col-12 mb-3">
-                                    <label for="country">Provincia <span>*</span></label>
-                                    <select class="w-100" id="prov" name= "prov">
-                                        <option value="cba">Córdoba</option>
-                                        <option value="ba">Buenos Aires</option>
-                                        <option value="sfe">Santa Fe</option>
-                                        <option value="juj">Jujuy</option>
-                                        <option value="sal">Salta</option>
-                                        <option value="tuc">Tucumán</option>
-                                        <option value="sgo">Santiago del Estero</option>
-                                        <option value="sju">San Juan</option>
-                                        <option value="co">Corrientes</option>
-                                        <option value="mis">Misiones</option>
-                                        <option value="pam">La Pampa</option>
-                                        <option value="eri">Entre Rios</option>
-                                        <option value="chu">Chubut</option>
-                                        <option value="tie">Tierra del Fuego</option>
-                                        <option value="cha">Chaco</option>
-                                        <option value="mza">Mendoza</option>
-                                        <option value="slu">San Luis</option>
-                                        <option value="lar">La Rioja</option>
-                                        <option value="for">Formosa</option>
-                                        <option value="cat">Catamarca</option>
-                                        <option value="neu">Neuquen</option>
-                                        <option value="rio">Rio Negro</option>
-                                    </select>
+                                    <label for="country">Autor/a <span>*</span></label>
+                                    <input type="text" class="form-control" id="titulo" name = "titulo" value="" required placeholder="Título del libro">
+                                       
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <label for="city">Localidad <span>*</span></label>
-                                    <input type="text" class="form-control" name= "localidad" id="ciudad" value="" placeholder="Localidad">
+                                    <label for="city">Precio <span>*</span></label>
+                                    <input type="text" class="form-control" name= "precio" id="precio" value="" placeholder="Precio">
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <label for="street_address">Dirección <span>*</span></label>
-                                    <input type="text" class="form-control mb-3" id="calle" name= "direccion" value="" placeholder="Dirección">
+                                    <label for="street_address">Stock <span>*</span></label>
+                                    <input type="text" class="form-control mb-3" id="stock" name= "stock" value="" placeholder="Stock">
                                 
                                 </div>
-                                <div class="col-12 mb-3">
-                                    <label for="postcode">Código Postal <span>*</span></label>
-                                    <input type="text" class="form-control" name= "cp" id="cp" value="" placeholder="Código Postal">
-                                </div>
-                              
-                
-                                <div class="col-12 mb-3">
-                                    <label for="phone_number">Número de teléfono <span>*</span></label>
-                                    <input type="number" class="form-control" id="numero" name= "numero" min="0" value="" placeholder="Número de teléfono">
-                                </div>
+                               
                                 <div class="col-12 mb-4">
-                                    <label for="email_address">Email <span>*</span></label>
-                                    <input type="email" class="form-control" name= "email" id="email" value="" placeholder="Email">
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <label for="password">Contraseña <span>*</span></label>
-                                    <input type="password" class="form-control" name= "contraseña" id="password" min="0" value="" placeholder="Contraseña">
+                                    <label for="file">Subí la foto de portada</label><span>*</span> <br>
+                                    <input type="file" name= "avatar" id="avatar" value="avatar">
                                 </div>
 
                                 <div class="col-12">
                                     
-                                    <button type = "submit" href="/products/create" class="btn essence-btn">Registrarme</button>
+                                    <button type = "submit" href="/products/create" class="btn essence-btn">Agregar producto</button>
                                 </div>
                             </div>
                         </form>

@@ -17,8 +17,10 @@ create : function(req, res){
 },
 agregar: function(req, res, next){
     let producto = {
-        id: req.body.id,
         titulo: req.body.titulo,
+        autor: req.body.autor,
+        precio: req.body.precio,
+        stock: req.body.stock,
         categoria: req.body.categoria,
         imagen: req.files[0].filename
     }
