@@ -3,6 +3,7 @@ const router = express.Router();
 let fs = require("fs");
 const multer = require("multer");
 let path = require("path");
+
 var storage = multer.diskStorage({
   destination: function(req, file, cb){
     cb(null, "tmp/my-uploads")
@@ -12,13 +13,15 @@ var storage = multer.diskStorage({
   }
 });
 var upload = multer({storage: storage});
-const listadoUsers = JSON.parse(fs.readFileSync('./data/users.json', 'utf-8'));
+
+const listadoUsers = JSON.parse(fs.readFileSync("./data/users.json", 'utf-8'));
 const usersController = require("../controllers/usersController");
-let logDBMiddleware = require("../middleware/logDBMiddleware");
+let logDBMiddleware = require("../middleware/logDBMiddleware"); 
+let guestMiddleware = require("../middleware/guestMiddleware");
 let { check, validationResult, body } = require("express-validator");
 
 
-router.get("/register", usersController.register);
+router.get("/register", guestMiddleware, usersController.register);
 
 router.post(
   "/register", upload.any(),
@@ -44,16 +47,21 @@ router.post(
         if (users[i].email == value) return false;
       }
       return true;
-    }).withMessage('Usuario ya existente'),
+    }).withMessage("Usuario ya existente"),
     check("contraseña")
       .isLength({ min: 8 })
-      .withMessage("Hasta 8 caracteres podés poner")
+      .withMessage("Hasta 8 caracteres podés poner") 
   
-  ],
+  ], 
   usersController.create);
 
 router.get("/login", usersController.login);
 
 router.post("/login", usersController.count);
+
+router.post("/login", [
+  check('email').isEmail().withMessage("Email invalido"),
+  check('contraseña').isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+], usersController.processLogin);  
 
 module.exports = router;

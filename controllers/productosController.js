@@ -13,7 +13,7 @@ const productoAMostrar = listadoProductos.find(producto => {
     res.render("detalleProducto", {"productoClickeado": productoAMostrar});
 },
 create : function(req, res){
-    res.render("createProduct");
+    res.render("createProduct2");
 },
 agregar: function(req, res, next){
     let producto = {
