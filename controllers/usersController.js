@@ -101,13 +101,15 @@ const usersController = {
               break;
             }
           }
-        } if (usuarioALoguearse == undefined) {
+        }
+          if (usuarioALoguearse == undefined) {
           return res.render('login', {errors: [
             {msg: 'Credenciales invalidas'}
           ]});
         }
 
         req.session.usaruioLogueado = usuarioALoguearse;
+        res.render('Estas logueado');
 
         if (req.body.recordame != undefined) {
           res.cookie('recordame'),
