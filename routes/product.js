@@ -14,7 +14,7 @@ var upload = multer({storage: storage});
 const productosController = require("../controllers/productosController.js");
 
 router.get("/", productosController.listado);
-router.get("/:idProduct", productosController.detalle);
+//router.get("/:idProduct", productosController.detalle);
 router.get("/create", productosController.create);
 router.post("/create", upload.any(), productosController.agregar);
 router.get("/:idProduct/edit", productosController.update);
