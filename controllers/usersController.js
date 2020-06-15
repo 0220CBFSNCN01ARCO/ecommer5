@@ -83,17 +83,18 @@ const usersController = {
   processLogin: function(req, res) { 
     let errors = validationResult(req);
       if (errors.isEmpty()) {
-        let usersJSON = fs.readFileSync('./data/users.json', {encoding: "utf-8"});
+        let usersJSON = fs.readFileSync('./data/users.json', {
+          encoding: "utf-8",
+        });
         let usuarios;
-        if (usersJSON == "") {
+        if (usersJSON == " ") {
           usuarios = [];
         } else {
           usuarios = JSON.parse(usersJSON);
         }
 
         for (let i = 0; i < usersJSON.length; i++) {
-          if(req.body.email == usuarios[i].email &&
-            bcrypt.compareSync(req.body.password, usuarios[i].password)) {
+          if(usuarios[i].email == req.body.email) {
             if (bcrypt.compareSync(req.body.password), usuarios[i].password) {
               let usuarioALoguearse = usuarios[i];
 
@@ -118,7 +119,8 @@ const usersController = {
       return res.render('login', {errors: errors.errors});
     }
 
-  }, 
+  },
+  
 
   count: function (req, res) {
     let archivoUsuarios = fs.readFileSync("./data/users.json", {
