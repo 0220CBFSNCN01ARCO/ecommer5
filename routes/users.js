@@ -61,7 +61,7 @@ router.get("/login", usersController.login);
 
 router.post("/login", [
   check('email').isEmail().withMessage("Email invalido"),
-  check('contraseña').isInt({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+  check('password').isInt({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
 ], usersController.processLogin);  
 
 module.exports = router;

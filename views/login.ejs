@@ -41,7 +41,17 @@
                                 <div class="cart-page-heading mb-30">
                                     <h5>Iniciá sesión</h5>
                                 </div>
+                                <% if (typeof errors != 'undefined') { %>
+                                    <P style="color:red">ERROR</P>
         
+                                    <ul>
+                                        <% for (let i = 0; i < errors.length; i++) { %>
+                                            <li>
+                                                <%=errors[i].msg%>
+                                            </li>
+                                       <% } %>
+                                    </ul>
+                                <% } %>
                                 <div class="col-12 mb-4">
                                     <label for="email_address">Email <span>*</span></label>
                                     <input type="email" class="form-control" name= "email" id="email" value="email">
