@@ -57,7 +57,7 @@ router.post(
 
 router.get("/login", usersController.login);
 
-router.post("/login", usersController.count);
+//router.post("/login", usersController.count);
 
 router.post("/login", [
   check('email').isEmail().withMessage("Email invalido"),
