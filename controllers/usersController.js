@@ -1,41 +1,47 @@
 const fs = require("fs");
 const bcrypt = require("bcrypt");
-let { check, validationResult, body } = require("express-validator");
+const { check, validationResult, body } = require("express-validator");
 
 const usersController = {
   register: function (req, res) {
     res.render("register");
   },
   create: function(req, res, next) {
-    let usuario = {
-      nombre: req.body.nombre,
-      localidad: req.body.localidad,
-      direccion: req.body.direccion,
-      cp: req.body.cp,
-      numero: req.body.numero,
-      email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 10),
-      avatar: req.files[0].filename,
 
-    }
+    let errors = validationResult(req);
 
-    let archivoUsuarios = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
-    let usuarios;
-    if (archivoUsuarios == "") {
-      usuarios = [];
+    if(errors.isEmpty()){
+      let usuario = {
+        nombre: req.body.nombre,
+        localidad: req.body.localidad,
+        direccion: req.body.direccion,
+        cp: req.body.cp,
+        numero: req.body.numero,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        avatar: req.files[0].filename,
+  
+      }
+  
+      let archivoUsuarios = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
+      let usuarios;
+      if (archivoUsuarios == "") {
+        usuarios = [];
+      } else {
+      usuarios = JSON.parse(archivoUsuarios);
+  
+      }
+  
+      usuarios.push(usuario);
+  
+      usuariosJSON = JSON.stringify(usuarios);
+  
+      fs.appendFileSync("./data/users.json", usuariosJSON);
+  
+      res.redirect('/products');
     } else {
-    usuarios = JSON.parse(archivoUsuarios);
-
+      res.render("register", {errors: errors.errors})
     }
-
-    usuarios.push(usuario);
-
-    usuariosJSON = JSON.stringify(usuarios);
-
-    fs.appendFileSync("./data/users.json", usuariosJSON);
-
-    res.redirect('/products');
-
   },
   /*create: function (req, res, next) {
     let errors = validationResult(req);
@@ -77,7 +83,7 @@ const usersController = {
   processLogin: function(req, res) { 
     let errors = validationResult(req);
       if (errors.isEmpty()) {
-        let usersJSON = fs.readFileSync('users.json', {
+        let usersJSON = fs.readFileSync('./data/users.json', {
           encoding: "utf-8",
         });
         let usuarios;
@@ -108,7 +114,7 @@ const usersController = {
           usuarioALoguearse.email, ({ maxAge: 60000 })
         }
 
-        res.render('Usuario Logueado');
+        res.send('Usuario Logueado');
     } else {
       return res.render('login', {errors: errors.errors});
     }
