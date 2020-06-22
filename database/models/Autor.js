@@ -18,7 +18,7 @@ let config = {
 
 let Autor = sequelize.define(alias, cols, config);
 
-// relacion de tiene. Autores tienen muchos libros.
+// relacion de tiene. Autores tienen muchos libros
 
 Autor.associate = function(models) {
     Autor.hasMany(models.Libro, {

@@ -22,7 +22,7 @@ module.exports = function(sequelize, dataTypes) {
 
     let Libro = sequelize.define(alias, cols, config);
 
-    // relacion pertenece a. Los libros pertenecen a un autor. 
+    // relacion pertenece a. Los libros pertenecen a un autor
 
     Libro.associate = function(models) {
         Libro.belongsTo(models.Autor, {

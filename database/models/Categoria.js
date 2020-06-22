@@ -19,7 +19,7 @@ module.exports = function(sequelize, dataTypes) {
 
     let Categoria = sequelize.difine(alias, cols, config);
 
-    // relacion pertenece a. Una categoria pertenece a un libro.
+    // relacion pertenece a. Una categoria pertenece a un libro
     
     /*Categoria.associate = function(models) {
         Categoria.belongsTo(models.Libro, {
