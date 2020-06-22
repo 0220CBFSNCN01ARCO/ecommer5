@@ -10,7 +10,7 @@ module.exports = function(sequelize, dataTypes) {
         name: {
             type: dataTypes.STRING
         },
-        libro_id: {
+        categoria_id: {
             type: dataTypes.INTEGER
         }
     }
@@ -29,7 +29,7 @@ module.exports = function(sequelize, dataTypes) {
         as: "Autores",
         through: "autor_libro",
         foreignKey: "libro_id",
-        otherKey: "autor_id",
+        otherKey: "categoria_id",
         timestamps: false
         });
 
