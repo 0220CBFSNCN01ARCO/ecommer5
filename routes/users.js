@@ -50,7 +50,7 @@ router.post(
     }
       return true;
     }).withMessage("Usuario ya existente"),
-    check("password").isLength({ min: 8 }).withMessage("Podés poner hasta 8 caracteres") 
+    check("password").isLength({ min: 8 }).withMessage("La contraseña debe tener 8 caracteres como mínimo") 
 
   ], 
   usersController.create);
@@ -61,7 +61,7 @@ router.get("/login", usersController.login);
 
 router.post("/login", [
   check('email').isEmail().withMessage("Email invalido"),
-  check('password').isInt({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+  check('password').isLength().withMessage("La contraseña debe tener al menos 8 caracteres")
 ], usersController.processLogin);  
 
 module.exports = router;
