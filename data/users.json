@@ -1,1 +1,32 @@
-[{"nombre":"Yael Sucaria","localidad":"Cordoba","direccion":"El Chaco","cp":"5002","numero":"03514713725","email":"ya_sucaria@hotmail.com","password":"$2b$10$19DBTWaOI4WvNUyURXy9weFxPEZ9V0Ruv.EQ5B7zftMlXD17xPwry","avatar":"avatar-1592873645091.png"}]
+[
+  {
+    "nombre": "Yael Sucaria",
+    "localidad": "Cordoba",
+    "direccion": "El Chaco",
+    "cp": "5002",
+    "numero": "03514713725",
+    "email": "ya_sucaria@hotmail.com",
+    "password": "$2b$10$19DBTWaOI4WvNUyURXy9weFxPEZ9V0Ruv.EQ5B7zftMlXD17xPwry",
+    "avatar": "avatar-1592873645091.png"
+  },
+  {
+    "nombre": "Diego Ponce",
+    "localidad": "Córdoba",
+    "direccion": "Córdoba 123",
+    "cp": "5000",
+    "numero": "2954789878",
+    "email": "diego@digitalhouse.com",
+    "password": "$2b$10$Kx2VowxQqr7xlsg4XPy4EeBq2pysDOd.0vdkalx.GX8CgJlKEcDvK",
+    "avatar": "avatar-1592892949815.jpg"
+  },
+  {
+    "nombre": "Pepito",
+    "localidad": "Pepitolandia",
+    "direccion": "Calle falsa 123",
+    "cp": "123",
+    "numero": "455",
+    "email": "pepito@gmail.com",
+    "password": "$2b$10$in.euryfVZYi/ie/2q9ftus/NJyE6kn1cx.cNIU4x7PQSWmux4ZBO",
+    "avatar": "avatar-1592895350855.jpg"
+  }
+]

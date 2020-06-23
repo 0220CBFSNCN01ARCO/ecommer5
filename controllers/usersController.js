@@ -57,11 +57,11 @@ const usersController = {
         } else {
           users = JSON.parse(usersJSON);
         }
-        let usuarioALoguearse;
+        //let usuarioALoguearse;
         for (let i = 0; i < users.length; i++) {
           if(users[i].email == req.body.email) {
             if (bcrypt.compareSync(req.body.password, users[i].password)) {
-              let usuarioALoguearse = users[i];
+              /* let */ usuarioALoguearse = users[i];
 
               break;
             }
@@ -74,7 +74,8 @@ const usersController = {
         }
 
         req.session.usuarioLogueado = usuarioALoguearse;
-        res.send('Estas logueado');
+        //res.send('Estas logueado');
+        res.render('Estas logueado');
 
         if (req.body.recordame != undefined) {
           res.cookie('recordame'),
