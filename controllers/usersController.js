@@ -12,7 +12,7 @@ const usersController = {
 
     if(errors.isEmpty()){
       
-      let usersJSON = fs.readFileSync("users.json", {encoding: "utf-8"});
+      let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
       let usuarios;
       if (usersJSON == "") {
         users = [];
@@ -57,7 +57,7 @@ const usersController = {
         } else {
           users = JSON.parse(usersJSON);
         }
-
+        let usuarioALoguearse;
         for (let i = 0; i < users.length; i++) {
           if(users[i].email == req.body.email) {
             if (bcrypt.compareSync(req.body.password, users[i].password)) {
@@ -73,7 +73,7 @@ const usersController = {
           ]});
         }
 
-        req.session.usaruioLogueado = usuarioALoguearse;
+        req.session.usuarioLogueado = usuarioALoguearse;
         res.send('Estas logueado');
 
         if (req.body.recordame != undefined) {

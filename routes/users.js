@@ -52,15 +52,13 @@ router.post(
     }).withMessage("Usuario ya existente"),
     check("password").isLength({ min: 8 }).withMessage("La contraseña debe tener 8 caracteres como mínimo") 
 
-  ], 
-  usersController.create);
+  ], usersController.create);
+
 
 router.get("/login", usersController.login);
 
-//router.post("/login", usersController.count);
-
 router.post("/login", [
-  check('email').isEmail().withMessage("Email invalido"),
+  //check("email").isEmail().withMessage("Email inválido"),
   check('password').isLength().withMessage("La contraseña debe tener al menos 8 caracteres")
 ], usersController.processLogin);  
 

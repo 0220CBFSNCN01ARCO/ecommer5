@@ -38,20 +38,24 @@
 
                         <form action="/users/login" method="POST" enctype= "multipart/form-data">
                             <div class="row">
-                                <div class="cart-page-heading mb-30">
+                                <div class="mb-30">
                                     <h5>Iniciá sesión</h5>
+                                </div> 
+                                <div> <br>
+                                    <% if (typeof errors != 'undefined') { %>
+                                        <P style="color:red">ALGO PASÓ</P> 
+            
+                                        <ul>
+                                            <% for (let i = 0; i < errors.length; i++) { %>
+                                                <li>
+                                                    <%=errors[i].msg%>
+                                                </li>
+                                           <% } %>
+                                        </ul>
+                                    <% } %>
                                 </div>
-                                <% if (typeof errors != 'undefined') { %>
-                                    <P style="color:red">ERROR</P>
-        
-                                    <ul>
-                                        <% for (let i = 0; i < errors.length; i++) { %>
-                                            <li>
-                                                <%=errors[i].msg%>
-                                            </li>
-                                       <% } %>
-                                    </ul>
-                                <% } %>
+                               
+                                
                                 <div class="col-12 mb-4">
                                     <label for="email_address">Email <span>*</span></label>
                                     <input type="email" class="form-control" name= "email" id="email" value="" placeholder="Email">

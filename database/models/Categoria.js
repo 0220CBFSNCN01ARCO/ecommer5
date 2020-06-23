@@ -4,7 +4,7 @@ module.exports = function(sequelize, dataTypes) {
     let cols = {
         id: {
             type: dataTypes.INTEGER,
-            primaryKeY: true,
+            primaryKey: true,
             autoIncrement: true
         },
         category: {
@@ -17,7 +17,7 @@ module.exports = function(sequelize, dataTypes) {
         timestamps: false
     }
 
-    let Categoria = sequelize.difine(alias, cols, config);
+    let Categoria = sequelize.define(alias, cols, config);
 
     // relacion pertenece a. Una categoria pertenece a un libro
     
