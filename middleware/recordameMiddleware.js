@@ -1,28 +1,26 @@
 function recordameMiddleware(req, res, next) {
      next();
 
-     if(req.cookies.recordame != undefined && req.session.usarioLogueado == undefined) {
+     if(req.cookies.recordame != undefined && req.session.usuarioLogueado == undefined) {
         if (errors.isEmpty()) {
-            let usersJSON = fs.readFileSync('users.json', {
-              encoding: "utf-8",
-            });
-            let usuarios;
-            if (usersJSON == " ") {
-              usuarios = [];
+            let usersJSON = fs.readFileSync('./data/users.json', {encoding: "utf-8"});
+            let users;
+            if (usersJSON == "") {
+              users = [];
             } else {
-              usuarios = JSON.parse(usersJSON);
+              users = JSON.parse(usersJSON);
             }
-    
-            for (let i = 0; i < usersJSON.length; i++) {
-              if(usuarios[i].email == req.cookies.recordame) {
-                  let usuarioALoguearse = usuarios[i];
+            let usuarioALoguearse  
+            for (let i = 0; i < users.length; i++) {
+              if(users[i].email == req.cookies.recordame) {
+                  let usuarioALoguearse = users[i];
     
                   break;
                 }
               }
 
-              req.session.usaruioLogueado = usuarioALoguearse;
      } 
+     req.session.usuarioLogueado = usuarioALoguearse
 }
 }
 

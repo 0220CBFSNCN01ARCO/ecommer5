@@ -56,7 +56,22 @@ router.get("/login", usersController.login);
 
 router.post("/login", [
   check("email").isEmail().withMessage("Email inválido"),
-  check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres")
+  check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres"),
+  body("email").custom(function(value){
+    let usuariosJSON = fs.readFileSync('./data/users.json', {encoding:'utf-8'});
+    let users;
+    if(usuariosJSON == ""){
+      users = [];
+    }else{
+      users = JSON.parse(usuariosJSON);
+    }
+    for(let i = 0;i< users.length ;i++){
+      if(users[i].email == value){
+        return true;
+      }
+    }
+    return false;
+  }).withMessage("No tenemos registrado tu email")
 ], usersController.processLogin);  
 
 router.get('/check', function(req, res) {

@@ -77,8 +77,8 @@ const usersController = {
         res.send('Estas logueado');
 
         if (req.body.recordame != undefined) {
-          res.cookie('recordame'),
-          usuarioALoguearse.email, ({ maxAge: 60000 })
+          res.cookie('recordame',
+          usuarioALoguearse.email, ({ maxAge: 60000 }))
         }
 
         res.send('Usuario Logueado');
