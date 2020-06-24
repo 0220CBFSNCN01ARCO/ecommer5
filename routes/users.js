@@ -22,11 +22,8 @@ let fs = require("fs");
 
 router.get("/register", guestMiddleware, usersController.register);
 
-router.post(
-  "/register", upload.any(),
- logDBMiddleware,
-  [
-    check("nombre").isLength({min: 4}).withMessage("Este campo debe estar completo"),
+router.post("/register", upload.any(), logDBMiddleware, guestMiddleware, [
+    check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
     check("prov").isLength().withMessage("Te faltó la provincia"),
     check("localidad").isLength().withMessage("Te faltó la localidad"),
     check("direccion").isLength().withMessage("Y la dirección?"),
@@ -59,12 +56,12 @@ router.get("/login", usersController.login);
 
 router.post("/login", [
   check("email").isEmail().withMessage("Email inválido"),
-  check('password').isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+  check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres")
 ], usersController.processLogin);  
 
 router.get('/check', function(req, res) {
   if (req.session.usarioLogueado == undefined) {
-    res.send("No estas logueado");
+    res.send("No estás logueado");
   } else {
     res.send("El usuario logueado es " + req.session.usarioLogueado.email);
   }

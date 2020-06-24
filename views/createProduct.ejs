@@ -25,7 +25,17 @@
         </div>
     </div>
     <!-- ##### Breadcumb Area End ##### -->
+    <% if (typeof errors != 'undefined') { %>
+        <P style="color:red">ALGO PASÓ</P> 
 
+        <ul>
+            <% for (let i = 0; i < errors.length; i++) { %>
+                <li>
+                    <%=errors[i].msg%>
+                </li>
+           <% } %>
+        </ul>
+    <% } %>
     <!-- ##### Checkout Area Start ##### -->
     <div class="checkout_area section-padding-80">
         <div class="container">
@@ -49,7 +59,12 @@
                                 
                                 <div class="col-12 mb-3">
                                     <label for="country">Autor/a <span>*</span></label>
-                                    <input type="text" class="form-control" id="titulo" name = "titulo" value="" required placeholder="Título del libro">
+                                    <input type="text" class="form-control" id="titulo" name = "autor" value="" required placeholder="Nombre del autor/a">
+                                       
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="country">Categoría <span>*</span></label>
+                                    <input type="text" class="form-control" id="categoria" name = "categoria" value="" required placeholder="Categoría">
                                        
                                 </div>
                                 <div class="col-12 mb-3">
@@ -69,7 +84,7 @@
 
                                 <div class="col-12">
                                     
-                                    <button type = "submit" href="/products/create" class="btn essence-btn">Agregar producto</button>
+                                    <button type = "submit" href="/products" class="btn essence-btn">Agregar producto</button>
                                 </div>
                             </div>
                         </form>
