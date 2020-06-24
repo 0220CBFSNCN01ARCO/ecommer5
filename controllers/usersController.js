@@ -69,12 +69,12 @@ const usersController = {
         }
           if (usuarioALoguearse == undefined) {
           return res.render('login', {errors: [
-            {msg: 'Credenciales invalidas'}
+            {msg: 'Credenciales inválidas'}
           ]});
         }
 
         req.session.usuarioLogueado = usuarioALoguearse;
-        res.send('Estas logueado');
+        res.render('count', {usuarioLogueado: usuarioLogueado});
 
         if (req.body.recordame != undefined) {
           res.cookie('recordame',
@@ -89,27 +89,11 @@ const usersController = {
   },
   
 
-  count: function (req, res) {
-    let archivoUsuarios = fs.readFileSync("./data/users.json", {
-      encoding: "utf-8",
-    });
-    let usuarios;
-    if (archivoUsuarios == "") {
-      usuarios = [];
-    } else {
-      usuarios = JSON.parse(archivoUsuarios);
-    }
-    for (let i = 0; i < usuarios.length; i++) {
-      if (
-        req.body.email == usuarios[i].email &&
-        bcrypt.compareSync(req.body.password, usuarios[i].password)
-      ) {
-        res.render("count");
-      } else {
-        res.redirect("/users/login");
-      }
-    }
-  },
+  count : function (req, res) {
+  
+    res.render("count")
+   
+  }
 };
 
 module.exports = usersController;

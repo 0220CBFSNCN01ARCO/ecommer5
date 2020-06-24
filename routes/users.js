@@ -82,4 +82,6 @@ router.get('/check', function(req, res) {
   }
 })
 
+router.get("/count", usersController.count);
+
 module.exports = router;
