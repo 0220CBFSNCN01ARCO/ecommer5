@@ -25,17 +25,8 @@
         </div>
     </div>
     <!-- ##### Breadcumb Area End ##### -->
-    <% if (typeof errors != 'undefined') { %>
-        <P style="color:red">ALGO PASÓ</P> 
-
-        <ul>
-            <% for (let i = 0; i < errors.length; i++) { %>
-                <li>
-                    <%=errors[i].msg%>
-                </li>
-           <% } %>
-        </ul>
-    <% } %>
+    
+    
     <!-- ##### Checkout Area Start ##### -->
     <div class="checkout_area section-padding-80">
         <div class="container">
@@ -44,12 +35,24 @@
                 <div class="col-12 col-md-6">
                     <div class="checkout_details_area mt-10 clearfix">
 
-                        <div class="cart-page-heading mb-30">
+                        <div class="cart-page-heading mb-20">
                             <h5>Info del nuevo producto</h5>
                         </div>
+                        <div>
+                            <% if (typeof errors != 'undefined') { %>
+                                <P style="color:red">ALGO PASÓ</P> 
+                        
+                                <ul>
+                                    <% for (let i = 0; i < errors.length; i++) { %>
+                                        <li>
+                                            <%=errors[i].msg%>
+                                        </li>
+                                   <% } %>
+                                </ul>
+                            <% } %>
+                        </div>
 
-
-                        <form action= "/products/createProduct" method="POST" enctype="multipart/form-data">
+                        <form action= "/products/create" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="first_name">Título del libro<span>*</span></label>

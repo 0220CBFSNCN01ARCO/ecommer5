@@ -19,7 +19,7 @@ router.get("/", productosController.listado);
 
 router.get("/create", productosController.create);
 
-router.post("/create", upload.any(), authMiddleware, [
+router.post("/create", upload.any(),[
     check("titulo").isLength({min: 4}).withMessage("Falta el título del libro"),
     check("autor").isLength().withMessage("Falta aclarar el autor"),
     check("precio").isInt().withMessage("El producto no tiene precio"),

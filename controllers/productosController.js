@@ -1,5 +1,5 @@
 const fs = require('fs');
-let listadoProductos = fs.readFileSync("./data/detalleProductos.json", {encoding: "utf-8"});
+const { check, validationResult, body } = require("express-validator");
 
 const productosController = {
 listado : function(req, res){
@@ -10,7 +10,7 @@ create : function(req, res){
 res.render("createProduct")
 },
 
-agregar: function(req, res, next){
+agregar: function(req, res){
    
     let errors = validationResult(req);
 
