@@ -16,6 +16,7 @@ var upload = multer({storage: storage});
 const usersController = require("../controllers/usersController");
 let logDBMiddleware = require("../middleware/logDBMiddleware"); 
 let guestMiddleware = require("../middleware/guestMiddleware");
+let authMiddleware = require("../middleware/authMiddleware");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
@@ -82,6 +83,6 @@ router.get('/check', function(req, res) {
   }
 })
 
-router.get("/count", usersController.count);
+router.get("/count", authMiddleware, usersController.count);
 
 module.exports = router;
