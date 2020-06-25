@@ -74,7 +74,7 @@ const usersController = {
         }
 
         req.session.usuarioLogueado = usuarioALoguearse;
-        res.render('count', {usuarioLogueado: usuarioLogueado});
+        res.render('count', {usuario: req.session.usuarioLogueado});
 
         if (req.body.recordame != undefined) {
           res.cookie('recordame',
