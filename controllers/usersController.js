@@ -1,19 +1,20 @@
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
+//let db = require("./database/models/index.js");
 
 const usersController = {
   register: function (req, res) {
     res.render("register");
   },
-  create: function(req, res, next) {
+  create: function(req, res) {
 
     let errors = validationResult(req);
 
     if(errors.isEmpty()){
       
       let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
-      let usuarios;
+      let users;
       if (usersJSON == "") {
         users = [];
       } else {
@@ -63,13 +64,15 @@ const usersController = {
             if (bcrypt.compareSync(req.body.password, users[i].password)) {
             usuarioALoguearse = users[i]; //esto estaba comentado
 
+              let usuarioALoguearse = users[i];
+              console.log(usuarioALoguearse);
               break;
             }
           }
         }
           if (usuarioALoguearse == undefined) {
           return res.render('login', {errors: [
-            {msg: 'Credenciales invalidas'}
+            {msg: 'Credenciales inválidas'}
           ]});
         }
 
@@ -78,8 +81,8 @@ const usersController = {
         //res.render('Estas logueado');
 
         if (req.body.recordame != undefined) {
-          res.cookie('recordame'),
-          usuarioALoguearse.email, ({ maxAge: 60000 })
+          res.cookie('recordame',
+          usuarioALoguearse.email, ({ maxAge: 60000 }))
         }
 
         res.send('Usuario Logueado');

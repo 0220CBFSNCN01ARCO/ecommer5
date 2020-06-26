@@ -10,7 +10,7 @@ var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 var contactRouter = require('./routes/contact');
 var logMiddleware = require('./middleware/logMiddleware');
-var recordameMiddleware = require ('./middleware/recordameMiddleware');
+var recordameMiddleware = require('./middleware/recordameMiddleware');
 
 var app = express();
 

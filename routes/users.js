@@ -16,17 +16,15 @@ var upload = multer({storage: storage});
 const usersController = require("../controllers/usersController");
 let logDBMiddleware = require("../middleware/logDBMiddleware"); 
 let guestMiddleware = require("../middleware/guestMiddleware");
+let authMiddleware = require("../middleware/authMiddleware");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 
 router.get("/register", guestMiddleware, usersController.register);
 
-router.post(
-  "/register", upload.any(),
- logDBMiddleware,
-  [
-    check("nombre").isLength({min: 4}).withMessage("Este campo debe estar completo"),
+router.post("/register", upload.any(), logDBMiddleware, guestMiddleware, [
+    check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
     check("prov").isLength().withMessage("Te faltó la provincia"),
     check("localidad").isLength().withMessage("Te faltó la localidad"),
     check("direccion").isLength().withMessage("Y la dirección?"),
@@ -59,15 +57,32 @@ router.get("/login", usersController.login);
 
 router.post("/login", [
   check("email").isEmail().withMessage("Email inválido"),
-  check('password').isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
+  check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres")
+  //body("email").custom(function(value){
+   // let usuariosJSON = fs.readFileSync('./data/users.json', {encoding:'utf-8'});
+   // let users;
+    //if(usuariosJSON == ""){
+    //  users = [];
+    //}else{
+    //  users = JSON.parse(usuariosJSON);
+    //}
+   // for(let i = 0;i< users.length ;i++){
+    //  if(users[i].email == value){
+     //   return true;
+     // }
+    //}
+  //  return false;
+ // }).withMessage("No tenemos registrado tu email")
 ], usersController.processLogin);  
 
 router.get('/check', function(req, res) {
   if (req.session.usarioLogueado == undefined) {
-    res.send("No estas logueado");
+    res.send("No estás logueado");
   } else {
     res.send("El usuario logueado es " + req.session.usarioLogueado.email);
   }
 })
+
+router.get("/account", authMiddleware, usersController.account);
 
 module.exports = router;

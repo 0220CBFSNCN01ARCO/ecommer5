@@ -41,7 +41,7 @@
                                 <div class="mb-30">
                                     <h5>Iniciá sesión</h5>
                                 </div> 
-                                <div> <br>
+                                <div> 
                                     <% if (typeof errors != 'undefined') { %>
                                         <P style="color:red">ALGO PASÓ</P> 
             
@@ -57,19 +57,19 @@
                                
                                 
                                 <div class="col-12 mb-4">
-                                    <label for="email_address">Email <span>*</span></label>
-                                    <input type="email" class="form-control" name= "email" id="email" value="" placeholder="Email">
+                                    <label for="">Email<span>*</span></label>
+                                    <input type="text" class="form-control" name= "email" id="email" value="" placeholder="Email">
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="password">Contraseña<span>*</span></label>
-                                    <input type="password" class="form-control" name= "password" id="password" min="0" value="" placeholder="Contraseña"> 
+                                    <input type="password" class="form-control" name= "password" id="password" value="" placeholder="Contraseña"> 
                                     <label for="">Recordame</label>
                                     <input type="checkbox" name="recordame"><br>
                                 </div>
                                 
                                 <div class="col-12">
                                     
-                                    <button type = "submit" href="#" class="btn essence-btn">Entrar</button> <br>
+                                    <input type = "submit" href="#" class="btn essence-btn" value = "Entrar">
                     
                                 </div>
                                 <div class="col-12 registracion">
