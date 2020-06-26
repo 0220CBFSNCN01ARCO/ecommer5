@@ -1,6 +1,7 @@
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
+//let db = require("./database/models/index.js");
 
 const usersController = {
   register: function (req, res) {
@@ -57,12 +58,15 @@ const usersController = {
         } else {
           users = JSON.parse(usersJSON);
         }
+        //console.log(users);
         let usuarioALoguearse;
+        
         for (let i = 0; i < users.length; i++) {
           if(users[i].email == req.body.email) {
             if (bcrypt.compareSync(req.body.password, users[i].password)) {
-              let usuarioALoguearse = users[i];
 
+              let usuarioALoguearse = users[i];
+              console.log(usuarioALoguearse);
               break;
             }
           }
@@ -74,7 +78,7 @@ const usersController = {
         }
 
         req.session.usuarioLogueado = usuarioALoguearse;
-        res.render('count', {usuario: req.session.usuarioLogueado});
+        res.redirect('account', {usuario: req.session.usuarioLogueado});
 
         if (req.body.recordame != undefined) {
           res.cookie('recordame',
@@ -89,9 +93,9 @@ const usersController = {
   },
   
 
-  count : function (req, res) {
+  account : function (req, res) {
   
-    res.render("count")
+    res.render("account")
    
   }
 };
