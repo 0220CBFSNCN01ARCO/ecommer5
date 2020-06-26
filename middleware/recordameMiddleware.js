@@ -15,7 +15,7 @@ function recordameMiddleware(req, res, next) {
     
             for (let i = 0; i < usersJSON.length; i++) {
               if(usuarios[i].email == req.cookies.recordame) {
-                  let usuarioALoguearse = usuarios[i];
+                usuarioALoguearse = usuarios[i]; //al principio habia un let
     
                   break;
                 }

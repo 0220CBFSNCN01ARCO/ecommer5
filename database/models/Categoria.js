@@ -32,7 +32,7 @@ module.exports = function(sequelize, dataTypes) {
     Categoria.associate = function(models) {
     Categoria.belongsToMany(models.Libro, {
             as: "libroscategoria",
-            through: "autor_libro",
+            through: "autor_libro", // models autor libro
             foreignKey: "categoria_id",
             otherKey: "libro_id",
             timestamps: false

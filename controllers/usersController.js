@@ -50,18 +50,18 @@ const usersController = {
   processLogin: function(req, res) { 
     let errors = validationResult(req);
       if (errors.isEmpty()) {
-        let usersJSON = fs.readFileSync('./data/users.json', {encoding: "utf-8"});
+        let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
         let users;
         if (usersJSON == "") {
           users = [];
         } else {
           users = JSON.parse(usersJSON);
         }
-        //let usuarioALoguearse;
+        let usuarioALoguearse; // esto estaba comentado
         for (let i = 0; i < users.length; i++) {
           if(users[i].email == req.body.email) {
             if (bcrypt.compareSync(req.body.password, users[i].password)) {
-              /* let */ usuarioALoguearse = users[i];
+            usuarioALoguearse = users[i]; //esto estaba comentado
 
               break;
             }
@@ -74,8 +74,8 @@ const usersController = {
         }
 
         req.session.usuarioLogueado = usuarioALoguearse;
-        //res.send('Estas logueado');
-        res.render('Estas logueado');
+        res.send('Estas logueado');
+        //res.render('Estas logueado');
 
         if (req.body.recordame != undefined) {
           res.cookie('recordame'),
@@ -88,8 +88,8 @@ const usersController = {
     }
 
   },
-  
 
+  
   count: function (req, res) {
     let archivoUsuarios = fs.readFileSync("./data/users.json", {
       encoding: "utf-8",
