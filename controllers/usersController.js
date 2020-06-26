@@ -93,7 +93,7 @@ const usersController = {
   },
 
   
-  count: function (req, res) {
+  account: function (req, res) {
     let archivoUsuarios = fs.readFileSync("./data/users.json", {
       encoding: "utf-8",
     });
@@ -108,7 +108,7 @@ const usersController = {
         req.body.email == usuarios[i].email &&
         bcrypt.compareSync(req.body.password, usuarios[i].password)
       ) {
-        res.render("count");
+        res.redirect("account");
       } else {
         res.redirect("/users/login");
       }
