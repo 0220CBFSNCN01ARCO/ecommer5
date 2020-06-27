@@ -1,3 +1,4 @@
+module.exports = function(sequelize, dataTypes) {
 let alias = "Autor";
 
 let cols = {
@@ -27,5 +28,5 @@ Autor.associate = function(models) {
     });
 
 }
-
+}
 return Autor;
