@@ -34,47 +34,51 @@
                 <div class="col-12 col-md-6">
                     <div class="checkout_details_area clearfix">
 
-                    
+                        <div class= "errors">
+                            <% if (typeof errors != 'undefined') { %>
+                                <P style="color:red">ALGO PASÓ</P> 
+    
+                                <ul>
+                                    <% for (let i = 0; i < errors.length; i++) { %>
+                                        <li>
+                                            <%=errors[i].msg%>
+                                        </li>
+                                   <% } %>
+                                </ul>
+                            <% } %>
+                        </div>
 
                         <form action="/users/login" method="POST">
                             <div class="row">
-                                <div class="mb-30">
-                                    <h5>Iniciá sesión</h5>
+                                <div class="inicia mb-70">
+                                    <h5>Iniciá sesión</h5> 
                                 </div> 
-                                <div> 
-                                    <% if (typeof errors != 'undefined') { %>
-                                        <P style="color:red">ALGO PASÓ</P> 
-            
-                                        <ul>
-                                            <% for (let i = 0; i < errors.length; i++) { %>
-                                                <li>
-                                                    <%=errors[i].msg%>
-                                                </li>
-                                           <% } %>
-                                        </ul>
-                                    <% } %>
-                                </div>
-                               
-                                
-                                <div class="col-12 mb-4">
-                                    <label for="">Email<span>*</span></label>
-                                    <input type="text" class="form-control" name= "email" id="email" value="" placeholder="Email">
-                                </div>
-                                <div class="col-12 mb-3">
-                                    <label for="password">Contraseña<span>*</span></label>
-                                    <input type="password" class="form-control" name= "password" id="password" value="" placeholder="Contraseña"> 
-                                    <label for="">Recordame</label>
-                                    <input type="checkbox" name="recordame"><br>
-                                </div>
-                                
-                                <div class="col-12">
+                            
                                     
-                                    <input type = "submit" href="#" class="btn essence-btn" value = "Entrar">
-                    
+                                
+                               
+                                <div class="datos row">
+                                    <div class="col-12 mb-4">
+                                        <label for="">Email<span>*</span></label>
+                                        <input type="text" class="form-control" name= "email" id="email" value="" placeholder="Email">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="password">Contraseña<span>*</span></label>
+                                        <input type="password" class="form-control" name= "password" id="password" value="" placeholder="Contraseña"> 
+                                        <label for="">Recordame</label>
+                                        <input type="checkbox" name="recordame"><br>
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        
+                                        <input type = "submit" href="#" class="btn essence-btn" value = "Entrar">
+                        
+                                    </div>
+                                    <div class="col-12 registracion">
+                                        <a for="" href= "/users/register">¿TODAVÍA NO TE REGISTRASTE?</a>
+                                    </div>
                                 </div>
-                                <div class="col-12 registracion">
-                                    <a for="" href= "/users/register">¿TODAVÍA NO TE REGISTRASTE?</a>
-                                </div>
+                                
                                 
                             </div>
                         </form>

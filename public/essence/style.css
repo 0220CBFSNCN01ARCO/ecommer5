@@ -23,3 +23,20 @@
 .promociones{
     height: 10vh;
 }
+
+.inicia{
+    position: relative;
+    margin-left: 1vw;
+    margin-bottom: 10vh;
+}
+
+.errors{
+    position: absolute;
+    margin-top: 10px;
+    padding-top: 15px;
+}
+
+.datos{
+    margin-top: 3vh;
+    margin-left: 0vw;
+}
