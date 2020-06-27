@@ -64,8 +64,8 @@ const usersController = {
             if (bcrypt.compareSync(req.body.password, users[i].password)) {
              usuarioALoguearse = users[i]; //esto estaba comentado
 
-              let usuarioALoguearse = users[i];
-              console.log(usuarioALoguearse);
+            
+             // console.log(usuarioALoguearse);
               break;
             }
           }
