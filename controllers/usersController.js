@@ -62,7 +62,7 @@ const usersController = {
         for (let i = 0; i < users.length; i++) {
           if(users[i].email == req.body.email) {
             if (bcrypt.compareSync(req.body.password, users[i].password)) {
-            usuarioALoguearse = users[i]; //esto estaba comentado
+             usuarioALoguearse = users[i]; //esto estaba comentado
 
               let usuarioALoguearse = users[i];
               console.log(usuarioALoguearse);
