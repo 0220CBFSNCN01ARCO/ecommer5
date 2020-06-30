@@ -7,11 +7,23 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        name: {
-            type: dataTypes.STRING
+        titulo: {
+            type: dataTypes.VARCHAR(45)
         },
-        categoria_id: {
-            type: dataTypes.INTEGER
+        portada: {
+            type: dataTypes.VARCHAR(45)
+        },
+        precio: {
+            type: dataTypes.INTEGER(11)
+        }
+        stock: {
+            type: dataTypes.INTEGER(11)
+        },
+        idCategoria: {
+            type: dataTypes.INTEGER(11)
+        },
+        idUsarios: {
+            type: dataTypes.INTEGER(11)
         }
     }
 
