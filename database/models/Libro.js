@@ -34,13 +34,13 @@ module.exports = function(sequelize, dataTypes) {
 
     let Libro = sequelize.define(alias, cols, config);
 
-    // relacion pertenece a. Los libros pertenecen a un autor
+    // relacion pertenece a. Los libros tienen muchos autores
 
     Libro.associate = function(models) {
-        Libro.belongsTo(models.Autor, {
+        Libro.hasMany(models.Autor, {
         as: "Autores",
-        through: "autor_libro",
-        foreignKey: "libro_id",
+        through: "Libro_Autor",
+        foreignKey: "idLibro",
         otherKey: "categoria_id",
         timestamps: false
         });
