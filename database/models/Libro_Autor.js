@@ -16,7 +16,10 @@ module.exports = function(sequelize, DataTypes) {
     }
 
     let config = {
-        tableName: "Libros_Autores",
+        tableName: "libros_autores",
         timestamps: false
     }
+const Libro_Autor = sequelize.define(alias, cols, config);
+return Libro_Autor
+
 }
