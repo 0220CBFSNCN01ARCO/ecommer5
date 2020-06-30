@@ -7,8 +7,11 @@ module.exports = function(sequelize, dataTypes) {
             primaryKey: true,
             autoIncrement: true
         },
-        category: {
-            type: dataTypes.STRING
+        nombre: {
+            type: dataTypes.VARCHAR(45)
+        },
+        idLibro: {
+            type: dataTypes.INTEGER(11)
         }
     }
 
@@ -32,7 +35,7 @@ module.exports = function(sequelize, dataTypes) {
     Categoria.associate = function(models) {
     Categoria.belongsToMany(models.Libro, {
             as: "libroscategoria",
-            through: "autor_libro", // models autor libro
+            through: "libros_autores", 
             foreignKey: "categoria_id",
             otherKey: "libro_id",
             timestamps: false

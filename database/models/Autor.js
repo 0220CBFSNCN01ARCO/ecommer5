@@ -7,8 +7,11 @@ let cols = {
         primaryKey: true,
         autoIncrement: true
     },
-    name: {
-        type: dataTypes.STRING
+    nombre: {
+        type: dataTypes.VARCHAR(45)
+    },
+    idLibro: {
+        type: dataTypes.INTEGER(11)
     }
 }
 
