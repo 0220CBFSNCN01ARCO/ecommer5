@@ -27,7 +27,7 @@ let Autor = sequelize.define(alias, cols, config);
 Autor.associate = function(models) {
     Autor.hasMany(models.Libro, {
         as: "libros",
-        foreingKey: "autor_id" 
+        foreingKey: "idLibro" 
     });
 
 }
