@@ -1,17 +1,17 @@
-module.exports = function(sequelize, dataTypes) {
+module.exports = function(sequelize, DataTypes) {
     let alias = "Libro_Autor";
 
     let cols = {
         id: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true
         },
         idLibro: {
-            type: dataTypes.INTEGER(11)
+            type: DataTypes.INTEGER(11)
         },
         idAutor: {
-            type: dataType.INTEGER(11)
+            type: DataType.INTEGER(11)
         }
     }
 

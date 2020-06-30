@@ -1,34 +1,34 @@
-module.exports = function(sequelize, dataTypes) {
+module.exports = function(sequelize, DataTypes) {
     let alias = "Libro";
 
     let cols = {
         id: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true
         },
         titulo: {
-            type: dataTypes.VARCHAR(45)
+            type: DataTypes.VARCHAR(45)
         },
         portada: {
-            type: dataTypes.VARCHAR(45)
+            type: DataTypes.VARCHAR(450)
         },
         precio: {
-            type: dataTypes.INTEGER(11)
+            type: DataTypes.INTEGER(11)
         },
         stock: {
-            type: dataTypes.INTEGER(11)
+            type: DataTypes.INTEGER(11)
         },
         idCategoria: {
-            type: dataTypes.INTEGER(11)
+            type: DataTypes.INTEGER(11)
         },
         idUsarios: {
-            type: dataTypes.INTEGER(11)
+            type: DataTypes.INTEGER(11)
         }
     }
 
     let config = {
-        tableName: "Libros",
+        tableName: "libros",
         timestamps: false
     }
 
@@ -40,10 +40,16 @@ module.exports = function(sequelize, dataTypes) {
         Libro.belongsToMany(models.Autor, {
         as: "Autores",
         through: "libros_autores",
-        foreignKey: "idAutor",
-        otherKey: "idCategoria",
+        foreignKey: "idLibro",
+        otherKey: "idAutor",
         timestamps: false
         });
+ // relacion uno a muchos. Un libro tiene una categoría
+        Libro.belongsTo(models.Categoria, {
+            as: "categoria",
+            foreignKey: "idCategoria",
+            timestamps: false
+            });
 
     }
 

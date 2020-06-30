@@ -1,36 +1,35 @@
-module.exports = function(sequelize, dataTypes) {
+module.exports = function(sequelize, DataTypes) {
     let alias = "Categoria";
 
     let cols = {
         id: {
-            type: dataTypes.INTEGER,
+            type: DataTypes.INTEGER(11),
             primaryKey: true,
             autoIncrement: true
         },
         nombre: {
-            type: dataTypes.VARCHAR(45)
+            type: DataTypes.VARCHAR(45)
         },
         idLibro: {
-            type: dataTypes.INTEGER(11)
+            type: DataTypes.INTEGER(11)
         }
     }
 
     let config = {
-        tableName: "Categorias",
+        tableName: "categorias",
         timestamps: false
     }
 
     let Categoria = sequelize.define(alias, cols, config);
 
 
-// relacion uno a muchos. Las categorias tienen muchos libros
+// relacion uno a muchos. Una categoría tiene muchos libros
     Categoria.associate = function(models) {
     Categoria.hasMany(models.Libro, {
-            as: "libroscategoria",
+            as: "libros",
             foreignKey: "idLibro",
             timestamps: false
             });
-
     }
 
     return Categoria;
