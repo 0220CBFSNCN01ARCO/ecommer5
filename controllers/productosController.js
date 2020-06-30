@@ -1,9 +1,10 @@
 const fs = require('fs');
 const { check, validationResult, body } = require("express-validator");
-//let db = require("./database/models/index.js");
+//const db = require("../database/models/index.js");
 
 const productosController = {
 listado : function(req, res){
+    
     res.render("products");
 },
 

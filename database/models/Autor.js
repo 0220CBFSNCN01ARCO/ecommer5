@@ -3,15 +3,15 @@ module.exports = function(sequelize, DataTypes) {
     
     let cols = {
         id: {
-            type: DataTypes.INTEGER(11),
+            type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         nombre: {
-            type: DataTypes.VARCHAR(45)
+            type: DataTypes.VARCHAR
         },
         idLibro: {
-            type: DataTypes.INTEGER(11)
+            type: DataTypes.INTEGER
         }
     }
     
