@@ -40,8 +40,8 @@ module.exports = function(sequelize, dataTypes) {
         Libro.hasMany(models.Autor, {
         as: "Autores",
         through: "Libro_Autor",
-        foreignKey: "idLibro",
-        otherKey: "categoria_id",
+        foreignKey: "idLibros",
+        otherKey: "idCategoria",
         timestamps: false
         });
 
