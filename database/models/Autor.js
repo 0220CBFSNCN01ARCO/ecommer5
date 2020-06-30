@@ -22,12 +22,14 @@ let config = {
 
 let Autor = sequelize.define(alias, cols, config);
 
-// relacion de tiene. Autores tienen muchos libros
+// relacion de muchos a muchos. Autores tienen muchos libros
 
 Autor.associate = function(models) {
-    Autor.hasMany(models.Libro, {
+    Autor.belongsToMany(models.Libro, {
         as: "libros",
-        foreingKey: "idLibro" 
+        through: "libros_autores",
+        foreingKey: "idLibro",
+        timestamps: false
     });
 
 }

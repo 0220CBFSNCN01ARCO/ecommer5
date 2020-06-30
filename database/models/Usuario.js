@@ -39,7 +39,7 @@ module.exports = function(sequelize, dataTypes) {
     }
 }
 
-// relacion muchos a muchos. Las usuarios tienen muchos libros. 
+// relacion uno a muchos. Los usuarios tienen muchos libros 
 
 let Usuario = sequelize.define(alias, cols, config);
 

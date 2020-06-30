@@ -22,22 +22,12 @@ module.exports = function(sequelize, dataTypes) {
 
     let Categoria = sequelize.define(alias, cols, config);
 
-    // relacion pertenece a. Una categoria pertenece a un libro
-    
-    /*Categoria.associate = function(models) {
-        Categoria.belongsTo(models.Libro, {
-            as: "categorialibros",
-            foreingKey: "libro_id"
-        });*/
 
-    // relacion muchos a muchos. Las categorias tienen muchos libros. 
-
+// relacion uno a muchos. Las categorias tienen muchos libros
     Categoria.associate = function(models) {
-    Categoria.belongsToMany(models.Libro, {
+    Categoria.hasMany(models.Libro, {
             as: "libroscategoria",
-            through: "libros_autores", 
-            foreignKey: "categoria_id",
-            otherKey: "libro_id",
+            foreignKey: "idLibro",
             timestamps: false
             });
 
