@@ -3,7 +3,7 @@ module.exports = function(sequelize, DataTypes) {
 
     let cols = {
         id: {
-            type: DataTypes.INTEGER//(11),
+            type: DataTypes.INTEGER,//(11)
             primaryKey: true,
             autoIncrement: true
         },
@@ -13,13 +13,14 @@ module.exports = function(sequelize, DataTypes) {
         idAutor: {
             type: DataType.INTEGER//(11)
         }
-    }
+    
 
-    let config = {
+    let: config = {
         tableName: "libros_autores",
         timestamps: false
     }
 const Libro_Autor = sequelize.define(alias, cols, config);
-return Libro_Autor
+return: Libro_Autor
 
+}
 }
