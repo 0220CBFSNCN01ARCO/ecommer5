@@ -25,7 +25,7 @@ const usersController = {
      // users = JSON.parse(usersJSON);
   
      // }
-      db.Usuario.create({
+     let nuevoUsuario= db.Usuario.create({
         nombre: req.body.nombre,
         localidad: req.body.localidad,
         direccion: req.body.direccion,
@@ -36,7 +36,10 @@ const usersController = {
         avatar: req.files[0].filename
       })
        .then(function(libros){
-        res.render('/account');
+        res.render('account', {nuevoUsuario: nuevoUsuario});
+      })
+      .catch(function(error){
+        res.redirect("register", {errors: errors})
       })
   
       }

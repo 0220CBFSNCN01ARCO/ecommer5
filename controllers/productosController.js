@@ -96,8 +96,16 @@ update: function(req, res){
 },
 
 delete: function(req, res){
-
-    res.redirect("/product")
+db.Libro.destroy({
+  where: {id: req.params.idLibro}
+})
+.then(function(result){
+  let mensajeConfirm= "Se eliminó el producto correctamente"
+  res.render("products", {mensajeConfirm: mensajeConfirm})
+})
+  .catch(function(error){
+    return res.render("products", {error: error})
+  })
 }
 
 };
