@@ -2,8 +2,8 @@ const fs = require("fs");
 const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
 let path = require("path");
-const rutaDb = path.join("..", "database", "models", "index");
-const db = require(rutaDb)
+//const rutaDb = path.join("..", "database", "models", "index");
+//const db = require(rutaDb)
 
 
 const usersController = {

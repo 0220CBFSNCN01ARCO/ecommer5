@@ -16,7 +16,7 @@ var upload = multer({storage: storage});
 const productosController = require("../controllers/productosController.js");
 
 router.get("/", productosController.listado);
-
+router.get("/detail/:id", productosController.detail);
 router.get("/create", productosController.create);
 
 router.post("/create", upload.any(),[
@@ -26,8 +26,8 @@ router.post("/create", upload.any(),[
     check("stock").isInt().withMessage("Falta aclarar el stock")
 ], productosController.agregar);
 
-router.get("/:idProduct/edit", productosController.update);
-router.put("/:idProduct/edit", productosController.update);
-router.delete("/:idProduct/delete", productosController.delete);
+router.get("/edit/:id", productosController.edit);
+router.post("/edit/:id", productosController.update);
+router.delete("/delete/:id", productosController.delete);
 
 module.exports = router;
