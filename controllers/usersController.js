@@ -1,7 +1,7 @@
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
-//let db = require("./database/models/index.js");
+//let db = require("../database/models/index.js");
 
 const usersController = {
   register: function (req, res) {
