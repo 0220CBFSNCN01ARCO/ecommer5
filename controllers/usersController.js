@@ -2,6 +2,7 @@ const fs = require("fs");
 const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
 let path = require("path");
+const db = require("../database/models");
 //const rutaDb = path.join("..", "database", "models", "index");
 //const db = require(rutaDb)
 
@@ -16,15 +17,15 @@ const usersController = {
 
     if(errors.isEmpty()){
       
-      let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
-      let users;
-      if (usersJSON == "") {
-        users = [];
-      } else {
-      users = JSON.parse(usersJSON);
+      //let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
+      //let users;
+      //if (usersJSON == "") {
+       // users = [];
+     // } else {
+     // users = JSON.parse(usersJSON);
   
-      }
-      let user = {
+     // }
+      db.Usuario.create({
         nombre: req.body.nombre,
         localidad: req.body.localidad,
         direccion: req.body.direccion,
@@ -32,20 +33,22 @@ const usersController = {
         numero: req.body.numero,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
-        avatar: req.files[0].filename,
+        avatar: req.files[0].filename
+      })
+       
   
       }
   
-      users.push(user);
+     // users.push(user);
   
-      usersJSON = JSON.stringify(users);
+      //usersJSON = JSON.stringify(users);
   
-      fs.appendFileSync("./data/users.json", usersJSON);
+      //fs.appendFileSync("./data/users.json", usersJSON);
   
       res.redirect('/products');
-    } else {
-      res.render("register", {errors: errors.errors})
-    }
+   // } else {
+     // res.render("register", {errors: errors.errors})
+   // }
   },
 
   login: function (req, res) {
