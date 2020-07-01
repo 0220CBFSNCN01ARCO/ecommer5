@@ -8,28 +8,28 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         nombre: {
-            type: DataTypes.VARCHAR//(45)
+            type: DataTypes.STRING//(45)
         },
         email: {
-            type: DataTypes.VARCHAR//(45)
+            type: DataTypes.STRING//(45)
         },
         direccion: {
-            type: DataTypes.INTEGER//(11)
+            type: DataTypes.STRING//(11)
         },
         cp: {
             type: DataTypes.INTEGER//(11)
         },
         password: {
-            type: DataTypes.VARCHAR//(45)
+            type: DataTypes.STRING//(45)
         },
         localidad: {
-            type: DataTypes.VARCHAR//(45)
+            type: DataTypes.STRING//(45)
         },
         provincia: {
-            type: DataTypes.VARCHAR//(45)
+            type: DataTypes.STRING//(45)
         },
         avatar: {
-            type: DataTypes.VARCHAR//(450)
+            type: DataTypes.STRING//(450)
         }
     }
 
@@ -43,13 +43,13 @@ module.exports = function(sequelize, DataTypes) {
 
 let Usuario = sequelize.define(alias, cols, config);
 
-Usuario.associate = function(models) {
-    Autor.hasMany(models.Libro, {
-        as: "libros",
-        foreignKey: "idLibro" 
-    });
+//Usuario.associate = function(models) {
+  //  Libro.hasMany(models.Libro, {
+      //  as: "libros",
+       // foreignKey: "idLibro" 
+    //});
    
-}
+//}
 
 return Usuario;
 }

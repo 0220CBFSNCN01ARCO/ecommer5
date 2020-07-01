@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         nombre: {
-            type: DataTypes.VARCHAR//(45)
+            type: DataTypes.STRING//(45)
         },
         idLibro: {
             type: DataTypes.INTEGER//(11)

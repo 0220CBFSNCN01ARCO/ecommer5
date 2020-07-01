@@ -8,10 +8,10 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         titulo: {
-            type: DataTypes.VARCHAR//(45)
+            type: DataTypes.STRING//(45)
         },
         portada: {
-            type: DataTypes.VARCHAR//(450)
+            type: DataTypes.STRING//(450)
         },
         precio: {
             type: DataTypes.INTEGER//(11)
