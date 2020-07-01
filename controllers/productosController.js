@@ -37,6 +37,9 @@ agregar: function(req, res){
         precio: req.body.precio,
         stock: req.body.sotck,
         avatar: req.files[0].filename
+      }) 
+      .then(function(libros){
+        res.render('/products');
       })
       //let productosJSON = fs.readFileSync("./data/detalleProductos.json", {encoding: "utf-8"});
       //let productos;
@@ -62,7 +65,7 @@ agregar: function(req, res){
   
       //fs.appendFileSync("./data/detalleProductos.json", productosJSON);
   
-      res.redirect('/products');
+      //res.redirect('/products');
    // } else {
     //  res.render("createProduct", {errors: errors.errors})
    // }

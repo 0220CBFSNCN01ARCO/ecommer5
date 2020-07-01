@@ -35,7 +35,9 @@ const usersController = {
         password: bcrypt.hashSync(req.body.password, 10),
         avatar: req.files[0].filename
       })
-       
+       .then(function(libros){
+        res.render('/account');
+      })
   
       }
   
@@ -45,7 +47,7 @@ const usersController = {
   
       //fs.appendFileSync("./data/users.json", usersJSON);
   
-      res.redirect('/products');
+      //res.redirect('/products');
    // } else {
      // res.render("register", {errors: errors.errors})
    // }
