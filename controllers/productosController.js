@@ -1,7 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { check, validationResult, body } = require("express-validator");
-const db = require("../database/models/index.js");
+const rutaDb = path.join("..", "database", "models", "index");
+const db = require(rutaDb)
 
 const productosController = {
 listado : function(req, res){

@@ -1,7 +1,10 @@
 const fs = require("fs");
 const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
-//let db = require("../database/models/index.js");
+let path = require("path");
+const rutaDb = path.join("..", "database", "models", "index");
+const db = require(rutaDb)
+
 
 const usersController = {
   register: function (req, res) {
