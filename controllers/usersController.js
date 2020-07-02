@@ -35,7 +35,7 @@ const usersController = {
         password: bcrypt.hashSync(req.body.password, 10),
         avatar: req.files[0].filename
       })
-       .then(function(libros){
+       .then(function(resultado){
         res.render('account', {nuevoUsuario: nuevoUsuario});
       })
       .catch(function(error){
