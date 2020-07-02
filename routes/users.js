@@ -17,6 +17,7 @@ const usersController = require("../controllers/usersController");
 let logDBMiddleware = require("../middleware/logDBMiddleware"); 
 let guestMiddleware = require("../middleware/guestMiddleware");
 let authMiddleware = require("../middleware/authMiddleware");
+let adminMiddleware = require("../middleware/admin");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
@@ -84,5 +85,6 @@ router.get('/check', function(req, res) {
 })
 
 router.get("/account", authMiddleware, usersController.account);
+router.get("/admin", adminMiddleware.verifyAdmin ,usersController.admin);
 
 module.exports = router;
