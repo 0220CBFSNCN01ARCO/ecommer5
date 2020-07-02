@@ -125,6 +125,9 @@ const usersController = {
       }
     }
   },
+  admin: function(req, res){
+    return res.send("Bienvenido " + req.nombreAdmin);
+  }
 };
 
 module.exports = usersController;
