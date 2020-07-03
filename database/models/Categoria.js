@@ -8,12 +8,13 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         nombre: {
-            type: DataTypes.STRING//(45)
+            type: DataTypes.VARCHAR//(45)
         },
         idLibro: {
             type: DataTypes.INTEGER//(11)
         }
     }
+}
 
     let config = {
         tableName: "categorias",
@@ -33,4 +34,3 @@ module.exports = function(sequelize, DataTypes) {
     }
 
     return Categoria;
-}
