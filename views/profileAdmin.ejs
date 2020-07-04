@@ -16,20 +16,19 @@
 
     <div class="contact-area d-flex align-items-center">
 
-     
-
+    
         <div class="contact-info">
-            <h2>Mi cuenta</h2>
+            <h2>Hola <%= userAdminLogueado.nombre %> !</h2>
 
-            <div class="contact-address mt-5">
-                <p><span>Bienvenida/o: </span><%= userAdminLogueado.nombre %> </p>
-                <p><span>Email:</span><%= userAdminLogueado.email %> </p>
-                
+            <div class=" mt-5">
+                <p class = "datosadmin"><strong>Administrador: </strong>  <%= userAdminLogueado.nombre %></p>
+                <p class = "datosadmin"><strong>Email: </strong><%= userAdminLogueado.email %> </p>
             </div>
-
-            
         </div>
-
+           
+            <button type = "submit" href="/admin/create" class="btn essence-btn">Editar productos</button> <br>
+    
+      
     </div>
 
     <!-- ##### Footer Area Start ##### -->

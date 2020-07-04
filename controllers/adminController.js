@@ -2,7 +2,7 @@ const adminController = {
     adminProducts : function(req, res){
         //db.Products.findAll()
           //.then(products => {
-            res.render('profileAdmin')//, {
+            res.send('Administrar productos')//, {
             //  title: 'Admin',
           //    products: products
          //   })
@@ -10,9 +10,8 @@ const adminController = {
     },
     create : function(req, res){
         res.render("createProduct")
-        },
-        
-        agregar: function(req, res){
+    },
+    agregar: function(req, res){
            
             //let errors = validationResult(req);
         
@@ -98,4 +97,4 @@ const adminController = {
         };
 
 
-module.exports = adminController
+module.exports = adminController;
