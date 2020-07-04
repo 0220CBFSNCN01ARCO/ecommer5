@@ -1,16 +1,15 @@
 const verifyAdmin = function(req, res, next){
-const nombreAVerificar = req.query.user;
-const listadoNombresAdmin = ["Yael", "Franco"];
-
-const nombreValido = listadoNombresAdmin.find(user => {return user == nombreAVerificar})
-
-if(!nombreValido){
-    res.send("No tenés los permisos para ingresar a esta página")
-}
-
-req.nombreAdmin = nombreAVerificar
-
-next()
+    let usersAdmin = {
+        nomre: "Yael Sucaria",
+        email: "ya_sucaria@hotmail.com"
+    }
+   let userAdminLogueado;
+      if(req.body.email == usersAdmin.email) {
+          let userAdminLogueado = usersAdmin;
+         res.render("profileAdmin", {userAdminLogueado});
+            } else {
+                next()
+            }       
 
 };
 

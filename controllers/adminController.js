@@ -1,12 +1,12 @@
 const adminController = {
     adminProducts : function(req, res){
-        db.Products.findAll()
-          .then(products => {
-            res.render('admin/products', {
-              title: 'Admin',
-              products: products
-            })
-          })  
+        //db.Products.findAll()
+          //.then(products => {
+            res.render('profileAdmin')//, {
+            //  title: 'Admin',
+          //    products: products
+         //   })
+         // })  
     },
     create : function(req, res){
         res.render("createProduct")
