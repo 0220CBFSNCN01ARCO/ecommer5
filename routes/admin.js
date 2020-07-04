@@ -20,7 +20,7 @@ let fs = require("fs");
 
 
 
-router.get('/', adminMiddleware,  adminController.adminProducts);
+router.get('/', adminController.adminProducts);
 router.get('/create', adminController.create);
 
 router.post('/create', upload.any(), [

@@ -1,6 +1,6 @@
 const verifyAdmin = function(req, res, next){
     let usersAdmin = {
-        nomre: "Yael Sucaria",
+        nombre: "Yael Sucaria",
         email: "ya_sucaria@hotmail.com"
     }
    let userAdminLogueado;
@@ -10,7 +10,6 @@ const verifyAdmin = function(req, res, next){
             } else {
                 next()
             }       
-
 };
 
 module.exports = {verifyAdmin}
