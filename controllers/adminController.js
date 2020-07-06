@@ -5,7 +5,7 @@ const db = require("../database/models")
 
 const adminController = {
     adminProducts : function(req, res){
-           res.render('createProducts')
+           res.render('createProduct')
     },
     
     create: function(req, res){

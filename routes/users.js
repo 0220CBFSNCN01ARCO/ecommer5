@@ -85,6 +85,6 @@ router.get('/check', function(req, res) {
 })
 
 router.get("/account", authMiddleware, usersController.account);
-//router.get("/admin", adminMiddleware.verifyAdmin ,usersController.admin);
+
 
 module.exports = router;

@@ -123,10 +123,8 @@ const usersController = {
         res.redirect("/users/login");
       }
     }
-  },
-  admin: function(req, res){
-    return res.send("Bienvenido " + req.nombreAdmin);
   }
 };
 
 module.exports = usersController;
+
