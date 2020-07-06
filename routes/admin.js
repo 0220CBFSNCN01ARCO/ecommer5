@@ -14,9 +14,9 @@ var storage = multer.diskStorage({
   var upload = multer({storage: storage});
 
 
-  /*let adminMiddleware = require("../middleware/admin");
+  let adminMiddleware = require("../middleware/admin");
   let { check, validationResult, body } = require("express-validator");
-let fs = require("fs");*/
+let fs = require("fs");
 //HAY QUE HACER LA LOGICA DEL MD PARA ADMIN
 
 
@@ -24,7 +24,7 @@ let fs = require("fs");*/
 //router.get('/', adminController.create);
 router.get('/create', adminController.adminProducts);
 
-router.post('/create', upload.any(), [
+router.post('/create', upload.any(), [ 
     check("titulo").isLength({min: 4}).withMessage("Falta el título del libro"),
     check("autor").isLength().withMessage("Falta aclarar el autor"),
     check("precio").isInt().withMessage("El producto no tiene precio"),
