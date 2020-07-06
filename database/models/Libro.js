@@ -1,3 +1,5 @@
+const { sequelize } = require(".");
+
 module.exports = function(sequelize, DataTypes) {
     let alias = "Libro";
 
@@ -8,10 +10,10 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         titulo: {
-            type: DataTypes.VARCHAR//(45)
+            type: DataTypes.VARCHAR//(45) VARCHAR 
         },
         portada: {
-            type: DataTypes.VARCHAR//(450)
+            type: DataTypes.VARCHAR//(450) VARCHAR 
         },
         precio: {
             type: DataTypes.INTEGER//(11)
@@ -32,6 +34,13 @@ module.exports = function(sequelize, DataTypes) {
         tableName: "libros",
         timestamps: false
     }
+
+   /* let Libro = sequelize.define([
+        'require',
+        'dependency'], function(require, factory) {
+        'use strict';
+        
+    });(alias, cols, config);*/
 
     let Libro = sequelize.define(alias, cols, config);
 
