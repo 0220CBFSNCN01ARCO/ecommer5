@@ -4,25 +4,15 @@ const products = JSON.parse(fs.readFileSync("./data/detalleProductos.json", {enc
 const db = require("../database/models")
 
 const adminController = {
-    adminProducts : {
-      function(req, res){
-        //db.Products.findAll()
-          //.then(products => {
-           res.render('createProducts')//, {
-            //  title: 'Admin',
-          //    products: products
-         //   })
-         // })  
-      }
+    adminProducts : function(req, res){
+           res.render('createProducts')
     },
-    create : function(req, res){
-        res.render("createProduct")
-    },
-    agregar: function(req, res){
+    
+    create: function(req, res){
            
             //let errors = validationResult(req);
         
-            //if(errors.isEmpty()){
+           // if(errors.isEmpty()){
               db.Libro.create({
                 titulo: req.body.titulo,
                 autor: req.body.autor,

@@ -1,7 +1,7 @@
 const verifyAdmin = function(req, res, next){
     let usersAdmin = {
         nombre: "Yael Sucaria",
-        email: "ya_sucaria@hotmail.com"
+        email: "ya_sucaria@hotmail.com",
     }
    let usuarioLogueado;
       if(req.body.email == usersAdmin.email) {

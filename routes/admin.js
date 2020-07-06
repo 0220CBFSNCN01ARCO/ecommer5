@@ -19,12 +19,10 @@ const adminController = require("../controllers/adminController");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
-router.get('/', adminController.create);
-//router.get("/create", adminController.adminProducts);
+//router.get('/', adminController.adminProducts);
+router.get("/create", adminController.adminProducts);
 
-router.post(
-  "/create",
-  upload.any(),
+router.post("/create", upload.any(),
   [
     check("titulo")
       .isLength({ min: 4 })
@@ -33,8 +31,7 @@ router.post(
     check("precio").isInt().withMessage("El producto no tiene precio"),
     check("stock").isInt().withMessage("Falta aclarar el stock"),
   ],
-  adminController.agregar
-);
+  adminController.create);
 
 router.get("/edit/:id", adminController.edit);
 router.post("/edit/:id", adminController.update);
