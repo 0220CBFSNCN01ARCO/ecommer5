@@ -14,9 +14,10 @@ var storage = multer.diskStorage({
   var upload = multer({storage: storage});
 
 
-  let adminMiddleware = require("../middleware/admin");
+  /*let adminMiddleware = require("../middleware/admin");
   let { check, validationResult, body } = require("express-validator");
-let fs = require("fs");
+let fs = require("fs");*/
+//HAY QUE HACER LA LOGICA DEL MD PARA ADMIN
 
 
 
