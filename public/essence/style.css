@@ -4,6 +4,14 @@
 .titlebanner{
     color: white;
 }
+.marquee{
+    position: relative;
+    margin-top: 1vh;
+    padding-top: 1px;
+    background-color: white;
+    text-align: center;
+    font-size: medium;
+}
 .imagenmaspedido{
     height: 75vh;
 }
