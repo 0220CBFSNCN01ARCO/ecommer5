@@ -1,5 +1,3 @@
-//const { Sequelize } = require(".");
-
 module.exports = function(sequelize, DataTypes) {
     let alias = "Autor";
     
@@ -10,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         nombre: {
-           type: DataTypes.STRING
+            type: DataTypes.VARCHAR
         },
         idLibro: {
             type: DataTypes.INTEGER
@@ -37,5 +35,5 @@ module.exports = function(sequelize, DataTypes) {
     
     }
     return Autor;
-    }
+    };
     

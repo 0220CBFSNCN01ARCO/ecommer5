@@ -8,10 +8,10 @@ module.exports = function(sequelize, DataTypes) {
             autoIncrement: true
         },
         titulo: {
-            type: DataTypes.STRING//(45)
+            type: DataTypes.VARCHAR//(45)
         },
         portada: {
-            type: DataTypes.STRING//(450)
+            type: DataTypes.VARCHAR//(450)
         },
         precio: {
             type: DataTypes.INTEGER//(11)
@@ -26,6 +26,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER//(11)
         }
     }
+}
 
     let config = {
         tableName: "libros",
@@ -44,7 +45,7 @@ module.exports = function(sequelize, DataTypes) {
         otherKey: "idAutor",
         timestamps: false
         });
- // relacion uno a muchos. Un libro tiene una categoría
+    // relacion uno a muchos. Un libro tiene una categoría
         Libro.belongsTo(models.Categoria, {
             as: "categoria",
             foreignKey: "idCategoria",
@@ -55,4 +56,4 @@ module.exports = function(sequelize, DataTypes) {
 
     return Libro;
 
-    }
+    
