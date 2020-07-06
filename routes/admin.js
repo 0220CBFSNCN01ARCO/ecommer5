@@ -22,7 +22,7 @@ let fs = require("fs");
 
 
 //router.get('/', adminController.create);
-router.get('/create', adminController.adminProducts);
+router.get('/create', adminController.create); // antes aca estaba adminProducts comentado en AdminController
 
 router.post('/create', upload.any(), [ 
     check("titulo").isLength({min: 4}).withMessage("Falta el título del libro"),
