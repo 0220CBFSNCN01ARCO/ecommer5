@@ -14,10 +14,10 @@
     <!-- ##### Right Side Cart End ##### -->
 
 
-    <div class="contact-area d-flex align-items-center">
+    <div class="container contact-area d-flex align-items-center">
 
     
-        <div class="contact-info">
+        <div class="row contact-info col-12">
             <h2>Hola <%= usuarioLogueado.nombre %> !</h2>
 
             <div class=" mt-5">
@@ -25,8 +25,12 @@
                 <p class = "datosadmin"><strong>Email: </strong><%= usuarioLogueado.email %> </p>
             </div>
         </div>
-           
-            <button type = "submit" href="/admin/create" class="btn essence-btn">Editar productos</button> <br>
+           <div class = "editproduct row col-12">
+            <h3 class = "hacer col-12">¿Qué querés hacer?</h3>
+            <button type = "submit" href="/admin/edit" class="edit btn essence-btn">Editar producto</button> <br>
+            <button type = "submit" href="/admin/create" class="create btn essence-btn">Agregar producto</button> <br>
+           </div>
+            
     
       
     </div>
