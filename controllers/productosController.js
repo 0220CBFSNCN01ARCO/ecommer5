@@ -25,12 +25,12 @@ detail: function(req, res){
 res.render("createProduct")
 },*/
 
-agregar: function(req, res){
+//agregar: function(req, res){
    
     //let errors = validationResult(req);
 
     //if(errors.isEmpty()){
-      db.Libro.create({
+      /*db.Libro.create({
         titulo: req.body.titulo,
         autor: req.body.autor,
         categoria: req.body.categoria,
@@ -108,7 +108,7 @@ db.Libro.destroy({
   })
 }
 
-};
+};*/
 
-
+}
 module.exports= productosController;

@@ -4,18 +4,16 @@ const products = JSON.parse(fs.readFileSync("./data/detalleProductos.json", {enc
 const db = require("../database/models")
 
 const adminController = {
-  create: function(req, res){
-  res.render("creatProduct")
-} 
-/*{
-    adminProducts : function(req, res){
+    adminProducts : {
+      function(req, res){
         //db.Products.findAll()
           //.then(products => {
-            res.send('Administrar productos')//, {
+           res.send('Administrar productos')//, {
             //  title: 'Admin',
           //    products: products
          //   })
          // })  
+      }
     },
     create : function(req, res){
         res.render("createProduct")
@@ -103,7 +101,6 @@ const adminController = {
           })
         }
         
-        };*/
+        };
 
-      }
 module.exports = adminController;
