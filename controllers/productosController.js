@@ -21,9 +21,9 @@ detail: function(req, res){
       producto: productoClickeado
   });
 },
-create : function(req, res){
+/*create : function(req, res){
 res.render("createProduct")
-},
+},*/
 
 agregar: function(req, res){
    
