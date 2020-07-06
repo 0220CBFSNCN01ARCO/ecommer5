@@ -7,8 +7,10 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var adminRouter = require("./routes/admin");
 var productRouter = require('./routes/product');
 var contactRouter = require('./routes/contact');
+var promocionesRouter = require('./routes/promociones');
 var logMiddleware = require('./middleware/logMiddleware');
 var recordameMiddleware = require('./middleware/recordameMiddleware');
 
@@ -30,8 +32,10 @@ app.use(recordameMiddleware);
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/admin', adminRouter);
 app.use('/products', productRouter);
 app.use("/contact", contactRouter);
+app.use("/promociones", promocionesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

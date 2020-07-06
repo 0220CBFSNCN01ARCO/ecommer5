@@ -56,7 +56,7 @@ router.post("/register", upload.any(), logDBMiddleware, guestMiddleware, [
 
 router.get("/login", usersController.login);
 
-router.post("/login", [
+router.post("/login", adminMiddleware.verifyAdmin, [
   check("email").isEmail().withMessage("Email inválido"),
   check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres"),
   body("email").custom(function(value){
@@ -85,6 +85,6 @@ router.get('/check', function(req, res) {
 })
 
 router.get("/account", authMiddleware, usersController.account);
-router.get("/admin", adminMiddleware.verifyAdmin ,usersController.admin);
+//router.get("/admin", adminMiddleware.verifyAdmin ,usersController.admin);
 
 module.exports = router;

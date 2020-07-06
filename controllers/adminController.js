@@ -1,18 +1,17 @@
 const adminController = {
     adminProducts : function(req, res){
-        db.Products.findAll()
-          .then(products => {
-            res.render('admin/products', {
-              title: 'Admin',
-              products: products
-            })
-          })  
+        //db.Products.findAll()
+          //.then(products => {
+            res.send('Administrar productos')//, {
+            //  title: 'Admin',
+          //    products: products
+         //   })
+         // })  
     },
     create : function(req, res){
         res.render("createProduct")
-        },
-        
-        agregar: function(req, res){
+    },
+    agregar: function(req, res){
            
             //let errors = validationResult(req);
         
@@ -98,4 +97,4 @@ const adminController = {
         };
 
 
-module.exports = adminController
+module.exports = adminController;
