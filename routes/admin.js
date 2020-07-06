@@ -16,12 +16,11 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage });
 
 const adminController = require("../controllers/adminController");
-let adminMiddleware = require("../middleware/admin");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
-//router.get('/', adminController.create);
-router.get("/create", adminController.adminProducts);
+router.get('/', adminController.create);
+//router.get("/create", adminController.adminProducts);
 
 router.post(
   "/create",

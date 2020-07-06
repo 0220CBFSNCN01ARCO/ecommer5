@@ -8,7 +8,7 @@ const adminController = {
       function(req, res){
         //db.Products.findAll()
           //.then(products => {
-           res.send('Administrar productos')//, {
+           res.render('createProducts')//, {
             //  title: 'Admin',
           //    products: products
          //   })
