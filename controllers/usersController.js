@@ -89,14 +89,13 @@ const usersController = {
 
         req.session.usuarioLogueado = usuarioALoguearse;
         res.send('Estas logueado');
-        //res.render('Estas logueado');
 
         if (req.body.recordame != undefined) {
           res.cookie('recordame',
           usuarioALoguearse.email, ({ maxAge: 60000 }))
         }
 
-        res.send('Usuario Logueado');
+        res.render('account', {usuarioLogueado});
     } else {
       return res.render('login', {errors: errors.errors});
     }

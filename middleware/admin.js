@@ -3,10 +3,10 @@ const verifyAdmin = function(req, res, next){
         nombre: "Yael Sucaria",
         email: "ya_sucaria@hotmail.com"
     }
-   let userAdminLogueado;
+   let usuarioLogueado;
       if(req.body.email == usersAdmin.email) {
-          let userAdminLogueado = usersAdmin;
-         res.render("profileAdmin", {userAdminLogueado});
+          let usuarioLogueado = usersAdmin;
+         res.render("profileAdmin", {usuarioLogueado});
             } else {
                 next()
             }       
