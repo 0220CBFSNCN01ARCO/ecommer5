@@ -47,8 +47,17 @@
 .promos{
     margin: 10vh;
 }
+.titulopromo{
+margin-bottom: 20vh;
+}
 .promos-foto{
     width: 40vw;
+}
+.beneficios{
+    margin-bottom: 20vh;
+}
+.terminos{
+    font-size: x-small;
 }
 .datosadmin{
     font-weight: bolder;

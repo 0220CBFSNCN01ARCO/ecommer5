@@ -22,7 +22,7 @@ const adminController = {
                 avatar: req.files[0].filename
               }) 
               .then(function(libros){
-                res.render('/products');
+                res.render('products');
               })
               //let productosJSON = fs.readFileSync("./data/detalleProductos.json", {encoding: "utf-8"});
               //let productos;
