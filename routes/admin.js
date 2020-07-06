@@ -21,7 +21,7 @@ let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 //router.get('/', adminController.create);
-router.get("/create", adminController.adminController);
+router.get("/create", adminController.adminProducts);
 
 router.post(
   "/create",
