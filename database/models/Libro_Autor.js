@@ -11,7 +11,7 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.INTEGER//(11)
         },
         idAutor: {
-            type: DataType.INTEGER//(11)
+            type: DataTypes.INTEGER//(11)
         }
      }
 

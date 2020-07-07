@@ -10,9 +10,6 @@ module.exports = function(sequelize, DataTypes) {
         },
         nombre: {
             type: DataTypes.STRING//(45)
-        },
-        idLibro: {
-            type: DataTypes.INTEGER//(11)
         }
     }
 

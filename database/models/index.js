@@ -5,12 +5,12 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/database.json')[env];
+const config = require(__dirname + '/../config/database.js')[env];
 const db = {};
 
 
 //Todo esto que esta comentado es lo que trataste de configurar con env
-/*let sequelize;
+let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
@@ -34,6 +34,6 @@ Object.keys(db).forEach(modelName => {
 });
 
 db.sequelize = sequelize;
-db.Sequelize = Sequelize;*/
+db.Sequelize = Sequelize;
 
 module.exports = db;

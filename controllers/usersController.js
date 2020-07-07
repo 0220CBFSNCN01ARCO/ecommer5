@@ -25,7 +25,7 @@ const usersController = {
      // users = JSON.parse(usersJSON);
   
      // }
-     let nuevoUsuario= db.Usuario.create({
+     db.Usuario.create({
         nombre: req.body.nombre,
         localidad: req.body.localidad,
         direccion: req.body.direccion,
@@ -35,13 +35,13 @@ const usersController = {
         password: bcrypt.hashSync(req.body.password, 10),
         avatar: req.files[0].filename
       })
-       .then(function(resultado){
-        res.render('account', {nuevoUsuario: nuevoUsuario});
-      })
-      .catch(function(error){
-        res.redirect("register", {errors: errors})
-      })
-  
+      // .then(function(resultado){
+      //  res.render('account', {nuevoUsuario: nuevoUsuario});
+     // })
+     // .catch(function(error){
+      //  res.redirect("register", {errors: errors})
+     // })
+      return res.redirect("/")
       }
   
      // users.push(user);
