@@ -6,11 +6,11 @@
 }
 .marquee{
     position: relative;
-    margin-top: 1vh;
-    padding-top: 1px;
+    padding-top: 3px;
     background-color: white;
     text-align: center;
-    font-size: medium;
+    font-size: small;
+    border-bottom-style: inset;
 }
 .imagenmaspedido{
     height: 75vh;
