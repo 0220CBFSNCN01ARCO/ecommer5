@@ -1,0 +1,19 @@
+//const { sequelize } = require(".");
+/* let Libro = sequelize.define([
+        'require',
+        'dependency'], function(require, factory) {
+        'use strict';
+        
+    });(alias, cols, config);*/
+
+// relacion muchos a muchos. Los libros tienen muchos autores
+
+//Libro.associate = function(models) {
+// Libro.belongsToMany(models.Autor, {
+//  as: "Autores",
+// through: "libros_autores",
+// foreignKey: "idLibro",
+// otherKey: "idAutor",
+//  timestamps: false
+//  });
+// relacion uno a muchos. Un libro tiene una categoría
