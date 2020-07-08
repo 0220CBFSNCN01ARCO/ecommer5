@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const Usuario = sequelize.define("Usuario", 
     {
-        id: {
+        idusuario: {
             type: DataTypes.INTEGER,//(11),
             primaryKey: true,
             autoIncrement: true

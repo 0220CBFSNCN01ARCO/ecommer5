@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const Autor = sequelize.define("Autor",
     {
-        id: {
+        idautores: {
             type: DataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
@@ -9,9 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         nombre: {
             type: DataTypes.STRING
         },
-        idLibro: {
-            type: DataTypes.INTEGER
-        }
     },
     {
         tableName: "autores",

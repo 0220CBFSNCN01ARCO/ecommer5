@@ -3,7 +3,7 @@ module.exports = (sequelize, DataTypes) => {
   const Libro = sequelize.define(
     "Libro",
     {
-      id: {
+      idlibros: {
         type: DataTypes.INTEGER, //(11),
         primaryKey: true,
         autoIncrement: true,
@@ -20,8 +20,8 @@ module.exports = (sequelize, DataTypes) => {
       stock: {
         type: DataTypes.INTEGER, //(11)
       },
-      idCategoria: {
-        type: DataTypes.INTEGER, //(11)
+      descripcion: {
+        type: DataTypes.STRING, //(11)
       },
     },
     {
@@ -32,14 +32,14 @@ module.exports = (sequelize, DataTypes) => {
   Libro.associate = function(models){
     Libro.belongsTo(models.Autor, {
         as: "categoria",
-        foreignKey: "idCategorias",
+        foreignKey: "idcategorias",
         timestamps: false,
       });
   }
   Libro.associate = function(models){
     Libro.belongsTo(models.Categoria, {
         as: "autor",
-        foreignKey: "idAutores",
+        foreignKey: "idautores",
         timestamps: false,
       });
   }

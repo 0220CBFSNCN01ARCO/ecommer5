@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
     const Categoria = sequelize.define("Categoria",
      {
-        id: {
+        idcategorias: {
             type: DataTypes.INTEGER,//(11),
             primaryKey: true,
             autoIncrement: true,
@@ -9,9 +9,6 @@ module.exports = (sequelize, DataTypes) => {
         nombre: {
             type: DataTypes.STRING//(45)
         },
-        idLibro: {
-            type: DataTypes.INTEGER, //(11)
-          },
     },
     {
         tableName: "categorias",
