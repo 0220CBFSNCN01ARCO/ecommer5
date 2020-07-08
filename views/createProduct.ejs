@@ -52,7 +52,7 @@
                             <% } %>
                         </div>
 
-                        <form action= "/products/create" method="POST" enctype="multipart/form-data">
+                        <form method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="titulo">Título del libro <span>*</span></label>
@@ -86,13 +86,13 @@
                                 </div>
                                
                                 <div class="col-12 mb-4">
-                                    <label for="file">Subí la foto de portada</label><span>*</span> <br>
-                                    <input type="file" name= "avatar" id="avatar" value="avatar">
+                                    <label for="portada">Subí la foto de portada</label><span>*</span> <br>
+                                    <input type="file" name= "portada" id="portada" value="portada">
                                 </div>
 
                                 <div class="col-12">
                                     
-                                    <button type = "submit" href="/products" class="btn essence-btn">Agregar producto</button>
+                                    <button type = "submit" class="btn essence-btn">Agregar producto</button>
                                 </div>
                             </div>
                         </form>

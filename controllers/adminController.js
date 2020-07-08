@@ -16,10 +16,11 @@ const adminController = {
               db.Libro.create({
                 titulo: req.body.titulo,
                 autor: req.body.autor,
-                categoria: req.body.categoria,
+               // categoria: req.body.categoria,
                 precio: req.body.precio,
                 stock: req.body.sotck,
-                avatar: req.files[0].filename
+                descripcion: req.body.descripcion,
+                portada: req.files[0].filename
               }) 
               .then(function(libros){
                 res.render('products');
@@ -68,7 +69,7 @@ const adminController = {
                     if(producto.id == idProducto){
                       product.titulo= req.body.titulo,
                       product.autor= req.body.autor,
-                      product.categoria= req.body.categoria,
+                    //  product.categoria= req.body.categoria,
                       product.precio= req.body.precio,
                       product.stock= req.body.stock,
                       product.avatar= req.files[0].filename
