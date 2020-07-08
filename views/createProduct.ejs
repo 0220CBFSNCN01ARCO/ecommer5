@@ -55,28 +55,33 @@
                         <form action= "/products/create" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="first_name">Título del libro<span>*</span></label>
+                                    <label for="titulo">Título del libro <span>*</span></label>
                                     <input type="text" class="form-control" id="titulo" name = "titulo" value="" required placeholder="Título del libro">
                                 </div>
                               
                                 
                                 <div class="col-12 mb-3">
-                                    <label for="country">Autor/a <span>*</span></label>
-                                    <input type="text" class="form-control" id="titulo" name = "autor" value="" required placeholder="Nombre del autor/a">
+                                    <label for="autor">Autor/a <span>*</span></label>
+                                    <input type="text" class="form-control" id="autor" name = "autor" value="" required placeholder="Nombre del autor/a">
                                        
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <label for="country">Categoría <span>*</span></label>
+                                    <label for="categoria">Categoría <span>*</span></label>
                                     <input type="text" class="form-control" id="categoria" name = "categoria" value="" required placeholder="Categoría">
                                        
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <label for="city">Precio <span>*</span></label>
+                                    <label for="precio">Precio <span>*</span></label>
                                     <input type="text" class="form-control" name= "precio" id="precio" value="" placeholder="Precio">
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <label for="street_address">Stock <span>*</span></label>
+                                    <label for="stock">Stock <span>*</span></label>
                                     <input type="text" class="form-control mb-3" id="stock" name= "stock" value="" placeholder="Stock">
+                                
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="descripcion">Descripción <span>*</span></label>
+                                    <textarea name = "descripcion" rows = "5" cols= "72">Escribí acá una breve descripción del libro</textarea>
                                 
                                 </div>
                                
