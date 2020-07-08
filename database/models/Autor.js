@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true
         },
         nombre: {
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
         },
         idLibro: {
             type: DataTypes.INTEGER
