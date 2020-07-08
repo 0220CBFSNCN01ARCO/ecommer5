@@ -30,12 +30,14 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   Libro.associate = function(models){
-    Libro.belongsTo(models.Categoria, {
+    Libro.belongsTo(models.Autor, {
         as: "categoria",
-        foreignKey: "idCategoria",
+        foreignKey: "idCategorias",
         timestamps: false,
       });
   }
   return Libro;
 }
 
+
+// Libro Autor - relacion. Un Autor hasmany Libros. Libros belongsto pertenece a un Autor. 
