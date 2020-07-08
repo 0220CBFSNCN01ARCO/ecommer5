@@ -17,8 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         tableName: "categorias",
         timestamps: false
     }
-    );
-
+    ); 
     // Una categoria tiene muchos libros. 
     Categoria.associate = function(models) {
         Categoria.hasMany(models.Libro, {
