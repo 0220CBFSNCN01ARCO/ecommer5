@@ -40,4 +40,4 @@ module.exports = (sequelize, DataTypes) => {
 
 
 
-// Libro Autor - relacion. Un Autor hasmany Libros. Libros belongsto pertenece a un Autor. 
+// Libro Autor - relacion. Un Autor hasmany Libros al igual que Categorias. Libros belongsto pertenece a un Autor y Categoria. 

@@ -18,7 +18,6 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     }
     ); 
-    // Una categoria tiene muchos libros. 
     Categoria.associate = function(models) {
         Categoria.hasMany(models.Libro, {
                 as: "libros",
@@ -29,3 +28,5 @@ module.exports = (sequelize, DataTypes) => {
 
         return Categoria;
 }
+
+// Libro Autor - relacion. Un Autor hasmany Libros al igual que Categorias. Libros belongsto pertenece a un Autor y Categoria. 
