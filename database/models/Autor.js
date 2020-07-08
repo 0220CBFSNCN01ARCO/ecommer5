@@ -1,7 +1,6 @@
-module.exports = function(sequelize, DataTypes) {
-    let alias = "Autor";
-    
-    let cols = {
+module.exports = (sequelize, DataTypes) => {
+    const Autor = sequelize.define("Autor",
+    {
         id: {
             type: DataTypes.INTEGER,
             primaryKey: true,
@@ -13,14 +12,12 @@ module.exports = function(sequelize, DataTypes) {
         idLibro: {
             type: DataTypes.INTEGER
         }
-    }
-    
-    let config = {
+    },
+    {
         tableName: "autor",
         timestamps: false
-    }
-    
-    let Autor = sequelize.define(alias, cols, config);
+    },
+    );
     
     // relacion de muchos a muchos. Autores tienen muchos libros
     
@@ -35,5 +32,4 @@ module.exports = function(sequelize, DataTypes) {
     
     }
     return Autor;
-    };
-    
+}
