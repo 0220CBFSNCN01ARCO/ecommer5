@@ -13,7 +13,6 @@ var productRouter = require('./routes/product');
 var contactRouter = require('./routes/contact');
 var promocionesRouter = require('./routes/promociones');
 var shippingRouter = require('./routes/shipping');
-var logMiddleware = require('./middleware/logMiddleware');
 var recordameMiddleware = require('./middleware/recordameMiddleware');
 
 var app = express();
