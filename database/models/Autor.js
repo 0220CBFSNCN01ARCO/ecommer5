@@ -19,15 +19,6 @@ module.exports = (sequelize, DataTypes) => {
     },
     );
     
-    /*Autor.associate = function(models) {
-        Autor.hasMany(models.Libro, {
-            as: "libros",
-            through: "libros_autores",
-            foreingKey: "idAutor",
-            otherKey: "idLibro",
-            timestamps: false
-        });*/
-    
         Autor.associate = function(models) {
             Autor.hasMany(models.Libro, {
                     as: "libros",
