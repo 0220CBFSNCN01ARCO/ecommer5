@@ -14,7 +14,6 @@ var storage = multer.diskStorage({
 var upload = multer({storage: storage});
 
 const usersController = require("../controllers/usersController");
-let logDBMiddleware = require("../middleware/logDBMiddleware"); 
 let guestMiddleware = require("../middleware/guestMiddleware");
 let authMiddleware = require("../middleware/authMiddleware");
 let adminMiddleware = require("../middleware/admin");
@@ -24,7 +23,7 @@ let fs = require("fs");
 
 router.get("/register", guestMiddleware, usersController.register);
 
-router.post("/register", upload.any(), logDBMiddleware, guestMiddleware, [
+router.post("/register", upload.any(), guestMiddleware, [
     check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
     check("prov").isLength().withMessage("Te faltó la provincia"),
     check("localidad").isLength().withMessage("Te faltó la localidad"),

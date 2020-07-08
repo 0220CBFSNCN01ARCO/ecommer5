@@ -17,8 +17,6 @@ var recordameMiddleware = require('./middleware/recordameMiddleware');
 
 var app = express();
 
-app.use(logMiddleware);
-
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
