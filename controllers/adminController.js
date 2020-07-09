@@ -8,23 +8,24 @@ const adminController = {
            res.render('createProduct')
     },
     
-    create: function(req, res){
-           
+    create: function(req, res){ 
             //let errors = validationResult(req);
-        
+      
            // if(errors.isEmpty()){
               db.Libro.create({
                 titulo: req.body.titulo,
                 autor: req.body.autor,
                // categoria: req.body.categoria,
                 precio: req.body.precio,
-                stock: req.body.sotck,
+                stock: req.body.stock,
                 descripcion: req.body.descripcion,
                 portada: req.files[0].filename
               }) 
-              .then(function(libros){
+              
+             // .then(function(libros){
                 res.render('products');
-              })
+                
+            //  })
               //let productosJSON = fs.readFileSync("./data/detalleProductos.json", {encoding: "utf-8"});
               //let productos;
               //if (productosJSON == "") {

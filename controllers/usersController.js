@@ -13,9 +13,9 @@ const usersController = {
   },
   create: function(req, res) {
 
-    let errors = validationResult(req);
+    //let errors = validationResult(req);
 
-    if(errors.isEmpty()){
+   // if(errors.isEmpty()){
       
       //let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
       //let users;
@@ -28,9 +28,9 @@ const usersController = {
      db.Usuario.create({
         nombre: req.body.nombre,
         localidad: req.body.localidad,
+        provincia: req.body.provincia,
         direccion: req.body.direccion,
         cp: req.body.cp,
-        numero: req.body.numero,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
         avatar: req.files[0].filename
@@ -42,7 +42,7 @@ const usersController = {
       //  res.redirect("register", {errors: errors})
      // })
       return res.redirect("/")
-      }
+     // }
   
      // users.push(user);
   
