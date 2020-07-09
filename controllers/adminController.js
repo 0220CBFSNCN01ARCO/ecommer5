@@ -58,11 +58,12 @@ const adminController = {
         
         },
         edit: function(req, res){
-          const product = req.params.id;
-          let productoAEditar = products.find( product => {
-            return product.id == idProduct;
+          db.Lirbo.findByPk(req.params.id, {
+            include: [{association: "categoria"}, {association: "autor"}]
+          })
+          .then(function(libro) {
+            res.render("productDetails", {libro: libro})
         });
-        res.redirect('products', {producto: productoAEditar});
         },
         update: function(req, res){
           const idProducto = req.params.id;
