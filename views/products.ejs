@@ -46,14 +46,7 @@
 
                     <li data-toggle="collapse" data-target="#clothing">
                       <a href="#">Humanidades</a>
-                      <ul class="sub-menu collapse show" id="clothing">
-                        <li><a href="#">Filosofía</a></li>
-                        <li><a href="#">Historia</a></li>
-                        <li><a href="#">Sociología</a></li>
-                        <li><a href="#">Psicoanálisis</a></li>
-                        <li><a href="#">Política</a></li>
-                        <li><a href="#">Crítica literaria</a></li>
-                      </ul>
+                      
                     </li>
                     <!-- Single Item -->
                     <li
@@ -69,8 +62,15 @@
                       data-target="#accessories"
                       class="collapsed"
                     >
-                      <a href="#">Diseño y fotografía</a>
+                      <a href="#">Arte, arquitectura y diseño</a>
                     </li>
+                    <li
+                    data-toggle="collapse"
+                    data-target="#accessories"
+                    class="collapsed"
+                  >
+                    <a href="#">Gastronomía</a>
+                  </li>
                   </ul>
                 </div>
               </div>
@@ -139,7 +139,7 @@
                           <option value="value">Precio: mayor a menor</option>
                           <option value="value">Precio: menor a mayor</option>
                         </select>
-                        <input type="submit" class="d-none" value="" />
+                        <input type="submit" class="d-none" value="">
                       </form>
                     </div>
                   </div>
@@ -148,60 +148,11 @@
 
               <div class="row">
                 <!-- Single Product -->
-                <!-- <% for (let i = 0; i < product.length; i ++) { %>
-                                <li>
-                                    <a href="/products/<%=product[i].id%>">
-                                    <%product.[i].titulo%>
-                                    </a>
-                                    <%product.[i].autor%>
-                                    <%product.[i].precio%>
-                                    <%product.[i].stock%>
-                                    <%product.[i].descripcion%>
-                                    <%product.[i].portada%>
-                                </li>
-                            <% } %> -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                  <div class="single-product-wrapper">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                      <img
-                        class="imagenproducto"
-                        src="/essence/img/images/comunismoparatodos.png"
-                        alt=""
-                      />
-                      <!-- Hover Thumb -->
-
-                      <!-- Product Badge -->
-                      <div class="product-badge offer-badge">
-                        <span>-10%</span>
-                      </div>
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product-description">
-                      <span>Bini Adamczak</span>
-                      <a href="single-product-details.html">
-                        <h6>Comunismo para todxs</h6>
-                      </a>
-                      <p class="product-price">
-                        <span class="old-price">$800</span> $720
-                      </p>
-
-                      <!-- Hover Content -->
-                      <div class="hover-content">
-                        <!-- Add to Cart -->
-                        <div class="add-to-cart-btn">
-                          <a href="#" class="btn essence-btn"
-                            >Agregar al carrito</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+          
 
                 <!-- Single Product -->
                 <div class="col-12 col-sm-6 col-lg-4">
+                  <% for(let i = 0; i < libros.length; i++) { %>
                   <div class="single-product-wrapper">
                     <!-- Product Image -->
                     <div class="product-img">
@@ -220,11 +171,12 @@
 
                     <!-- Product Description -->
                     <div class="product-description">
-                      <span>Keri Smith</span>
+                      <span><%= libros[i].autor %></span>
                       <a href="single-product-details.html">
-                        <h6>Destroza este diario</h6>
+                        <h6><%= libros[i].titulo %></h6>
+                        <h6><%= libros[i].autor %></h6>
                       </a>
-                      <p class="product-price">$800</p>
+                      <p class="product-price"><%= libros[i].precio %></p>
 
                       <!-- Hover Content -->
                       <div class="hover-content">
@@ -236,253 +188,12 @@
                         </div>
                       </div>
                     </div>
+                   
                   </div>
+                  <% } %>
                 </div>
+   
 
-                <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                  <div class="single-product-wrapper">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                      <img
-                        class="imagenproducto"
-                        src="essence/img/images/elintruso.png"
-                        alt=""
-                      />
-
-                      <!-- Product Badge -->
-                      <div class="product-badge new-badge">
-                        <span>Novedad</span>
-                      </div>
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product-description">
-                      <span>Jean Luc Nancy</span>
-                      <a href="single-product-details.html">
-                        <h6>El intruso</h6>
-                      </a>
-                      <p class="product-price">$1300</p>
-
-                      <!-- Hover Content -->
-                      <div class="hover-content">
-                        <!-- Add to Cart -->
-                        <div class="add-to-cart-btn">
-                          <a href="#" class="btn essence-btn"
-                            >Agregar al carrito</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                  <div class="single-product-wrapper">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                      <img
-                        class="imagenproducto"
-                        src="/essence/img/images/formascomunes.jpg"
-                        alt=""
-                      />
-                      <!-- Hover Thumb -->
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product-description">
-                      <span>Gabriel Giorgi</span>
-                      <a href="single-product-details.html">
-                        <h6>Formas comunes</h6>
-                      </a>
-                      <p class="product-price">$1100</p>
-
-                      <!-- Hover Content -->
-                      <div class="hover-content">
-                        <!-- Add to Cart -->
-                        <div class="add-to-cart-btn">
-                          <a href="#" class="btn essence-btn"
-                            >Agregar al carrito</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                  <div class="single-product-wrapper">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                      <img
-                        class="imagenproducto"
-                        src="/essence/img/images/futuropresente.png"
-                        alt=""
-                      />
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product-description">
-                      <span>Graciela Speranza</span>
-                      <a href="single-product-details.html">
-                        <h6>Futuro presente</h6>
-                      </a>
-                      <p class="product-price">$780</p>
-
-                      <!-- Hover Content -->
-                      <div class="hover-content">
-                        <!-- Add to Cart -->
-                        <div class="add-to-cart-btn">
-                          <a href="#" class="btn essence-btn"
-                            >Agregar al carrito</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                  <div class="single-product-wrapper">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                      <img
-                        class="imagenproducto"
-                        src="/essence/img/images/fueradeclase.png"
-                        alt=""
-                      />
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product-description">
-                      <span>Marina Garcés</span>
-                      <a href="single-product-details.html">
-                        <h6>Fuera de clase</h6>
-                      </a>
-                      <p class="product-price">$890</p>
-
-                      <!-- Hover Content -->
-                      <div class="hover-content">
-                        <!-- Add to Cart -->
-                        <div class="add-to-cart-btn">
-                          <a href="#" class="btn essence-btn"
-                            >Agregar al carrito</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                  <div class="single-product-wrapper">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                      <img
-                        class="imagenproducto"
-                        src="/essence/img/images/elpreciodelapasion.png"
-                        alt=""
-                      />
-                      <!-- Hover Thumb -->
-
-                      <!-- Product Badge -->
-                      <div class="product-badge new-badge">
-                        <span>Novedad</span>
-                      </div>
-                    </div>
-
-                    <!-- Product Description -->
-                    -
-                    <div class="product-description">
-                      <span>Gabriel Rolón</span>
-                      <a href="single-product-details.html">
-                        <h6>El precio de la pasión</h6>
-                      </a>
-                      <p class="product-price">$1150</p>
-
-                      <!-- Hover Content -->
-                      <div class="hover-content">
-                        <!-- Add to Cart -->
-                        <div class="add-to-cart-btn">
-                          <a href="#" class="btn essence-btn"
-                            >Agregar al carrito</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                  <div class="single-product-wrapper">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                      <img
-                        class="imagenproducto"
-                        src="/essence/img/images/laimagendigital.png"
-                        alt=""
-                      />
-                      <!-- Hover Thumb -->
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product-description">
-                      <span>Laurent Jullier</span>
-                      <a href="single-product-details.html">
-                        <h6>La imagen digital</h6>
-                      </a>
-                      <p class="product-price">$2450</p>
-
-                      <!-- Hover Content -->
-                      <div class="hover-content">
-                        <!-- Add to Cart -->
-                        <div class="add-to-cart-btn">
-                          <a href="#" class="btn essence-btn"
-                            >Agregar al carrito</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                  <div class="single-product-wrapper">
-                    <!-- Product Image -->
-                    <div class="product-img">
-                      <img
-                        class="imagenproducto"
-                        src="/essence/img/images/laescrituraenelcuerpo.gif"
-                        alt=""
-                      />
-                    </div>
-
-                    <!-- Product Description -->
-                    <div class="product-description">
-                      <span>Rita Segato</span>
-                      <a href="single-product-details.html">
-                        <h6>La escritura sobre el cuerpo</h6>
-                      </a>
-                      <p class="product-price">$680</p>
-
-                      <!-- Hover Content -->
-                      <div class="hover-content">
-                        <!-- Add to Cart -->
-                        <div class="add-to-cart-btn">
-                          <a href="#" class="btn essence-btn"
-                            >Agregar al carrito</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
             <!-- Pagination -->

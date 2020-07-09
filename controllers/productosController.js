@@ -8,6 +8,7 @@ const productosController = {
 listado : function(req, res){
     db.Libro.findAll()
     .then(function(libros) {
+  //    res.send(libros)
       return res.render("products", {libros: libros});
     })
     
