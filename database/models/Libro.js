@@ -14,6 +14,9 @@ module.exports = (sequelize, DataTypes) => {
       portada: {
         type: DataTypes.STRING, //(450) VARCHAR
       },
+      autor: {
+        type: DataTypes.STRING, //(450) VARCHAR
+      },
       precio: {
         type: DataTypes.INTEGER, //(11)
       },
@@ -29,17 +32,11 @@ module.exports = (sequelize, DataTypes) => {
       timestamps: false,
     }
   );
-  Libro.associate = function(models){
-    Libro.belongsTo(models.Autor, {
-        as: "categoria",
-        foreignKey: "idcategorias",
-        timestamps: false,
-      });
-  }
+ 
   Libro.associate = function(models){
     Libro.belongsTo(models.Categoria, {
-        as: "autor",
-        foreignKey: "idautores",
+        as: "categoria",
+        foreignKey: "idcategorias",
         timestamps: false,
       });
   }
