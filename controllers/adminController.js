@@ -12,7 +12,10 @@ const adminController = {
             //let errors = validationResult(req);
       
            // if(errors.isEmpty()){
-              db.Libro.create({
+
+             var libros = db.Libro.findAll()
+             .then(function(libros){
+            db.Libro.create({
                 titulo: req.body.titulo,
                 autor: req.body.autor,
                // categoria: req.body.categoria,
@@ -21,49 +24,22 @@ const adminController = {
                 descripcion: req.body.descripcion,
                 portada: req.files[0].filename
               }) 
+
+             })
+             
               
              // .then(function(libros){
-                res.render('products');
-                
-            //  })
-              //let productosJSON = fs.readFileSync("./data/detalleProductos.json", {encoding: "utf-8"});
-              //let productos;
-              //if (productosJSON == "") {
-              //  productos = [];
-              //} else {
-              //productos = JSON.parse(productosJSON);
-          
-             // }
-             // let producto = {
-              //  titulo: req.body.titulo,
-               // autor: req.body.autor,
-               // categoria: req.body.categoria,
-              //  precio: req.body.precio,
-              //  stock: req.body.sotck,
-              //  avatar: req.files[0].filename,
-          
-             // }
-          
-              //productos.push(producto);
-          
-              //productosJSON = JSON.stringify(productos);
-          
-              //fs.appendFileSync("./data/detalleProductos.json", productosJSON);
-          
-              //res.redirect('/products');
-           // } else {
-            //  res.render("createProduct", {errors: errors.errors})
-           // }
-        
-        
+                res.render('products', {
+                  libros: libros          
+                });
+
         },
         edit: function(req, res){
-          db.Lirbo.findByPk(req.params.id, {
-            include: [{association: "categoria"}, {association: "autor"}]
-          })
-          .then(function(libro) {
-            res.render("productDetails", {libro: libro})
-        });
+          db.Libro.findAll()
+          .then(function(libros) {
+            //    res.send(libros)
+                return res.render("editProducts", {libros: libros});
+              })
         },
         update: function(req, res){
           const idProducto = req.params.id;

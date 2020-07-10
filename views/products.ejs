@@ -149,25 +149,25 @@
               <div class="row">
                 <!-- Single Product -->
           
-
+                
                 <!-- Single Product -->
-                <div class="col-12 col-sm-6 col-lg-4">
+                <div class="listadoproducts col-12 col-sm-6 col-lg-4">
                   <% for(let i = 0; i < libros.length; i++) { %>
                   <div class="single-product-wrapper">
+                    
                     <!-- Product Image -->
                     <div class="product-img">
                       <img
                         class="imagenproducto"
                         src="/essence/img/images/destrozaestediario.png"
-                        alt=""
-                      />
+                        alt=""/>
                    
                     </div>
-
+                    
                     <!-- Product Description -->
                     <div class="product-description">
                       <span><%= libros[i].autor %></span>
-                      <a href="single-product-details.html">
+                      <a href="productDetail.ejs">
                         <h6><%= libros[i].titulo %></h6>
                       </a>
                       <p class="product-price">$<%= libros[i].precio %></p>
@@ -180,13 +180,17 @@
                             >Agregar al carrito</a
                           >
                         </div>
+                        
                       </div>
+                      <% } %>
                     </div>
-                   
+                  
                   </div>
-                 
+                  
                 </div>
-                <% } %>
+                
+
+          
 
               </div>
              
