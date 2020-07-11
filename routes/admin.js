@@ -29,7 +29,7 @@ router.post("/create", upload.any(),
   ],
   adminController.create);
 
-router.get("/edit/:id", adminController.edit);
+router.get("/edit", adminController.edit)
 router.post("/edit/:id", adminController.update);
 router.delete("/delete/:id", adminController.delete);
 

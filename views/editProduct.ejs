@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head") %> 
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <%- include("./partials/header") %>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Right Side Cart Area ##### -->
+
+    <%- include("./partials/carrito") %>
+    <!-- ##### Right Side Cart End ##### -->
+    <div class="titulocarga breadcumb_area bg-img" style="background-image: url(/essence/img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>Edición de productos</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+<div class = "container tablalibros">
+    <% for(let i = 0; i < libros.length; i++) { %>
+<table class= "celdaslibros row col-12">
+    <tr>
+        <td class = "itemportada"><img class="portadaedit"
+            src="/essence/img/product-img/<%= libros[i].portada %>"
+            alt=""/></td>
+        <td class = "itemedit"><%= libros[i].titulo%></td>
+  
+        <td class = "itemedit"><%= libros[i].autor%></td>
+       
+        <td class = "itemnumero"><%= libros[i].precio%></td>
+       
+        <td class = "itemnumero"><%= libros[i].stock%></td>
+
+        <td class = "itemicono"><a href = "#"><img class= "iconoedit" src= "/essence/img/images/lapizedit.png"></a> <a href = "#"><img class = "iconodelete" src= "/essence/img/images/delete.png"></a></td>
+        
+    </tr>
+</table>
+<% } %>
+</div>
+
+
+  
+
+
+ 
+
+
+
+
+
+        <!-- ##### Footer Area Start ##### -->
+    <%- include("./partials/footer") %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="js/active.js"></script>
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
+    <script src="js/map-active.js"></script>
+
+</body>
+
+</html>

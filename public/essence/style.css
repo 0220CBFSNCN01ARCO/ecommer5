@@ -92,6 +92,43 @@ margin-bottom: 20vh;
 .catalogo{
     top: 5vh;
 }
-.listadoproducts{
- 
+.itemedit{
+    padding: 1vw;
+    margin-left: 5vw;
+    width: 20vw;
+    border-right: solid;
+}
+.itemnumero{
+    width: 10vw;
+    padding: 1vw;
+    border-right: solid;
+}
+.tablalibros{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.celdaslibros{
+    border-bottom: solid;
+    border-collapse: collapse;
+}
+.itemicono{
+    padding-left: 3vw;
+    padding-right: 3vw;
+    border-right: none;
+}
+.iconoedit{
+    padding-right: 1vw;
+    padding-left: 1vw;
+}
+.iconodelete{
+    margin-left: 2vw;
+}
+.portadaedit{
+    width: 6vw;
+    height: 20vh;
+    margin-right: 1vw;
+}
+.itemportada{
+    width: 6vw;
 }
