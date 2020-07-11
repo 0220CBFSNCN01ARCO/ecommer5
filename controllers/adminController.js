@@ -36,8 +36,8 @@ const adminController = {
         },
         edit: function(req, res){
           db.Libro.findAll()
-          .then(function(libros) {
-              return res.render("productdetails2", {libros: libros})
+          .then(function(libros){
+              return res.render("editProduct")
             })
         },
         update: function(req, res){
