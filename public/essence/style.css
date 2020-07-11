@@ -94,6 +94,22 @@ margin-bottom: 20vh;
 }
 .itemedit{
     padding: 1vw;
-    font-weight: bold;
     margin-left: 5vw;
+    width: 20vw;
+    border-right: solid;
+}
+.itemnumero{
+    width: 10vw;
+    padding: 1vw;
+    border-right: solid;
+}
+.tablalibros{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+.celdaslibros{
+    border-bottom: solid;
+    border-collapse: collapse;
+  
 }

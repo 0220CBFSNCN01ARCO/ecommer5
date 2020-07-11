@@ -24,16 +24,25 @@
         </div>
     </div>
  
-    <div class="listadoedicion section-padding-80">
-        <% for(let i = 0; i < libros.length; i++) { %>
-         <ul>
-             <li class = "itemedit">
-                <%= libros[i].titulo %>
-             </li>
-         </ul>
-         <% } %>
-     </div>
+<div class = "container tablalibros">
+    <% for(let i = 0; i < libros.length; i++) { %>
+<table class= "celdaslibros row col-12">
+    <tr>
+  
+        <td class = "itemedit"><%= libros[i].titulo%></td>
+  
+        <td class = "itemedit"><%= libros[i].autor%></td>
+       
+        <td class = "itemnumero"><%= libros[i].precio%></td>
+       
+        <td class = "itemnumero"><%= libros[i].stock%></td>
+    </tr>
+</table>
+<% } %>
+</div>
 
+
+  
 
 
  
