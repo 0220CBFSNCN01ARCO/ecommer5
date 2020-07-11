@@ -92,6 +92,8 @@ margin-bottom: 20vh;
 .catalogo{
     top: 5vh;
 }
-.listadoproducts{
- 
+.itemedit{
+    padding: 1vw;
+    font-weight: bold;
+    margin-left: 5vw;
 }
