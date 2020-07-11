@@ -113,8 +113,8 @@ margin-bottom: 20vh;
     border-collapse: collapse;
 }
 .itemicono{
-    padding-left: 5vw;
-    padding-right: 7vw;
+    padding-left: 3vw;
+    padding-right: 3vw;
     border-right: none;
 }
 .iconoedit{
@@ -123,4 +123,12 @@ margin-bottom: 20vh;
 }
 .iconodelete{
     margin-left: 2vw;
+}
+.portadaedit{
+    width: 6vw;
+    height: 20vh;
+    margin-right: 1vw;
+}
+.itemportada{
+    width: 6vw;
 }

@@ -28,7 +28,9 @@
     <% for(let i = 0; i < libros.length; i++) { %>
 <table class= "celdaslibros row col-12">
     <tr>
-  
+        <td class = "itemportada"><img class="portadaedit"
+            src="/essence/img/product-img/<%= libros[i].portada %>"
+            alt=""/></td>
         <td class = "itemedit"><%= libros[i].titulo%></td>
   
         <td class = "itemedit"><%= libros[i].autor%></td>
