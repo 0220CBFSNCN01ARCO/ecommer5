@@ -13,14 +13,17 @@ listado : function(req, res){
     })
     
 },
-detail: function(req, res){
-  const id = req.params.id;
+detail: function(req, res) {
+  /*const id = req.params.id;
   const productoClickeado = products.find(product => {
       return product.id == id;
-  });
-  res.render('productDetail', {
-      producto: productoClickeado
-  });
+  });*/
+  db.Libro.findByPK(req.params.id, {
+  include: [{association: "categoria"}]
+  })
+  .then (function(Libro) {
+  res.render("productDetail", {libros: libros});
+  })
 },
 /*create : function(req, res){
 res.render("createProduct")
