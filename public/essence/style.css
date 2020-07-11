@@ -111,5 +111,16 @@ margin-bottom: 20vh;
 .celdaslibros{
     border-bottom: solid;
     border-collapse: collapse;
-  
+}
+.itemicono{
+    padding-left: 5vw;
+    padding-right: 7vw;
+    border-right: none;
+}
+.iconoedit{
+    padding-right: 1vw;
+    padding-left: 1vw;
+}
+.iconodelete{
+    margin-left: 2vw;
 }
