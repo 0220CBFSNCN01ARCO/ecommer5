@@ -18,11 +18,11 @@ detail: function(req, res) {
   const productoClickeado = products.find(product => {
       return product.id == id;
   });*/
-  db.Libro.findByPK(req.params.id, {
+  db.Libro.findByPk(req.params.id, {
   include: [{association: "categoria"}]
   })
-  .then (function(Libro) {
-  res.render("productDetail", {libros: libros});
+  .then (function(libro) {
+  res.render("productDetail", {libro: libro});
   })
 },
 /*create : function(req, res){

@@ -72,16 +72,19 @@ margin-bottom: 20vh;
 .infoadmin{
 position: relative;
 margin-left: 20vw;
+top: 10vh;
+margin-bottom: 15vh;
 }
 .avataradmin{
     display: flex;
     position: absolute;
     margin-left: 2vw;
-    margin-top: 4vw;
+   margin-top: 15vh;
+
 }
 .imgadmin{
     border-radius: 200px;
-
+    border: outset 8px;
 }
 .editproduct{
     margin-bottom: 10vh;
