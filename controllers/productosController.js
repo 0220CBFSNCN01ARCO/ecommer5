@@ -14,14 +14,13 @@ listado : function(req, res){
     
 },
 detail: function(req, res) {
-  /*const id = req.params.id;
-  const productoClickeado = products.find(product => {
-      return product.id == id;
-  });*/
-  db.Libro.findByPk(req.params.id, {
-  include: [{association: "categoria"}]
-  })
+ 
+  db.Libro.findByPk(req.params.idlibros)
+  //, {
+  //include: [{association: "categoria"}]
+  //})
   .then (function(libro) {
+    //res.send(libro)
   res.render("productDetail", {libro: libro});
   })
 },
