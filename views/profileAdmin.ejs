@@ -12,28 +12,41 @@
 
     <%- include("./partials/carrito") %>
     <!-- ##### Right Side Cart End ##### -->
-
-
-    <div class="container contact-area d-flex align-items-center">
-
     
-        <div class="row contact-info col-12">
-            <h2>Hola <%= usuarioLogueado.nombre %> !</h2>
-
-            <div class=" mt-5">
-                <p class = "datosadmin"><strong>Administrador: </strong>  <%= usuarioLogueado.nombre %></p>
-                <p class = "datosadmin"><strong>Email: </strong><%= usuarioLogueado.email %> </p>
-            </div>
+    <div class = "container col-12">
+        <div class = "avataradmin row col-6">
+            <img class = "imgadmin" src = "/essence/img/users-img/<%= usuarioLogueado.avatar %>">
+    
         </div>
-           <div class = "editproduct row col-12">
-            <h4 class = "hacer col-12">¿Qué querés hacer?</h4>
-            <a  href="/admin/edit" class="create btn essence-btn">Editar producto </a> <br>
-            <a  href="/admin/create" class="create btn essence-btn">Agregar producto </a> <br>
-           </div>
-            
     
-      
+        <div class="infoadmin row contact-area d-flex align-items-center">
+    
+        
+            <div class="row contact-info col-6">
+                <h2>Hola <%= usuarioLogueado.nombre %> !</h2>
+    
+                <div class=" mt-5">
+                    <p class = "datosadmin"><strong>Administrador: </strong>  <%= usuarioLogueado.nombre %></p>
+                    <p class = "datosadmin"><strong>Email: </strong><%= usuarioLogueado.email %> </p>
+                </div>
+            </div>
+               <div class = "editproduct row col-12">
+                <h4 class = "hacer col-12">¿Qué querés hacer?</h4>
+                <a  href="/admin/edit" class="create btn essence-btn">Editar producto </a> <br>
+                <a  href="/admin/create" class="create btn essence-btn">Agregar producto </a> <br>
+               </div>
+                
+        
+          
+        </div>
+
+
+
+
     </div>
+    
+
+    
 
     <!-- ##### Footer Area Start ##### -->
     <%- include("./partials/footer") %>

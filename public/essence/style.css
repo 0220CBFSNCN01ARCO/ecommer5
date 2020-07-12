@@ -69,6 +69,20 @@ margin-bottom: 20vh;
 .datosadmin{
     font-weight: bolder;
 }
+.infoadmin{
+position: relative;
+margin-left: 20vw;
+}
+.avataradmin{
+    display: flex;
+    position: absolute;
+    margin-left: 2vw;
+    margin-top: 4vw;
+}
+.imgadmin{
+    border-radius: 200px;
+
+}
 .editproduct{
     margin-bottom: 10vh;
     margin-left: 2vw;
@@ -96,12 +110,12 @@ margin-bottom: 20vh;
     padding: 1vw;
     margin-left: 5vw;
     width: 20vw;
-    border-right: solid;
+
 }
 .itemnumero{
     width: 10vw;
     padding: 1vw;
-    border-right: solid;
+
 }
 .tablalibros{
     margin-top: 10vh;
@@ -109,12 +123,12 @@ margin-bottom: 20vh;
 }
 
 .celdaslibros{
-    border-bottom: solid;
+    border-bottom: solid 1px;
     border-collapse: collapse;
 }
 .itemicono{
     padding-left: 3vw;
-    padding-right: 3vw;
+   
     border-right: none;
 }
 .iconoedit{
