@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const multer = require("multer");
-let adminMiddleware = require("../middleware/admin");
+let editMiddleware = require("../middleware/editMiddleware.js");
 
 const path = require('path');
 const storage = multer.diskStorage({
@@ -17,7 +17,7 @@ let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 //router.get('/', adminController.adminProducts);
-router.get("/create", adminMiddleware.verifyAdmin, adminController.adminProducts);
+router.get("/create",  editMiddleware.validationAdmin, adminController.adminProducts);
 
 router.post("/create", upload.any(),
   [
@@ -28,10 +28,10 @@ router.post("/create", upload.any(),
     check("precio").isInt().withMessage("El producto no tiene precio"),
     check("stock").isInt().withMessage("Falta aclarar el stock"),
   ], 
-  adminMiddleware.verifyAdmin, adminController.create);
+  editMiddleware.validationAdmin, adminController.create);
 
-router.get("/edit", adminMiddleware.verifyAdmin,adminController.edit)
-router.post("/edit/:idlibros", adminMiddleware.verifyAdmin, adminController.update);
-router.delete("/delete/:id", adminMiddleware.verifyAdmin, adminController.delete);
+router.get("/edit", editMiddleware.validationAdmin ,adminController.edit)
+router.post("/edit/:idlibros",  editMiddleware.validationAdmin, adminController.update);
+router.delete("/delete/:id",  editMiddleware.validationAdmin, adminController.delete);
 
 module.exports = router;

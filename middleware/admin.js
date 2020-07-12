@@ -13,4 +13,5 @@ const verifyAdmin = function(req, res, next){
             }       
 };
 
+
 module.exports = {verifyAdmin}
