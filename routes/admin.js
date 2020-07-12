@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const multer = require("multer");
+let editMiddleware = require("../middleware/editMiddleware.js");
 
 const path = require('path');
 const storage = multer.diskStorage({
@@ -16,7 +17,7 @@ let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 //router.get('/', adminController.adminProducts);
-router.get("/create", adminController.adminProducts);
+router.get("/create",  editMiddleware.validationAdmin, adminController.adminProducts);
 
 router.post("/create", upload.any(),
   [
@@ -26,11 +27,11 @@ router.post("/create", upload.any(),
     check("autor").isLength().withMessage("Falta aclarar el autor"),
     check("precio").isInt().withMessage("El producto no tiene precio"),
     check("stock").isInt().withMessage("Falta aclarar el stock"),
-  ],
-  adminController.create);
+  ], 
+  editMiddleware.validationAdmin, adminController.create);
 
-router.get("/edit", adminController.edit)
-router.post("/edit/:id", adminController.update);
-router.delete("/delete/:id", adminController.delete);
+router.get("/edit", editMiddleware.validationAdmin ,adminController.edit)
+router.post("/edit/:idlibros",  editMiddleware.validationAdmin, adminController.update);
+router.delete("/delete/:id",  editMiddleware.validationAdmin, adminController.delete);
 
 module.exports = router;

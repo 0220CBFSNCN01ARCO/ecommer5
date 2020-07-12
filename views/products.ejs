@@ -157,7 +157,7 @@
                     
                     <!-- Product Image -->
                     <div class="product-img">
-                      <a href = "productDetail.ejs">
+                      <a href = "/product/detail/<%= libros[i].idlibros %>">
                         <img
                         class="imagenproducto"
                         src="/essence/img/product-img/<%= libros[i].portada %>"
@@ -171,7 +171,7 @@
                     <!-- Product Description -->
                     <div class="product-description">
                       <span><%= libros[i].autor %></span>
-                      <a href="productDetail.ejs">
+                      <a href="/product/detail/<%= libros[i].idlibros %>">
                         <h6><%= libros[i].titulo %></h6>
                       </a>
                       <p class="product-price">$<%= libros[i].precio %></p>
