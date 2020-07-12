@@ -6,7 +6,8 @@ const validationAdmin = function(req, res, next){
     }
 
     if(req.session.usuarioLogueado != usersAdmin) {
-        res.send('Esta pagina es sólo para administradores');
+        let mensajeAdmin = 'Esta pagina es sólo para administradores'
+        res.render("stopAdmin", {mensajeAdmin: mensajeAdmin});
     } else {
         next();
     }
