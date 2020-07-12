@@ -41,24 +41,22 @@ const adminController = {
             })
         },
         update: function(req, res){
-          const idProducto = req.params.id;
-                products.map( producto => {
-                    if(producto.id == idProducto){
-                      product.titulo= req.body.titulo,
-                      product.autor= req.body.autor,
-                    //  product.categoria= req.body.categoria,
-                      product.precio= req.body.precio,
-                      product.stock= req.body.stock,
-                      product.avatar= req.files[0].filename
-                    }
-                })
-                fs.appendFileSync("./data/detalleProductos.json", products);
-                res.redirect('/products');
+          db.Libro.update({
+            titulo: req.body.titulo,
+            autor: req.body.autor,
+            precio: req.body.precio,
+            stock: req.file.stock,
+            descripcion: req.body.descripcion,
+            portada: req.body.portada
+          }, {where: {
+              id: req.params.idlibros
+          }},
+          res.redirect('/admin/edit'))
         },
         
         delete: function(req, res){
         db.Libro.destroy({
-          where: {id: req.params.idLibro}
+          where: {idlibros: req.params.idlibros}
         })
         .then(function(result){
           let mensajeConfirm= "Se eliminó el producto correctamente"
