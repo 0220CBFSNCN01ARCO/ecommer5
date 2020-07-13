@@ -28,10 +28,8 @@ const adminController = {
              })
              
               
-             // .then(function(libros){
-                res.render('products', {
-                  libros: libros          
-                });
+             //.then(function(libros){
+                res.render('products', {libros: libros});
 
         },
         edit: function(req, res){
@@ -40,18 +38,29 @@ const adminController = {
               return res.render("editProduct", {libros: libros})
             })
         },
+        select: function(req, res){
+  
+            db.Libro.findByPk(req.params.id)
+            .then(function(libro){
+              res.send(libro)
+             // res.render("updateProduct", {libro: libro})
+            })
+    
+        },
         update: function(req, res){
           db.Libro.update({
             titulo: req.body.titulo,
             autor: req.body.autor,
             precio: req.body.precio,
-            stock: req.file.stock,
+            stock: req.body.stock,
             descripcion: req.body.descripcion,
             portada: req.body.portada
           }, {where: {
               id: req.params.idlibros
-          }},
-          res.redirect('/admin/edit'))
+          }
+        })
+          res.redirect('/admin/edit')
+          
         },
         
         delete: function(req, res){

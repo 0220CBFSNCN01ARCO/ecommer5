@@ -19,7 +19,7 @@ detail: function(req, res) {
   include: [{association: "categoria"}]
 })
   .then (function(libro) {
-   // res.send(libro)
+   //res.send(libro)
   res.render("productDetail", {libro: libro});
   })
 }

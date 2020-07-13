@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include("./partials/head") %> 
+
+<body>
+    <!-- ##### Header Area Start ##### -->
+    <%- include("./partials/header") %>
+    <!-- ##### Header Area End ##### -->
+
+    <!-- ##### Right Side Cart Area ##### -->
+    <%- include("./partials/carrito") %>
+    <!-- ##### Right Side Cart End ##### -->
+
+    <!-- ##### Breadcumb Area Start ##### -->
+    <div class="titulocarga breadcumb_area bg-img" style="background-image: url(/essence/img/bg-img/breadcumb.jpg);">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-12">
+                    <div class="page-title text-center">
+                        <h2>Actualizá el producto que seleccionaste</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Breadcumb Area End ##### -->
+    
+    
+    <!-- ##### Checkout Area Start ##### -->
+    <div class="checkout_area section-padding-80">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-md-6">
+                    <div class="checkout_details_area mt-10 clearfix">
+
+                        <div class="cart-page-heading mb-50">
+                            <h5>Info actualizada del producto</h5>
+                        </div>
+                        <div>
+                            <% if (typeof errors != 'undefined') { %>
+                                <P style="color:red">ALGO PASÓ</P> 
+                        
+                                <ul>
+                                    <% for (let i = 0; i < errors.length; i++) { %>
+                                        <li>
+                                            <%=errors[i].msg%>
+                                        </li>
+                                   <% } %>
+                                </ul>
+                            <% } %>
+                        </div>
+
+                        <form action = "/admin/edit/<%= libro.idlibros %>" method="POST" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="titulo">Título del libro <span>*</span></label>
+                                    <input type="text" class="form-control" id="titulo" name = "titulo" value="<%= libro.titulo %>" required placeholder="Título del libro">
+                                </div>
+                              
+                                
+                                <div class="col-12 mb-3">
+                                    <label for="autor">Autor/a <span>*</span></label>
+                                    <input type="text" class="form-control" id="autor" name = "autor" value="<%= libro.autor %>" required placeholder="Nombre del autor/a">
+                                       
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="categoria">Categoría <span>*</span></label>
+                                    <input type="text" class="form-control" id="categoria" name = "categoria" value="<%= libro.categoria %>" required placeholder="Categoría">
+                                       
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="precio">Precio <span>*</span></label>
+                                    <input type="text" class="form-control" name= "precio" id="precio" value="<%= libro.precio %>" placeholder="Precio">
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="stock">Stock <span>*</span></label>
+                                    <input type="text" class="form-control mb-3" id="stock" name= "stock" value="<%= libro.stock %>" placeholder="Stock">
+                                
+                                </div>
+                                <div class="col-12 mb-3">
+                                    <label for="descripcion">Descripción <span>*</span></label>
+                                    <textarea name = "descripcion" rows = "5" cols= "72" value = "<%= libro.descripcion %>">Escribí acá una breve descripción del libro</textarea>
+                                
+                                </div>
+                               
+                                <div class="col-12 mb-4">
+                                    <label for="portada">Subí la foto de portada</label><span>*</span> <br>
+                                    <input type="file" name= "portada" id="portada" value="<%= libro.portada %>">
+                                </div>
+
+                                <div class="col-12">
+                                    
+                                    <button type = "submit" class="btn essence-btn">Agregar producto</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ##### Checkout Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    <%- include("./partials/footer") %>
+    <!-- ##### Footer Area End ##### -->
+
+    <!-- jQuery (Necessary for All JavaScript Plugins) -->
+    <script src="/essence/js/jquery/jquery-2.2.4.min.js"></script>
+    <!-- Popper js -->
+    <script src="/essence/js/popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="/essence/js/bootstrap.min.js"></script>
+    <!-- Plugins js -->
+    <script src="/essence/js/plugins.js"></script>
+    <!-- Classy Nav js -->
+    <script src="/essence/js/classy-nav.min.js"></script>
+    <!-- Active js -->
+    <script src="/essence/js/active.js"></script>
+
+</body>
+
+</html>
