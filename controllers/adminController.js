@@ -52,14 +52,14 @@ const adminController = {
             titulo: req.body.titulo,
             autor: req.body.autor,
             precio: req.body.precio,
-            stock: req.file.stock,
+            stock: req.body.stock,
             descripcion: req.body.descripcion,
             portada: req.body.portada
           }, {where: {
               id: req.params.idlibros
-          }},
-          res.redirect('/admin/edit'))
-        
+          }
+        })
+          res.redirect('/admin/edit')
           
         },
         
