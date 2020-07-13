@@ -28,10 +28,8 @@ const adminController = {
              })
              
               
-             // .then(function(libros){
-                res.render('products', {
-                  libros: libros          
-                });
+             //.then(function(libros){
+                res.render('products', {libros: libros});
 
         },
         edit: function(req, res){

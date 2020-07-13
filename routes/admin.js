@@ -17,9 +17,11 @@ let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 //router.get('/', adminController.adminProducts);
-router.get("/create",  editMiddleware.validationAdmin, adminController.adminProducts);
+router.get("/create", // editMiddleware.validationAdmin, 
+adminController.adminProducts);
 
-router.post("/create", upload.any(),
+router.post("/create", //editMiddleware.validationAdmin, 
+upload.any(),
   [
     check("titulo")
       .isLength({ min: 4 })
@@ -27,11 +29,13 @@ router.post("/create", upload.any(),
     check("autor").isLength().withMessage("Falta aclarar el autor"),
     check("precio").isInt().withMessage("El producto no tiene precio"),
     check("stock").isInt().withMessage("Falta aclarar el stock"),
-  ], 
-  editMiddleware.validationAdmin, adminController.create);
+  ],  adminController.create);
 
-router.get("/edit", editMiddleware.validationAdmin ,adminController.edit)
-router.post("/edit/:idlibros",  editMiddleware.validationAdmin, adminController.update);
-router.delete("/delete/:id",  editMiddleware.validationAdmin, adminController.delete);
+router.get("/edit", //editMiddleware.validationAdmin, 
+adminController.edit)
+router.post("/edit/:idlibros", // editMiddleware.validationAdmin, 
+adminController.update);
+router.delete("/delete/:idlibros",  //editMiddleware.validationAdmin, 
+adminController.delete);
 
 module.exports = router;

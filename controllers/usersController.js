@@ -25,7 +25,7 @@ const usersController = {
      // users = JSON.parse(usersJSON);
   
      // }
-     db.Usuario.create({
+     let nuevoUsuario = db.Usuario.create({
         nombre: req.body.nombre,
         localidad: req.body.localidad,
         provincia: req.body.provincia,
@@ -35,9 +35,10 @@ const usersController = {
         password: bcrypt.hashSync(req.body.password, 10),
         avatar: req.files[0].filename
       })
-      // .then(function(resultado){
-      //  res.render('account', {nuevoUsuario: nuevoUsuario});
-     // })
+      .then(function(usuario){
+     // return res.render('account', {nuevoUsuario: nuevoUsuario});
+     res.send(usuario)
+     })
      // .catch(function(error){
       //  res.redirect("register", {errors: errors})
      // })
@@ -60,46 +61,17 @@ const usersController = {
     res.render("login");
   },
   processLogin: function(req, res) { 
-    let errors = validationResult(req);
-      if (errors.isEmpty()) {
-        let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
-        let users;
-        if (usersJSON == "") {
-          users = [];
-        } else {
-          users = JSON.parse(usersJSON);
-        }
-        let usuarioALoguearse; // esto estaba comentado
-        for (let i = 0; i < users.length; i++) {
-          if(users[i].email == req.body.email) {
-            if (bcrypt.compareSync(req.body.password, users[i].password)) {
-             usuarioALoguearse = users[i]; //esto estaba comentado
-
-            
-             // console.log(usuarioALoguearse);
-              break;
-            }
-          }
-        }
-          if (usuarioALoguearse == undefined) {
-          return res.render('login', {errors: [
-            {msg: 'Credenciales inválidas'}
-          ]});
-        }
-
-        req.session.usuarioLogueado = usuarioALoguearse;
-        res.send('Estas logueado');
-
-        if (req.body.recordame != undefined) {
-          res.cookie('recordame',
-          usuarioALoguearse.email, ({ maxAge: 60000 }))
-        }
-
-        res.render('account', {usuarioLogueado});
-    } else {
-      return res.render('login', {errors: errors.errors});
-    }
-
+    let usuarioALoguearse = db.Usuario.findOne({
+      where: {email: req.body.email}
+    })
+    .then(function(usuario){
+      if(usuarioALoguearse != usuario){
+        return res.render("login")
+      } else {
+        res.render("index")
+      }
+    })
+   
   },
 
   

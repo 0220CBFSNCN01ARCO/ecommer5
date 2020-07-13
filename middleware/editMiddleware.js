@@ -5,7 +5,7 @@ const validationAdmin = function(req, res, next){
         avatar: "user-1594249373228.png"
     }
 
-    if(req.session.usuarioLogueado != usersAdmin) {
+    if(req.session.usuarioLogueado == undefined || req.session.usuarioLogueado.email != usersAdmin.email) {
         let mensajeAdmin = 'Esta pagina es sólo para administradores'
         res.render("stopAdmin", {mensajeAdmin: mensajeAdmin});
     } else {
