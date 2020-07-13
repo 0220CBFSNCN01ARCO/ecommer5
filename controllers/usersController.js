@@ -61,17 +61,27 @@ const usersController = {
     res.render("login");
   },
   processLogin: function(req, res) { 
+    let errors = validationResult(req);
+    if (errors.isEmpty()) {
+    let usuarioLogueado;
     let usuarioALoguearse = db.Usuario.findOne({
       where: {email: req.body.email}
     })
+    
     .then(function(usuario){
-      if(usuarioALoguearse != usuario){
+      if(usuarioALoguearse == undefined){
         return res.render("login")
-      } else {
+      } 
+      if(usuarioALoguearse.email == req.body.email 
+        && bcrypt.compareSync(req.body.password, usuarioALoguearse.password)) {
+        usuarioALoguearse = usuarioLogueado
         res.render("index")
       }
     })
-   
+  } else {
+    return res.render('login', {errors: errors.errors});
+    }
+  
   },
 
   
