@@ -43,7 +43,10 @@ const adminController = {
             db.Libro.findByPk(req.params.id)
             .then(function(libro){
               res.send(libro)
-             // res.render("updateProduct", {libro: libro})
+              //return res.render("updateProduct", {libro: libro})
+            })
+            .catch(function(error){
+              res.send(error)
             })
     
         },
@@ -55,7 +58,7 @@ const adminController = {
             stock: req.body.stock,
             descripcion: req.body.descripcion,
             portada: req.body.portada
-          }, {where: {
+          }, { where: {
               id: req.params.idlibros
           }
         })
