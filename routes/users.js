@@ -53,7 +53,7 @@ return false
 
 router.get("/login", usersController.login);
 
-router.post("/login", validationuser, adminMiddleware.verifyAdmin, [
+router.post("/login", validationusers, adminMiddleware.verifyAdmin, [
   check("email").isEmail().withMessage("Email inválido"),
   check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres"),
   body("email").custom(function(value){
