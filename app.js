@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 var morgan = require('morgan'); // muestra por consola las peticiones que van llegando.
+var methodOverride = require("method-override");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -29,6 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({secret: 'Secreto', resave: true, saveUninitialized: true}));
 app.use(recordameMiddleware);
 app.use(morgan('dev')); // parametro dev es para que nos muestre un determinado tipo de mensaje por consola. 
+app.use(methodOverride("_method"));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

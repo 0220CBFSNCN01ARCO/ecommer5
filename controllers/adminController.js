@@ -43,7 +43,7 @@ const adminController = {
         },
         select: function(req, res){
   
-            db.Libro.findByPk(req.params.id)
+            db.Libro.findByPk(req.params.idlibros)
             .then(function(libro){
               //res.send(libro)
               return res.render("updateProduct", {libro: libro})
@@ -73,17 +73,16 @@ const adminController = {
           where: {
             idlibros: req.params.idlibros
           }
+          
         })
-        .then(function(result){
-          //res.send(result)
-          let mensajeConfirm= "Se eliminó el producto correctamente"
-          res.redirect("/products", {mensajeConfirm: mensajeConfirm})
-        })
-          .catch(function(error){
-            return res.render("products", {error: error})
-          })
-        }
         
-        };
+        .then(
+         res.redirect("/products")
+         
+         )
+          
+        
+        }
+      }
 
 module.exports = adminController;

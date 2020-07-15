@@ -40,7 +40,7 @@ adminController.select)
 router.post("/edit/:idlibros", // editMiddleware.validationAdmin, 
 adminController.update);
 
-router.post("/delete/:idlibros",  //editMiddleware.validationAdmin, 
+router.delete("/delete/:idlibros",  //editMiddleware.validationAdmin, 
 adminController.delete);
 
 module.exports = router;

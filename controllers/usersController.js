@@ -14,7 +14,7 @@ const usersController = {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-      let nuevoUsuario = db.Usuario.create({
+       db.Usuario.create({
         nombre: req.body.nombre,
         localidad: req.body.localidad,
         provincia: req.body.provincia,
@@ -22,17 +22,19 @@ const usersController = {
         cp: req.body.cp,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
-        avatar: req.files[0].filename,
+        avatar: req.files[0].filename
       })
-      .then(function (usuario) {
-        return res.render("account", { nuevoUsuario: nuevoUsuario });
+      .then(
+         res.render("account", { data: req.body })
         //res.send(usuario)
-      });
+      )
       // .catch(function(error){
       //  res.redirect("register", {errors: errors})
       // })
       //return res.redirect("/")
       // }
+    } else {
+      res.render("register", {errors: errors.errors})
     }
     // users.push(user);
 
@@ -74,10 +76,10 @@ const usersController = {
   },
   logout(req, res, next) {
     req.session.destroy((err) => {
-      res.redirect("/login");
-    });
-  } /*,
-  account: function (req, res) {
+      res.redirect('/login')
+    })
+  },
+  account: function(req, res) {
     let archivoUsuarios = fs.readFileSync("./data/users.json", {
       encoding: "utf-8",
     });
@@ -98,6 +100,6 @@ const usersController = {
       }
     }
   }
-};*/
 };
+
 module.exports = usersController;

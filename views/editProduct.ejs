@@ -27,21 +27,41 @@
 <div class = "container tablalibros">
     <% for(let i = 0; i < libros.length; i++) { %>
 <table class= "celdaslibros row col-12">
-    <tr>
-        <td class = "itemportada"><img class="portadaedit"
-            src="/essence/img/product-img/<%= libros[i].portada %>"
-            alt=""/></td>
-        <td class = "itemedit"><%= libros[i].titulo%></td>
-  
-        <td class = "itemedit"><%= libros[i].autor%></td>
-       
-        <td class = "itemnumero"><%= libros[i].precio%></td>
-       
-        <td class = "itemnumero"><%= libros[i].stock%></td>
+    <thead>
+     <tr>
+        <th>Portada</th>
+         <th>Titulo</th>
+         <th>Autor</th>
+         <th>Precio</th>
+         <th>Stock</th>
+     </tr>
 
-        <td class = "itemicono"><a href = "/admin/edit/<%= libros[i].idlibros %>"><img class= "iconoedit" src= "/essence/img/images/lapizedit.png"></a> <a href = "/admin/delete/<%= libros[i].idlibros %>"><img class = "iconodelete" src= "/essence/img/images/delete.png"></a></td>
-        
-    </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class = "itemportada"><img class="portadaedit"
+                src="/essence/img/product-img/<%= libros[i].portada %>"
+                alt=""/></td>
+            <td class = "itemedit"><%= libros[i].titulo%></td>
+      
+            <td class = "itemedit"><%= libros[i].autor%></td>
+           
+            <td class = "itemnumero"><%= libros[i].precio%></td>
+           
+            <td class = "itemnumero"><%= libros[i].stock%></td>
+            <td class = "itemicono">
+            <form action = "/admin/delete/<%= libros[i].idlibros %>?_method=PUT" method = "POST">
+                <input type = "submit"><img class= "iconoedit" src= "/essence/img/images/lapizedit.png"></input>
+            </form>
+            
+                 <form action = "/admin/delete/<%= libros[i].idlibros %>?_method=DELETE" method = "POST">
+
+                <input type = "submit"><img class = "iconodelete" src= "/essence/img/images/delete.png"></input>
+            </form>
+        </td>
+        </tr>
+    </tbody>
+    
 </table>
 <% } %>
 </div>
