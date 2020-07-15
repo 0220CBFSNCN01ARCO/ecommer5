@@ -12,30 +12,41 @@
 
     <%- include("./partials/carrito") %>
     <!-- ##### Right Side Cart End ##### -->
-
-
-    <div class="contact-area d-flex align-items-center">
-
-     
-
-        <div class="contact-info">
-            <h2>Mi cuenta</h2>
-
-            <div class="contact-address mt-10">
-                <p><span>Nombre y apellido:</span>  </p>
-                <p><span>Dirección:</span> </p>
-                <p><span>Provincia:</span> </p>
-                <p><span>Localidad:</span> </p>
-                <p><span>Dirección:</span> </p>
-                <p><span>Código postal:</span> </p>
-                <p><span>Teléfono:</span> </p>
-                <p><span>Mail:</span> </p>
-                
-                
+    
+    <div class = "container col-12">
+        <div class = "avataradmin row col-6">
+            <img class = "imgadmin" src = "/essence/img/users-img/<%= nuevoUsuario.avatar %>">
+    
+        </div>
+    
+        <div class="infoadmin row contact-area d-flex align-items-center">
+    
+        
+            <div class="row contact-info col-6">
+                <h2>Hola <%= nuevoUsuario.nombre %> !</h2>
+    
+                <div class=" mt-5">
+                    <p class = "datosadmin"><strong>Usuario: </strong>  <%= nuevoUsuario.nombre %></p>
+                    <p class = "datosadmin"><strong>Email: </strong><%= nuevoUsuario.email %> </p>
+                    <p class = "datosadmin"><strong>Dirección: </strong><%= nuevoUsuario.direccion %> </p>
+                    <p class = "datosadmin"><strong>Provincia: </strong><%= nuevoUsuario.provincia %> </p>
+                    <p class = "datosadmin"><strong>Localidad: </strong><%= nuevoUsuario.localidad %> </p>
+                    <p class = "datosadmin"><strong>Código Postal: </strong><%= nuevoUsuario.cp %> </p>
+                </div>
             </div>
+              
+                
+        
+          
         </div>
 
+
+
+
     </div>
+    
+
+    
 
     <!-- ##### Footer Area Start ##### -->
     <%- include("./partials/footer") %>

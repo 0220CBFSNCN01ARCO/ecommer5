@@ -13,9 +13,9 @@ const usersController = {
   },
   create: function(req, res) {
 
-    //let errors = validationResult(req);
+    let errors = validationResult(req);
 
-   // if(errors.isEmpty()){
+   if(errors.isEmpty()){
       
       //let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
       //let users;
@@ -35,16 +35,17 @@ const usersController = {
         password: bcrypt.hashSync(req.body.password, 10),
         avatar: req.files[0].filename
       })
+    
       .then(function(usuario){
-     // return res.render('account', {nuevoUsuario: nuevoUsuario});
-     res.send(usuario)
+     return res.render('account', {nuevoUsuario: nuevoUsuario});
+     //res.send(usuario)
      })
      // .catch(function(error){
       //  res.redirect("register", {errors: errors})
      // })
-      return res.redirect("/")
+      //return res.redirect("/")
      // }
-  
+    }
      // users.push(user);
   
       //usersJSON = JSON.stringify(users);

@@ -45,8 +45,8 @@ const adminController = {
   
             db.Libro.findByPk(req.params.id)
             .then(function(libro){
-              res.send(libro)
-              //return res.render("updateProduct", {libro: libro})
+              //res.send(libro)
+              return res.render("updateProduct", {libro: libro})
             })
             .catch(function(error){
               res.send(error)
@@ -76,6 +76,7 @@ const adminController = {
           }
         })
         .then(function(result){
+          //res.send(result)
           let mensajeConfirm= "Se eliminó el producto correctamente"
           res.redirect("/products", {mensajeConfirm: mensajeConfirm})
         })
