@@ -84,8 +84,11 @@ const usersController = {
     }
   
   },
-
-  
+  logout(req, res, next) {
+    req.session.destroy((err) => {
+      res.redirect('/login')
+    })
+  },
   account: function (req, res) {
     let archivoUsuarios = fs.readFileSync("./data/users.json", {
       encoding: "utf-8",
