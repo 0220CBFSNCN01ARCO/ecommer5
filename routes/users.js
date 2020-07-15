@@ -44,22 +44,6 @@ return false
          return true
        }
      })
-     
-      //let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
-  
-     //let users;
-     //if (usersJSON == "") {
-     //  users = [];
-     // } else {
-     //  users = JSON.parse(usersJSON);
-     // }
-
-     // for (let i = 0; i < users.length; i++) {
-     //   if (users[i].email == value) {
-      //    return false;
-      //} 
-    //}
-    //  return true;
     }).withMessage("Usuario ya existente"),
     check("password").isLength({ min: 8 }).withMessage("La contraseña debe tener 8 caracteres como mínimo") 
 
@@ -96,7 +80,7 @@ router.get('/check', function(req, res) {
   }
 })
 
-router.get("/account", authMiddleware, usersController.account);
+router.get('/account', authMiddleware, usersController.account)
 
 router.get('/logout',usersController.logout)
 

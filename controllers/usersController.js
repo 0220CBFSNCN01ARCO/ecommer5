@@ -16,15 +16,6 @@ const usersController = {
     let errors = validationResult(req);
 
    if(errors.isEmpty()){
-      
-      //let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
-      //let users;
-      //if (usersJSON == "") {
-       // users = [];
-     // } else {
-     // users = JSON.parse(usersJSON);
-  
-     // }
      let nuevoUsuario = db.Usuario.create({
         nombre: req.body.nombre,
         localidad: req.body.localidad,
@@ -61,7 +52,10 @@ const usersController = {
   login: function (req, res) {
     res.render("login");
   },
-  processLogin: function(req, res) { 
+
+//PROCESS LOGIN SE ESTA MOVIENDO A MD VALIDATION USER ASI IMPLEMENTAR 
+
+  /*processLogin: function(req, res) { 
     let errors = validationResult(req);
     if (errors.isEmpty()) {
     let usuarioLogueado;
@@ -83,12 +77,12 @@ const usersController = {
     return res.render('login', {errors: errors.errors});
     }
   
-  },
+  },*/
   logout(req, res, next) {
     req.session.destroy((err) => {
       res.redirect('/login')
     })
-  },
+  }/*,
   account: function (req, res) {
     let archivoUsuarios = fs.readFileSync("./data/users.json", {
       encoding: "utf-8",
@@ -110,7 +104,7 @@ const usersController = {
       }
     }
   }
-};
-
+};*/
+}
 module.exports = usersController;
 
