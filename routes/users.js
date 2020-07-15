@@ -37,8 +37,8 @@ router.post("/register", upload.any(), guestMiddleware, [
          email : value
        }
      })
-     .then(function(result){
-       if(result == null || result == undefined){
+     .then(function(usuario){
+       if(usuario == null || usuario == undefined){
 return false
        } else {
          return true
