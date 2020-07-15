@@ -52,10 +52,7 @@ const usersController = {
   login: function (req, res) {
     res.render("login");
   },
-
-//PROCESS LOGIN SE ESTA MOVIENDO A MD VALIDATION USER ASI IMPLEMENTAR 
-
-  /*processLogin: function(req, res) { 
+  processLogin: function(req, res) { 
     let errors = validationResult(req);
     if (errors.isEmpty()) {
     let usuarioLogueado;
@@ -77,7 +74,7 @@ const usersController = {
     return res.render('login', {errors: errors.errors});
     }
   
-  },*/
+  },
   logout(req, res, next) {
     req.session.destroy((err) => {
       res.redirect('/login')
