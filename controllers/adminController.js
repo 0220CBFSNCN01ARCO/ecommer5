@@ -51,7 +51,6 @@ const adminController = {
             .catch(function(error){
               res.send(error)
             })
-    
         },
         update: function(req, res){
           db.Libro.update({

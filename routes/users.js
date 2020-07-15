@@ -16,6 +16,7 @@ const upload = multer({storage: storage});
 const usersController = require("../controllers/usersController");
 let guestMiddleware = require("../middleware/guestMiddleware");
 let authMiddleware = require("../middleware/authMiddleware");
+let validationusers = require("../middleware/validationuser")
 let adminMiddleware = require("../middleware/admin");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
@@ -44,22 +45,6 @@ return false
          return true
        }
      })
-     
-      //let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
-  
-     //let users;
-     //if (usersJSON == "") {
-     //  users = [];
-     // } else {
-     //  users = JSON.parse(usersJSON);
-     // }
-
-     // for (let i = 0; i < users.length; i++) {
-     //   if (users[i].email == value) {
-      //    return false;
-      //} 
-    //}
-    //  return true;
     }).withMessage("Usuario ya existente"),
     check("password").isLength({ min: 8 }).withMessage("La contraseña debe tener 8 caracteres como mínimo") 
 
@@ -68,7 +53,7 @@ return false
 
 router.get("/login", usersController.login);
 
-router.post("/login", adminMiddleware.verifyAdmin, [
+router.post("/login", validationuser, adminMiddleware.verifyAdmin, [
   check("email").isEmail().withMessage("Email inválido"),
   check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres"),
   body("email").custom(function(value){
@@ -96,7 +81,8 @@ router.get('/check', function(req, res) {
   }
 })
 
-router.get("/account", authMiddleware, usersController.account);
+router.get('/account', authMiddleware, usersController.account)
 
+router.get('/logout',usersController.logout)
 
 module.exports = router;
