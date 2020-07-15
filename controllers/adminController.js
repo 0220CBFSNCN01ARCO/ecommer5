@@ -45,7 +45,6 @@ const adminController = {
               res.send(libro)
              // res.render("updateProduct", {libro: libro})
             })
-    
         },
         update: function(req, res){
           db.Libro.update({
