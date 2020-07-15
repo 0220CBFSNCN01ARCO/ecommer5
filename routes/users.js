@@ -16,7 +16,7 @@ const upload = multer({storage: storage});
 const usersController = require("../controllers/usersController");
 let guestMiddleware = require("../middleware/guestMiddleware");
 let authMiddleware = require("../middleware/authMiddleware");
-let validationusers = require("../middleware/validationuser")
+//let validationusers = require("../middleware/validationuser")
 let adminMiddleware = require("../middleware/admin");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
@@ -53,7 +53,7 @@ return false
 
 router.get("/login", usersController.login);
 
-router.post("/login", validationuser, adminMiddleware.verifyAdmin, [
+router.post("/login", /*validationusers*/ adminMiddleware.verifyAdmin, [
   check("email").isEmail().withMessage("Email inválido"),
   check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres"),
   body("email").custom(function(value){
