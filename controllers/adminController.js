@@ -37,6 +37,9 @@ const adminController = {
           .then(function(libros){
               return res.render("editProduct", {libros: libros})
             })
+            .catch(function(error){
+              res.send(error)
+            })
         },
         select: function(req, res){
   
@@ -68,11 +71,13 @@ const adminController = {
         
         delete: function(req, res){
         db.Libro.destroy({
-          where: {idlibros: req.params.idlibros}
+          where: {
+            idlibros: req.params.idlibros
+          }
         })
         .then(function(result){
           let mensajeConfirm= "Se eliminó el producto correctamente"
-          res.render("products", {mensajeConfirm: mensajeConfirm})
+          res.redirect("/products", {mensajeConfirm: mensajeConfirm})
         })
           .catch(function(error){
             return res.render("products", {error: error})
