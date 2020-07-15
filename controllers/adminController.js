@@ -37,13 +37,19 @@ const adminController = {
           .then(function(libros){
               return res.render("editProduct", {libros: libros})
             })
+            .catch(function(error){
+              res.send(error)
+            })
         },
         select: function(req, res){
   
             db.Libro.findByPk(req.params.id)
             .then(function(libro){
-              res.send(libro)
-             // res.render("updateProduct", {libro: libro})
+              //res.send(libro)
+              return res.render("updateProduct", {libro: libro})
+            })
+            .catch(function(error){
+              res.send(error)
             })
         },
         update: function(req, res){
@@ -54,7 +60,7 @@ const adminController = {
             stock: req.body.stock,
             descripcion: req.body.descripcion,
             portada: req.body.portada
-          }, {where: {
+          }, { where: {
               id: req.params.idlibros
           }
         })
@@ -64,11 +70,14 @@ const adminController = {
         
         delete: function(req, res){
         db.Libro.destroy({
-          where: {idlibros: req.params.idlibros}
+          where: {
+            idlibros: req.params.idlibros
+          }
         })
         .then(function(result){
+          //res.send(result)
           let mensajeConfirm= "Se eliminó el producto correctamente"
-          res.render("products", {mensajeConfirm: mensajeConfirm})
+          res.redirect("/products", {mensajeConfirm: mensajeConfirm})
         })
           .catch(function(error){
             return res.render("products", {error: error})

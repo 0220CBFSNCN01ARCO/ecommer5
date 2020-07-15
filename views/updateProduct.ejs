@@ -52,31 +52,31 @@
                             <% } %>
                         </div>
 
-                        <form action = "/admin/edit/<%= libro.idlibros %>" method="POST" enctype="multipart/form-data">
+                        <form method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="titulo">Título del libro <span>*</span></label>
-                                    <input type="text" class="form-control" id="titulo" name = "titulo" value="<%= libro.titulo %>" required placeholder="Título del libro">
+                                    <input type="text" class="form-control" id="titulo" name = "titulo" value="<%= libro.titulo %>" >
                                 </div>
                               
                                 
                                 <div class="col-12 mb-3">
                                     <label for="autor">Autor/a <span>*</span></label>
-                                    <input type="text" class="form-control" id="autor" name = "autor" value="<%= libro.autor %>" required placeholder="Nombre del autor/a">
+                                    <input type="text" class="form-control" id="autor" name = "autor" value="<%= libro.autor %>" >
                                        
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="categoria">Categoría <span>*</span></label>
-                                    <input type="text" class="form-control" id="categoria" name = "categoria" value="<%= libro.categoria %>" required placeholder="Categoría">
+                                    <input type="text" class="form-control" id="categoria" name = "categoria" value="<%= libro.categoria %>">
                                        
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="precio">Precio <span>*</span></label>
-                                    <input type="text" class="form-control" name= "precio" id="precio" value="<%= libro.precio %>" placeholder="Precio">
+                                    <input type="text" class="form-control" name= "precio" id="precio" value="<%= libro.precio %>" >
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="stock">Stock <span>*</span></label>
-                                    <input type="text" class="form-control mb-3" id="stock" name= "stock" value="<%= libro.stock %>" placeholder="Stock">
+                                    <input type="text" class="form-control mb-3" id="stock" name= "stock" value="<%= libro.stock %>" >
                                 
                                 </div>
                                 <div class="col-12 mb-3">

@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
+const db = require("../database/models")
 
 const path = require('path');
 const storage = multer.diskStorage({
@@ -31,21 +32,34 @@ router.post("/register", upload.any(), guestMiddleware, [
     check("numero").isInt({min: 0}).withMessage("Sin número no te encuento"),
     check("email").isEmail().withMessage("Falta tu email"),
     body("email").custom(function (value){
-     let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
+     db.Usuario.findOne({
+       where: {
+         email : value
+       }
+     })
+     .then(function(result){
+       if(result == null || result == undefined){
+return false
+       } else {
+         return true
+       }
+     })
+     
+      //let usersJSON = fs.readFileSync("./data/users.json", {encoding: "utf-8"});
   
-     let users;
-     if (usersJSON == "") {
-       users = [];
-      } else {
-       users = JSON.parse(usersJSON);
-      }
+     //let users;
+     //if (usersJSON == "") {
+     //  users = [];
+     // } else {
+     //  users = JSON.parse(usersJSON);
+     // }
 
-      for (let i = 0; i < users.length; i++) {
-        if (users[i].email == value) {
-          return false;
-      } 
-    }
-      return true;
+     // for (let i = 0; i < users.length; i++) {
+     //   if (users[i].email == value) {
+      //    return false;
+      //} 
+    //}
+    //  return true;
     }).withMessage("Usuario ya existente"),
     check("password").isLength({ min: 8 }).withMessage("La contraseña debe tener 8 caracteres como mínimo") 
 
