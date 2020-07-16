@@ -137,9 +137,10 @@ margin-bottom: 15vh;
 .iconoedit{
     padding-right: 1vw;
     padding-left: 1vw;
+    margin-bottom: 2vh;
 }
 .iconodelete{
-    margin-left: 2vw;
+    margin-left: 1vw;
 }
 .portadaedit{
     width: 6vw;

@@ -29,11 +29,7 @@
 <table class= "celdaslibros row col-12">
     <thead>
      <tr>
-        <th>Portada</th>
-         <th>Titulo</th>
-         <th>Autor</th>
-         <th>Precio</th>
-         <th>Stock</th>
+        
      </tr>
 
     </thead>
@@ -50,14 +46,17 @@
            
             <td class = "itemnumero"><%= libros[i].stock%></td>
             <td class = "itemicono">
+          
             <form action = "/admin/edit/<%= libros[i].idlibros %>">
-                <input type = "submit"><img class= "iconoedit" src= "/essence/img/images/lapizedit.png"></input>
+                <input type = "image" src= "/essence/img/images/lapizedit.png" class= "iconoedit"></input>
             </form>
             
                  <form action = "/admin/delete/<%= libros[i].idlibros %>?_method=DELETE" method = "POST">
-
-                <input type = "submit"><img class = "iconodelete" src= "/essence/img/images/delete.png"></input>
+                    <input type = "image" src= "/essence/img/images/delete.png" class= "iconodelete"></input>
+                
             </form>
+         
+                
         </td>
         </tr>
     </tbody>
