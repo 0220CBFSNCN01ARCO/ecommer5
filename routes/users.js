@@ -16,7 +16,7 @@ const upload = multer({storage: storage});
 const usersController = require("../controllers/usersController");
 let guestMiddleware = require("../middleware/guestMiddleware");
 let authMiddleware = require("../middleware/authMiddleware");
-//let validationusers = require("../middleware/validationuser")
+//let validationuser = require("../middleware/validationuser")
 let adminMiddleware = require("../middleware/admin");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
@@ -71,7 +71,7 @@ router.post("/login", /*validationusers*/ adminMiddleware.verifyAdmin, [
    // }
    // return false;
  //}).withMessage("No tenemos registrado tu email")
-], usersController.processLogin);  
+], usersController.processLogin); 
 
 router.get('/check', function(req, res) {
   if (req.session.usarioLogueado == undefined) {
