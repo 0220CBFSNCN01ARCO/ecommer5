@@ -36,7 +36,16 @@ const usersController = {
     } else {
       res.render("register", {errors: errors.errors})
     }
-  
+    // users.push(user);
+
+    //usersJSON = JSON.stringify(users);
+
+    //fs.appendFileSync("./data/users.json", usersJSON);
+
+    //res.redirect('/products');
+    // } else {
+    // res.render("register", {errors: errors.errors})
+    // }
   },
 
   login: function (req, res) {
@@ -46,18 +55,18 @@ const usersController = {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       let usuarioLogueado;
-      let usuarioALoguearse = db.Usuario.findOne({
+       db.Usuario.findOne({
         where: { email: req.body.email },
       })
       .then(function (usuario) {
-        if (usuarioALoguearse == undefined) {
+        if (usuario == undefined || usuario == null) {
           return res.render("login");
         }
         if (
-          usuarioALoguearse.email == req.body.email &&
-          bcrypt.compareSync(req.body.password, usuarioALoguearse.password)
+          usuario.email == req.body.email &&
+          bcrypt.compareSync(req.body.password, usuario.password)
         ) {
-          usuarioALoguearse = usuarioLogueado;
+          usuario = usuarioLogueado;
           res.render("index");
         }
       });
