@@ -15,12 +15,16 @@ listado : function(req, res){
 },
 detail: function(req, res) {
  
-  db.Libro.findByPk(req.params.idlibros, {
-  include: [{association: "categoria"}]
-})
+ db.Libro.findByPk(req.params.idlibros)//, {
+ // include: [{association: "categoria"}]
+//})
+
   .then (function(libro) {
    //res.send(libro)
   res.render("productDetail", {libro: libro});
+  })
+  .catch(function(error){
+    res.send(error)
   })
 }
 

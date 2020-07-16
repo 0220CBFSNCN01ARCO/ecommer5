@@ -36,16 +36,7 @@ const usersController = {
     } else {
       res.render("register", {errors: errors.errors})
     }
-    // users.push(user);
-
-    //usersJSON = JSON.stringify(users);
-
-    //fs.appendFileSync("./data/users.json", usersJSON);
-
-    //res.redirect('/products');
-    // } else {
-    // res.render("register", {errors: errors.errors})
-    // }
+  
   },
 
   login: function (req, res) {
