@@ -45,12 +45,11 @@ const adminController = {
   
             db.Libro.findByPk(req.params.idlibros)
             .then(function(libro){
-              //res.send(libro)
               return res.render("updateProduct", {libro: libro})
             })
-            .catch(function(error){
-              res.send(error)
-            })
+              //res.send(libro)
+              
+           
         },
         update: function(req, res){
           db.Libro.update({

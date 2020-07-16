@@ -32,12 +32,12 @@ upload.any(),
   ],  adminController.create);
 
 router.get("/edit", //editMiddleware.validationAdmin, 
-adminController.edit)
+adminController.edit);
 
 router.get("/edit/:idlibros", //editMiddleware.validationAdmin, 
-adminController.select)
+adminController.select);
 
-router.post("/edit/:idlibros", // editMiddleware.validationAdmin, 
+router.put("/edit/:idlibros", // editMiddleware.validationAdmin, 
 adminController.update);
 
 router.delete("/delete/:idlibros",  //editMiddleware.validationAdmin, 

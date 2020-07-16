@@ -50,7 +50,7 @@
            
             <td class = "itemnumero"><%= libros[i].stock%></td>
             <td class = "itemicono">
-            <form action = "/admin/delete/<%= libros[i].idlibros %>?_method=PUT" method = "POST">
+            <form action = "/admin/edit/<%= libros[i].idlibros %>">
                 <input type = "submit"><img class= "iconoedit" src= "/essence/img/images/lapizedit.png"></input>
             </form>
             
