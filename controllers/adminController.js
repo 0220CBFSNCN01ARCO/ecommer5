@@ -60,10 +60,10 @@ const adminController = {
             descripcion: req.body.descripcion,
             portada: req.body.portada
           }, { where: {
-              id: req.params.idlibros
+              idlibros: req.params.idlibros
           }
         })
-          res.redirect('/admin/edit')
+          res.render("editProduct")
           
         },
         
