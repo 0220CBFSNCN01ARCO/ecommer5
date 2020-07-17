@@ -37,7 +37,7 @@ adminController.edit);
 router.get("/edit/:idlibros", //editMiddleware.validationAdmin, 
 adminController.select);
 
-router.put("/edit/:idlibros", // editMiddleware.validationAdmin, 
+router.put("/edit/:idlibros", upload.any(),// editMiddleware.validationAdmin, 
 adminController.update);
 
 router.delete("/delete/:idlibros",  //editMiddleware.validationAdmin, 
