@@ -56,19 +56,21 @@ const usersController = {
     if (errors.isEmpty()) {
       let usuarioLogueado;
        db.Usuario.findOne({
-        where: { email: req.body.email },
+        where: { email: req.body.email }
       })
       .then(function (usuario) {
-        if (usuario == undefined || usuario == null) {
-          return res.render("login");
+      //res.send(usuario)
+       if (!usuario) {
+         let messageNotLogin = "No tenemos registrado tu email"
+         return res.render("register", {messageNotLogin: messageNotLogin});
         }
-        if (
+        else if (
           usuario.email == req.body.email &&
           bcrypt.compareSync(req.body.password, usuario.password)
         ) {
-          usuario = usuarioLogueado;
-          res.render("index");
-        }
+          usuarioLogueado = usuario;
+          res.render("account", {data: req.body});
+        } 
       });
     } else {
       return res.render("login", { errors: errors.errors });
