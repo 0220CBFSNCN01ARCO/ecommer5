@@ -75,7 +75,7 @@ const adminController = {
         })
         
         .then(
-         res.redirect("/products")
+         res.redirect("/admin/edit")
          
          )
           
