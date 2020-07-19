@@ -22,8 +22,10 @@ window.addEventListener("load", function(){
                 e.preventDefault()
             }
         })
+    })
 
 //validación de campos de formulario de registración de usuario
+window.addEventListener("load", function(){
 
     let formulario = document.querySelector("form.registeruser");
     formulario.addEventListener("submit", function(e){
@@ -35,6 +37,6 @@ if(campoNombre.value == ""){
 alert("El campo de nombre debe tener al menos 4 caracteres")
 }
 
-    })
+})
 
 })
