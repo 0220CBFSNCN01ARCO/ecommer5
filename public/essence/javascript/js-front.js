@@ -28,7 +28,7 @@ window.addEventListener("load", function(){
     let formulario = document.querySelector("form.registeruser");
     formulario.addEventListener("submit", function(e){
         e.preventDefault();
-let campoNombre = document.querySelector("input.camponombre");
+let campoNombre = document.getElementById("camponombre");
 if(campoNombre.value == ""){
     alert("Tenés que completar tu nombre y apellido")
 } else if(campoNombre.value.length < 4){
