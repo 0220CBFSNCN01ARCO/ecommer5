@@ -55,16 +55,12 @@ const usersController = {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       let usuarioLogueado;
-       db.Usuario.findOne({
+     db.Usuario.findOne({
         where: { email: req.body.email }
       })
       .then(function (usuario) {
       //res.send(usuario)
-       if (!usuario) {
-         let messageNotLogin = "No tenemos registrado tu email"
-         return res.render("register", {messageNotLogin: messageNotLogin});
-        }
-        else if (
+      if (
           usuario.email == req.body.email &&
           bcrypt.compareSync(req.body.password, usuario.password)
         ) {

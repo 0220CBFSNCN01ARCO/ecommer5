@@ -1,6 +1,5 @@
 const fs = require('fs');
 const { check, validationResult, body } = require("express-validator");
-const products = JSON.parse(fs.readFileSync("./data/detalleProductos.json", {encoding: "utf-8"}));
 const db = require("../database/models")
 
 const adminController = {
@@ -76,7 +75,7 @@ const adminController = {
         })
         
         .then(
-         res.redirect("/products")
+         res.redirect("/admin/edit")
          
          )
           
