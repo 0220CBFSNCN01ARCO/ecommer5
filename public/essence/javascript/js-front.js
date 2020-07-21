@@ -38,7 +38,7 @@ if(campoNombre.value == ""){
 } else if(campoNombre.value.length < 4){
     errores.push("El campo de nombre debe tener al menos 4 caracteres")
 }
-let campoProvincia = document.getElementById("select.provincia");
+let campoProvincia = document.getElementById("provincia");
 if(campoProvincia.value == ""){
     errores.push("Tenés que seleccionar una provincia")
 
