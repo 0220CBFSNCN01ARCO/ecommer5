@@ -26,7 +26,7 @@ router.get("/register", guestMiddleware, usersController.register);
 
 router.post("/register", upload.any(), [
     check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
-    check("prov").isLength({min: 4}).withMessage("Te faltó la provincia"),
+    check("provincia").isLength().withMessage("Te faltó la provincia"),
     check("localidad").isLength({min: 4}).withMessage("Te faltó la localidad"),
     check("direccion").isLength({min: 5}).withMessage("Y la dirección?"),
     check("cp").isInt({min: 4}).withMessage("Sin codigo postal no te encuentro"),

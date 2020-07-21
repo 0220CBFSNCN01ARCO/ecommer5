@@ -21,8 +21,8 @@ const usersController = {
         })
         .then(function(usuario){
           if(usuario){
-            res.send(usuario)
-            //res.send("Usuario ya existente")
+            //res.send(usuario)
+            res.send("Usuario ya existente")
           } else {
             db.Usuario.create({
               nombre: req.body.nombre,
