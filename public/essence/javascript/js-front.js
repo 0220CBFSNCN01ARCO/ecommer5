@@ -36,6 +36,36 @@ if(campoNombre.value == ""){
 } else if(campoNombre.value.length < 4){
 alert("El campo de nombre debe tener al menos 4 caracteres")
 }
+let campoProvincia = document.getElementById("provincia");
+if(campoProvincia.value == ""){
+    alert("Tenés que seleccionar una provincia")
+
+}
+let campoLocalidad = document.getElementById("localidad");
+if(campoLocalidad.value == ""){
+    alert("Tenés que poner tu localidad")
+
+}
+let campoDireccion = document.getElementById("direccion");
+if(campoDireccion.value == ""){
+    alert("Tenés que poner tu dirección")
+
+}
+let campoCp = document.getElementById("cp");
+if(campoCp.value == ""){
+    alert("Tenés que poner tu código postal")
+
+}
+let campoEmail = document.getElementById("email");
+if(campoEmail.value == ""){
+    alert("Tenés que poner tu email")
+
+}
+let campoPassword = document.getElementById("password");
+if(campoPassword.value == ""){
+    alert("Tenés que poner una contraseña")
+
+}
 
 })
 
