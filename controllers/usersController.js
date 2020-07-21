@@ -14,20 +14,32 @@ const usersController = {
     let errors = validationResult(req);
 
     if (errors.isEmpty()) {
-       db.Usuario.create({
-        nombre: req.body.nombre,
-        localidad: req.body.localidad,
-        provincia: req.body.provincia,
-        direccion: req.body.direccion,
-        cp: req.body.cp,
-        email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 10),
-        avatar: req.files[0].filename
-      })
-      .then(
-         res.render("account", { data: req.body })
-        //res.send(usuario)
-      )
+      db.Usuario.findOne({
+        where: {
+          email : req.body.email
+         }
+        })
+        .then(function(usuario){
+          if(usuario){
+            res.send("Usuario ya existente")
+          } else {
+            db.Usuario.create({
+              nombre: req.body.nombre,
+              localidad: req.body.localidad,
+              provincia: req.body.provincia,
+              direccion: req.body.direccion,
+              cp: req.body.cp,
+              email: req.body.email,
+              password: bcrypt.hashSync(req.body.password, 10),
+              avatar: req.files[0].filename
+            })
+            .then(
+               res.render("account", { data: req.body })
+              //res.send(usuario)
+            )
+          }
+        });
+      
       // .catch(function(error){
       //  res.redirect("register", {errors: errors})
       // })
@@ -36,16 +48,7 @@ const usersController = {
     } else {
       res.render("register", {errors: errors.errors})
     }
-    // users.push(user);
 
-    //usersJSON = JSON.stringify(users);
-
-    //fs.appendFileSync("./data/users.json", usersJSON);
-
-    //res.redirect('/products');
-    // } else {
-    // res.render("register", {errors: errors.errors})
-    // }
   },
 
   login: function (req, res) {
@@ -54,6 +57,17 @@ const usersController = {
   processLogin: function (req, res) {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
+      db.Usuario.findOne({
+        where: {
+          email : req.body.email
+         }
+        })
+        .then(function(usuario){
+          if(!usuario){
+            res.send("No tenemos registrado tu email")
+          }
+        });
+
       let usuarioLogueado;
      db.Usuario.findOne({
         where: { email: req.body.email }
