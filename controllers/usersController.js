@@ -21,7 +21,8 @@ const usersController = {
         })
         .then(function(usuario){
           if(usuario){
-            res.send("Usuario ya existente")
+            res.send(usuario)
+            //res.send("Usuario ya existente")
           } else {
             db.Usuario.create({
               nombre: req.body.nombre,
@@ -65,24 +66,16 @@ const usersController = {
         .then(function(usuario){
           if(!usuario){
             res.send("No tenemos registrado tu email")
-          }
-        });
-
-      let usuarioLogueado;
-     db.Usuario.findOne({
-        where: { email: req.body.email }
-      })
-      .then(function (usuario) {
-      //res.send(usuario)
-      if (
-          usuario.email == req.body.email &&
-          bcrypt.compareSync(req.body.password, usuario.password)
-        ) {
+          } else if(usuario.email == req.body.email && 
+            bcrypt.compareSync(req.body.password, usuario.password)
+        ){
           usuarioLogueado = usuario;
           res.render("account", {data: req.body});
         } 
-      });
-    } else {
+      })
+
+          
+        } else {
       return res.render("login", { errors: errors.errors });
     }
   },
