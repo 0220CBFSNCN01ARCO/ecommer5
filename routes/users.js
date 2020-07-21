@@ -27,9 +27,9 @@ router.get("/register", guestMiddleware, usersController.register);
 router.post("/register", upload.any(), [
     check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
     check("prov").isLength({min: 4}).withMessage("Te faltó la provincia"),
-    check("localidad").isLength({min: 1}).withMessage("Te faltó la localidad"),
-    check("direccion").isLength({min: 1}).withMessage("Y la dirección?"),
-    check("cp").isInt({min: 0}).withMessage("Sin codigo postal no te encuentro"),
+    check("localidad").isLength({min: 4}).withMessage("Te faltó la localidad"),
+    check("direccion").isLength({min: 5}).withMessage("Y la dirección?"),
+    check("cp").isInt({min: 4}).withMessage("Sin codigo postal no te encuentro"),
     check("email").isEmail().withMessage("Falta tu email"),
    body("email").custom(function (value){
    db.Usuario.findOne({
@@ -62,11 +62,9 @@ router.post("/login", /*validationusers*/ adminMiddleware.verifyAdmin, [
        }
       })
       .then(function(usuario){
-        if(usuario){
-   return true
-         } else {
-          return false
-         }
+        if(!usuario){
+   return false
+         } 
       })
  }).withMessage("No tenemos registrado tu email"),
  check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres")

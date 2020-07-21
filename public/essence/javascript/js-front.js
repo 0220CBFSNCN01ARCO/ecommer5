@@ -92,7 +92,7 @@ window.addEventListener("load", function(){
     let login = document.querySelector("form.loginuser");
    login.addEventListener("submit", function(e){
 
-        let errorelogin = [];
+        let erroreslogin = [];
 
 let campoEmail = document.getElementById("email");
 if(campoEmail.value == ""){
@@ -102,6 +102,7 @@ let campoPassworLogin = document.getElementById("password");
 if(campoPassworLogin.value == ""){
     erroreslogin.push("Tenés que poner tu contraseña entrar")
 }
+
 
 })
 
