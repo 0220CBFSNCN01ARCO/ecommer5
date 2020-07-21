@@ -62,7 +62,7 @@ const adminController = {
               idlibros: req.params.idlibros
           }
         })
-          res.render("index")
+          res.render("editProduct")
           
         },
         
