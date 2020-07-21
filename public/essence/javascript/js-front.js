@@ -77,6 +77,30 @@ if (errores.length > 0 ) {
     
         ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
     }
+
+}
+
+})
+
+})
+
+
+// validación de campos de login
+
+window.addEventListener("load", function(){
+
+    let login = document.querySelector("form.loginuser");
+   login.addEventListener("submit", function(e){
+
+        let errorelogin = [];
+
+let campoEmail = document.getElementById("email");
+if(campoEmail.value == ""){
+    erroreslogin.push("Tenés que poner tu email para entrar")
+}
+let campoPassworLogin = document.getElementById("password");
+if(campoPassworLogin.value == ""){
+    erroreslogin.push("Tenés que poner tu contraseña entrar")
 }
 
 })
