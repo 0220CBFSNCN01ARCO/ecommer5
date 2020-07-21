@@ -37,6 +37,11 @@ if(campoNombre.value == ""){
 alert("El campo de nombre debe tener al menos 4 caracteres")
 }
 
+//let campoProvincia = document.querySelector("select.campoprovincia");
+//if(campoProvincia.value == ""){
+ //   alert("Tenés que seleccionar tu provincia")
+//}
+
 })
 
 })
