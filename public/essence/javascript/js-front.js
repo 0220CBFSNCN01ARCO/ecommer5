@@ -29,42 +29,54 @@ window.addEventListener("load", function(){
 
     let formulario = document.querySelector("form.registeruser");
     formulario.addEventListener("submit", function(e){
-        e.preventDefault();
+
+        let errores = [];
+
 let campoNombre = document.getElementById("camponombre");
 if(campoNombre.value == ""){
-    alert("Tenés que completar tu nombre y apellido")
+    errores.push("Tenés que completar tu nombre y apellido")
 } else if(campoNombre.value.length < 4){
-alert("El campo de nombre debe tener al menos 4 caracteres")
+    errores.push("El campo de nombre debe tener al menos 4 caracteres")
 }
-let campoProvincia = document.getElementById("provincia");
+let campoProvincia = document.getElementById("select.provincia");
 if(campoProvincia.value == ""){
-    alert("Tenés que seleccionar una provincia")
+    errores.push("Tenés que seleccionar una provincia")
 
 }
 let campoLocalidad = document.getElementById("localidad");
 if(campoLocalidad.value == ""){
-    alert("Tenés que poner tu localidad")
+    errores.push("Tenés que poner tu localidad")
 
 }
 let campoDireccion = document.getElementById("direccion");
 if(campoDireccion.value == ""){
-    alert("Tenés que poner tu dirección")
+    errores.push("Tenés que poner tu dirección")
 
 }
 let campoCp = document.getElementById("cp");
 if(campoCp.value == ""){
-    alert("Tenés que poner tu código postal")
+    errores.push("Tenés que poner tu código postal")
 
 }
 let campoEmail = document.getElementById("email");
 if(campoEmail.value == ""){
-    alert("Tenés que poner tu email")
+    errores.push("Tenés que poner tu email")
 
 }
 let campoPassword = document.getElementById("password");
 if(campoPassword.value == ""){
-    alert("Tenés que poner una contraseña")
+    errores.push("Tenés que poner una contraseña")
 
+}
+
+if (errores.length > 0 ) {
+    e.preventDefault();
+
+    let ulErrores = document.querySelector("div.errores ul");
+    for (let i = 0; i < errores.length; i++) {
+    
+        ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
+    }
 }
 
 })
