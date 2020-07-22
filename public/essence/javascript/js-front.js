@@ -38,12 +38,12 @@ if(campoNombre.value == ""){
 } else if(campoNombre.value.length < 4){
     errores.push("El campo de nombre debe tener al menos 4 caracteres")
 }
-let campoProvincia = document.getElementById("provincia");
-if(campoProvincia.value == ""){
-    errores.push("Tenés que seleccionar una provincia")
-} else if(campoProvincia.value.length < 5){
-    errores.push("El campo de Provincia debe tener al menos 5 caracteres")
-}
+//let campoProvincia = document.getElementById("provincia");
+//if(campoProvincia.value == ""){
+  //  errores.push("Tenés que seleccionar una provincia")
+//} else if(campoProvincia.value.length < 5){
+  //  errores.push("El campo de Provincia debe tener al menos 5 caracteres")
+//}
 let campoLocalidad = document.getElementById("localidad");
 if(campoLocalidad.value == ""){
     errores.push("Tenés que poner tu localidad")

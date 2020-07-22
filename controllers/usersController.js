@@ -24,7 +24,7 @@ const usersController = {
             //res.send(usuario)
             res.send("Usuario ya existente")
           } else {
-            db.Usuario.create({
+           let usuarioALoguearse = db.Usuario.create({
               nombre: req.body.nombre,
               localidad: req.body.localidad,
               provincia: req.body.provincia,
@@ -34,10 +34,11 @@ const usersController = {
               password: bcrypt.hashSync(req.body.password, 10),
               avatar: req.files[0].filename
             })
-            .then(
-               res.render("account", { data: req.body })
+       
+     
+               res.redirect("/")
               //res.send(usuario)
-            )
+            
           }
         });
       
@@ -59,25 +60,24 @@ const usersController = {
     let errors = validationResult(req);
     if (errors.isEmpty()) {
       db.Usuario.findOne({
-        where: {
-          email : req.body.email
-         }
-        })
-        .then(function(usuario){
-          if(!usuario){
-            res.send("No tenemos registrado tu email")
-          } else if(usuario.email == req.body.email && 
-            bcrypt.compareSync(req.body.password, usuario.password)
-        ){
-          usuarioLogueado = usuario;
-          res.render("account", {data: req.body});
-        } 
+        where: {email : req.body.email}
       })
-
-          
-        } else {
-      return res.render("login", { errors: errors.errors });
-    }
+      .then(function(query){
+        console.log(query.password);
+       if(bcrypt.compareSync(req.body.password, query.password)){
+req.session.username = query.email
+res.redirect("/users/account")
+       } else {
+         console.log(errors.errors)
+         res.render("login", {errors: errors})
+       }
+      })
+        .catch(function(error){
+          res.render("login", {errors: [{msg: "No tenemos registrado tu email"}]})
+        })
+      } else {
+        res.render("login", {errors: errors.errors})
+      }
   },
   logout(req, res, next) {
     req.session.destroy((err) => {
@@ -85,25 +85,16 @@ const usersController = {
     })
   },
   account: function(req, res) {
-    let archivoUsuarios = fs.readFileSync("./data/users.json", {
-      encoding: "utf-8",
-    });
-    let usuarios;
-    if (archivoUsuarios == "") {
-      usuarios = [];
-    } else {
-      usuarios = JSON.parse(archivoUsuarios);
-    }
-    for (let i = 0; i < usuarios.length; i++) {
-      if (
-        req.body.email == usuarios[i].email &&
-        bcrypt.compareSync(req.body.password, usuarios[i].password)
-      ) {
-        res.redirect("account");
-      } else {
-        res.redirect("/users/login");
-      }
-    }
+   db.Usuario.findOne({
+     where: {
+       email: req.session.username.email
+     }
+     
+   })
+   .then(function(usuario){
+    res.render("account", {data: usuario});
+    
+  })
   }
 };
 
