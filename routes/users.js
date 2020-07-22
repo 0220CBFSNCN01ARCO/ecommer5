@@ -67,7 +67,7 @@ router.post("/login", /*validationusers*/ adminMiddleware.verifyAdmin, [
    //      } 
     //  })
 // }).withMessage("No tenemos registrado tu email"),
- check("password").isLength({min: 1}).withMessage("La contraseña debe tener al menos 8 caracteres")
+ check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
 ], usersController.processLogin); 
 
 router.get('/check', function(req, res) {

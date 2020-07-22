@@ -100,7 +100,7 @@ if(campoEmail.value == ""){
 }
 let campoPassworLogin = document.getElementById("password");
 if(campoPassworLogin.value == ""){
-    erroreslogin.push("Tenés que poner tu contraseña entrar")
+    erroreslogin.push("Tenés que poner tu contraseña para entrar")
 }
 
 
