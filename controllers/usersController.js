@@ -22,7 +22,7 @@ const usersController = {
         .then(function(usuario){
           if(usuario){
             //res.send(usuario)
-            res.send("Usuario ya existente")
+            res.render("register", {errors: [{msg: "Usuario existente"}]})
           } else {
            let usuarioALoguearse = db.Usuario.create({
               nombre: req.body.nombre,
