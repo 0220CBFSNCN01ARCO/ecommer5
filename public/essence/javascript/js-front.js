@@ -41,31 +41,42 @@ if(campoNombre.value == ""){
 let campoProvincia = document.getElementById("provincia");
 if(campoProvincia.value == ""){
     errores.push("Tenés que seleccionar una provincia")
-
+} else if(campoProvincia.value.length < 5){
+    errores.push("El campo de nombre debe tener al menos 5 caracteres")
 }
 let campoLocalidad = document.getElementById("localidad");
 if(campoLocalidad.value == ""){
     errores.push("Tenés que poner tu localidad")
+} else if(campoLocalidad.value.length < 4){
+    errores.push("El campo de nombre debe tener al menos 4 caracteres")
 
 }
 let campoDireccion = document.getElementById("direccion");
 if(campoDireccion.value == ""){
     errores.push("Tenés que poner tu dirección")
+} else if(campoDireccion.value.length < 4){
+    errores.push("El campo de nombre debe tener al menos 4 caracteres")
 
 }
 let campoCp = document.getElementById("cp");
 if(campoCp.value == ""){
     errores.push("Tenés que poner tu código postal")
+} else if(campoCp.value.length < 4){
+    errores.push("El campo de nombre debe tener al menos 4 caracteres")
 
 }
 let campoEmail = document.getElementById("email");
 if(campoEmail.value == ""){
     errores.push("Tenés que poner tu email")
+} else if(campoEmail.value.length < 4){
+    errores.push("El campo de nombre debe tener al menos 4 caracteres")
 
 }
 let campoPassword = document.getElementById("password");
 if(campoPassword.value == ""){
     errores.push("Tenés que poner una contraseña")
+} else if(campoPassword.value.length < 8){
+    errores.push("El campo de nombre debe tener al menos 8 caracteres")
 
 }
 
