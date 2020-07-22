@@ -58,23 +58,32 @@ const usersController = {
   },
   processLogin: function (req, res) {
     let errors = validationResult(req);
+
     if (errors.isEmpty()) {
+
       db.Usuario.findOne({
         where: {email : req.body.email}
       })
       .then(function(query){
-        console.log(query.password);
-       if(bcrypt.compareSync(req.body.password, query.password)){
+        
+       if(!query){
+         res.render("login",{errors: [{msg: "No tenemos registrado tu email"}]})
+
+       } else if (query &&
+      bcrypt.compareSync(req.body.password, query.password)){
 req.session.username = query.email
 res.redirect("/users/account")
+
        } else {
          console.log(errors.errors)
-         res.render("login", {errors: errors})
+         res.render("login", {errors: [{msg: "Clave incorrecta"}]})
        }
       })
+
         .catch(function(error){
-          res.render("login", {errors: [{msg: "No tenemos registrado tu email"}]})
+          res.render("login", {error})
         })
+
       } else {
         res.render("login", {errors: errors.errors})
       }
