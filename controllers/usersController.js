@@ -3,8 +3,7 @@ const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
 let path = require("path");
 const db = require("../database/models");
-//const rutaDb = path.join("..", "database", "models", "index");
-//const db = require(rutaDb)
+
 
 const usersController = {
   register: function (req, res) {

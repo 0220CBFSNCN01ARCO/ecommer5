@@ -12,6 +12,7 @@ var usersRouter = require('./routes/users');
 var adminRouter = require("./routes/admin");
 var productRouter = require('./routes/product');
 var contactRouter = require('./routes/contact');
+var nosotrosRouter = require('./routes/nosotros');
 var promocionesRouter = require('./routes/promociones');
 var shippingRouter = require('./routes/shipping');
 var recordameMiddleware = require('./middleware/recordameMiddleware');
@@ -37,6 +38,7 @@ app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 app.use('/products', productRouter);
 app.use("/contact", contactRouter);
+app.use("/nosotros", nosotrosRouter);
 app.use("/shipping", shippingRouter);
 app.use("/promociones", promocionesRouter);
 
