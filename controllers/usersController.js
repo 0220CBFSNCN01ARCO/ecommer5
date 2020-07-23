@@ -23,7 +23,8 @@ const usersController = {
             //res.send(usuario)
             res.render("register", {errors: [{msg: "Usuario existente"}]})
           } else {
-           let usuarioALoguearse = db.Usuario.create({
+            console.log(req.body)
+           db.Usuario.create({
               nombre: req.body.nombre,
               localidad: req.body.localidad,
               provincia: req.body.provincia,
@@ -32,10 +33,15 @@ const usersController = {
               email: req.body.email,
               password: bcrypt.hashSync(req.body.password, 10),
               avatar: req.files[0].filename
+            }).then(() => {
+              res.redirect("/users/account")
+
+            }).catch((err) => {
+              console.log(err);
+              return res.send(err)
             })
        
      
-               res.redirect("/users/account")
               //res.send(usuario)
             
           }
@@ -58,20 +64,22 @@ const usersController = {
   processLogin: function (req, res) {
     let errors = validationResult(req);
 
+    console.log(req.body)
     if (errors.isEmpty()) {
 
       db.Usuario.findOne({
         where: {email : req.body.email}
       })
       .then(function(query){
-        
+        console.log(query)
        if(!query){
          res.render("login",{errors: [{msg: "No tenemos registrado tu email"}]})
 
        } else if (query &&
       bcrypt.compareSync(req.body.password, query.password)){
-req.session.username = query.email
-res.redirect("/users/account")
+      req.session.user = query
+      console.log(req.session.user);
+      res.redirect("/users/account")
 
        } else {
          console.log(errors.errors)
@@ -95,7 +103,7 @@ res.redirect("/users/account")
   account: function(req, res) {
    db.Usuario.findOne({
      where: {
-       email: req.session.username.email
+       email: req.session.user.email
      }
      
    })
