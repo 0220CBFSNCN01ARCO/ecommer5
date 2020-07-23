@@ -14,12 +14,15 @@ listado : function(req, res){
 },
 detail: function(req, res) {
  
-  db.Libro.findByPk(req.params.idlibros)//, {
+  db.Libro.findByPk(Number(req.params.idlibros))//, {
   // include: [{association: "categoria"}]
  //})
  
    .then (function(libro) {
-    //res.send(libro)
+     if(!libro) {
+       return res.send('NO EXISTE LIBRO')
+     }
+  //  res.send(libro)
    res.render("productDetail", {libro: libro});
    })
 
