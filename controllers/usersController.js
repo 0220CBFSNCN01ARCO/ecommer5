@@ -35,7 +35,7 @@ const usersController = {
             })
        
      
-               res.redirect("/users/account")
+               res.render("/")
               //res.send(usuario)
             
           }
