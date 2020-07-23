@@ -30,7 +30,17 @@ router.post("/register", upload.any(), [
     check("localidad").isLength({min: 4}).withMessage("Te faltó la localidad"),
     check("direccion").isLength({min: 5}).withMessage("Y la dirección?"),
     check("cp").isInt({min: 4}).withMessage("Sin codigo postal no te encuentro"),
-    check("email").isEmail().withMessage("Falta tu email"),
+    check("email").isEmail()
+    // VALIDACIÓN CUSTOM, PARA CHEQUEAR EN BASE DE DATOS
+    /*
+    .custom(async value => {
+      let existentUser = await ModeloUsuario.findOne({ 'email': value });
+      if (existentUser !== null) {
+        console.log('User Exists');
+        return Promise.reject();
+      }})
+      */
+      .withMessage("Falta tu email"),
     check("password").isLength({min: 8}).withMessage("La contraseña debe tener 8 caracteres como mínimo") 
 
   ], usersController.create);
