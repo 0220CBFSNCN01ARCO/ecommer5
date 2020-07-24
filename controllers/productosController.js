@@ -13,11 +13,24 @@ listado : function(req, res){
 },
 detail: function(req, res) {
 
-  db.Libro.findbyPk(req.params.idLibro,
-    {include: [{association: "categoria"}]})
-    .then (function(libro) {
-     res.render("productDetail", {libros: libro});
+  db.Libro.findByPk(Number(req.params.idlibros))//, {
+    // include: [{association: "categoria"}]
+   //})
+   
+     .then (function(libro) {
+       if(!libro) {
+         return res.send('NO EXISTE LIBRO')
+       }
+    //  res.send(libro)
+     res.render("productDetail", {libro: libro});
      })
-    }
+  
+     .catch(function(error){
+       res.send(error)
+     })
+   }
+   
+   
    }
    module.exports= productosController;
+  
