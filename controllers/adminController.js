@@ -62,7 +62,7 @@ const adminController = {
             precio: req.body.precio,
             stock: req.body.stock,
             descripcion: req.body.descripcion,
-            portada: req.body.filename
+            portada: req.file.filename
           }, { where: {
               idlibros: req.params.idlibros
           }
