@@ -13,7 +13,7 @@ listado : function(req, res){
 },
 detail: function(req, res) {
 
-  db.Libro.findbyPk(req.params.idlibro,
+  db.Libro.findbyPk(req.params.idLibro,
     {include: [{association: "categoria"}]})
     .then (function(libro) {
      res.render("productDetail", {libros: libro});
