@@ -43,16 +43,9 @@ const usersController = {
        
      
                res.render("/")
-              //res.send(usuario)
             
           }
         });
-      
-      // .catch(function(error){
-      //  res.redirect("register", {errors: errors})
-      // })
-      //return res.redirect("/")
-      // }
     } else {
       res.render("register", {errors: errors.errors})
     }
@@ -79,6 +72,10 @@ const usersController = {
        } else if (query &&
       bcrypt.compareSync(req.body.password, query.password)){
       req.session.user = query
+      delete req.session.user.password;
+      if(req.session.user && req.session.user.role == 'admin') {
+        next()
+      }
       console.log(req.session.user);
       res.redirect("/users/account")
 

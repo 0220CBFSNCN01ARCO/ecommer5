@@ -68,6 +68,7 @@ CREATE TABLE IF NOT EXISTS `mercadolibrodb`.`usuarios` (
   `localidad` VARCHAR(45) NOT NULL,
   `provincia` VARCHAR(45) NOT NULL,
   `avatar` VARCHAR(450) NOT NULL,
+  `role` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idusuario`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
 ENGINE = InnoDB
