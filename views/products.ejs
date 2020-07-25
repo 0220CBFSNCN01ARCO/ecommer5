@@ -107,12 +107,12 @@
           
                 
                 <!-- Single Product -->
-                <div class="listadoproducts col-12 col-sm-6 col-lg-4">
+                <div class="listadoproducts col-12">
                   
                   <div class="single-product-wrapper">
                     <% for(let i = 0; i < libros.length; i++) { %>
                     <!-- Product Image -->
-                    <div class="product-img">
+                    <div class="product-img col-3">
                       <a href = "/product/detail/<%= libros[i].idlibros %>">
                         <img
                         class="imagenproducto"

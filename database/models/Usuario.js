@@ -30,9 +30,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         avatar: {
             type: DataTypes.STRING//(450)
-        },
-        role: {
-            type: DataTypes.STRING//(45)
         }
     }, 
     {

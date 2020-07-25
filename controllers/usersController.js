@@ -64,20 +64,21 @@ const usersController = {
       db.Usuario.findOne({
         where: {email : req.body.email}
       })
-      .then(function(query){
-        console.log(query)
-       if(!query){
+      .then(function(usuario){
+        console.log(usuario)
+       if(!usuario){
          res.render("login",{errors: [{msg: "No tenemos registrado tu email"}]})
 
-       } else if (query &&
-      bcrypt.compareSync(req.body.password, query.password)){
-      req.session.user = query
+       } else if (usuario &&
+      bcrypt.compareSync(req.body.password, usuario.password)){
+        let usuarioLogueado = usuario
+      req.session.usuario = usuarioLogueado
       delete req.session.user.password;
-      if(req.session.user && req.session.user.role == 'admin') {
-        next()
-      }
-      console.log(req.session.user);
-      res.redirect("/users/account")
+     // if(req.session.user && req.session.user.role == 'admin') {
+      //  next()
+     // }
+      console.log(req.session.usuario);
+     res.redirect("/users/account")
 
        } else {
          console.log(errors.errors)
@@ -101,7 +102,7 @@ const usersController = {
   account: function(req, res) {
    db.Usuario.findOne({
      where: {
-       email: req.session.user.email
+       email: req.session.usuario.email
      }
      
    })
