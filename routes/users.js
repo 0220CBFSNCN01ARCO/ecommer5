@@ -64,6 +64,7 @@ router.get('/check', function(req, res) {
 router.get('/account', //authMiddleware, 
 usersController.account)
 
-router.get('/logout', usersController.logout)
+router.get('/logout', //authMiddleware, 
+usersController.logout)
 
 module.exports = router;

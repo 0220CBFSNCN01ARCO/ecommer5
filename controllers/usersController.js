@@ -34,7 +34,7 @@ const usersController = {
               password: bcrypt.hashSync(req.body.password, 10),
               avatar: req.files[0].filename
             }).then(() => {
-              res.redirect("/users/account")
+              res.redirect("/")
 
             }).catch((err) => {
               console.log(err);
@@ -42,7 +42,7 @@ const usersController = {
             })
        
      
-               res.render("/")
+               
             
           }
         });
@@ -61,30 +61,40 @@ const usersController = {
     console.log(req.body)
     if (errors.isEmpty()) {
 
-      db.Usuario.findOne({
+     db.Usuario.findOne({
         where: {email : req.body.email}
       })
+
       .then(function(usuario){
-        console.log(usuario)
+
+       console.log(usuario)
        if(!usuario){
          res.render("login",{errors: [{msg: "No tenemos registrado tu email"}]})
-
+        
        } else if (usuario &&
       bcrypt.compareSync(req.body.password, usuario.password)){
-        let usuarioLogueado = usuario
-      req.session.usuario = usuarioLogueado
-      delete req.session.user.password;
+
+      
+      req.session.usuarioLogueado = usuario
+    //  console.log(req.session.usuarioLogueado)
+     // delete req.session.user.password;
      // if(req.session.user && req.session.user.role == 'admin') {
       //  next()
      // }
-      console.log(req.session.usuario);
-     res.redirect("/users/account")
+     // console.log(req.session.usuarioLogueado);
+    
 
-       } else {
+       } else if(usuario &&
+        !bcrypt.compareSync(req.body.password, usuario.password)){
          console.log(errors.errors)
          res.render("login", {errors: [{msg: "Clave incorrecta"}]})
        }
+
+       return res.redirect("/users/account")
+
       })
+
+    
 
         .catch(function(error){
           res.render("login", {error})
@@ -102,12 +112,12 @@ const usersController = {
   account: function(req, res) {
    db.Usuario.findOne({
      where: {
-       email: req.session.usuario.email
+       email: req.session.usuarioLogueado.email
      }
      
    })
    .then(function(usuario){
-    res.render("account", {data: usuario});
+    res.render("account", {data: req.session.usuarioLogueado});
     
   })
   }

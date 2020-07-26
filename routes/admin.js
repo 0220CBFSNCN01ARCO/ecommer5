@@ -1,7 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const multer = require("multer");
-let editMiddleware = require("../middleware/editMiddleware.js");
+let editMiddleware = require("../middleware/editMiddleware");
 
 const path = require('path');
 const storage = multer.diskStorage({
@@ -17,7 +17,7 @@ let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 //router.get('/', adminController.adminProducts);
-router.get("/create", // editMiddleware.validationAdmin, 
+router.get("/create", //editMiddleware.validationAdmin, 
 adminController.adminProducts);
 
 router.post("/create", //editMiddleware.validationAdmin, 
