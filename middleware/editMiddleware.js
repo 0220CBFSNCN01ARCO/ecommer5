@@ -5,7 +5,7 @@ const validationAdmin = function(req, res, next){
         avatar: "user-1594249373228.png"
     }
 
-    if(req.session.usuarioLogueado == undefined || req.session.usuarioLogueado.email != usersAdmin.email) {
+    if(req.session.usuarioLogueado.email != usersAdmin.email) {
         res.render("stopAdmin");
     } else {
         next();

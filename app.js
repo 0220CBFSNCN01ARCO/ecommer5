@@ -28,7 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({secret: 'Secreto', resave: true, saveUninitialized: true}));
+ app.use(session({secret: 'MercadoLibroSession', resave: true, saveUninitialized: true}))
 app.use(recordameMiddleware);
 app.use(morgan('dev')); // parametro dev es para que nos muestre un determinado tipo de mensaje por consola. 
 app.use(methodOverride("_method"));
