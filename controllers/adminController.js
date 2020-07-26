@@ -12,8 +12,7 @@ const adminController = {
       
            // if(errors.isEmpty()){
 
-             var libros = db.Libro.findAll()
-             .then(function(libros){
+          
             db.Libro.create({
                 titulo: req.body.titulo,
                 autor: req.body.autor,
@@ -24,15 +23,19 @@ const adminController = {
                 portada: req.files[0].filename
               }) 
 
-             })
              
              .then(function(){
               db.Libro.findAll()
               .then(function(libros){
                 return res.render("products", {libros: libros})
               })
+             })
+             .catch(function(error){
+              res.render("profileAdmin", {error})
             })
-             //.then(function(libros){
+             
+            
+            
                 
 
         },
@@ -62,7 +65,7 @@ const adminController = {
             precio: req.body.precio,
             stock: req.body.stock,
             descripcion: req.body.descripcion,
-            portada: req.file.filename
+            portada: req.files[0].filename
           }, { where: {
               idlibros: req.params.idlibros
           }
