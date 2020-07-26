@@ -8,9 +8,9 @@ const adminController = {
     },
     
     create: function(req, res){ 
-            //let errors = validationResult(req);
+            let errors = validationResult(req);
       
-           // if(errors.isEmpty()){
+            if(errors.isEmpty()){
 
           
             db.Libro.create({
@@ -34,9 +34,9 @@ const adminController = {
               res.render("profileAdmin", {error})
             })
              
-            
-            
-                
+          } else {
+            res.render("createProduct", {errors: errors.errors})
+          }  
 
         },
         edit: function(req, res){

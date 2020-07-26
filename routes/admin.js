@@ -23,10 +23,8 @@ adminController.adminProducts);
 router.post("/create", //editMiddleware.validationAdmin, 
 upload.any(),
   [
-    check("titulo")
-      .isLength({ min: 4 })
-      .withMessage("Falta el título del libro"),
-    check("autor").isLength().withMessage("Falta aclarar el autor"),
+    check("titulo").isLength({ min: 4 }).withMessage("Falta el título del libro"),
+    check("autor").isLength({min: 4 }).withMessage("Falta aclarar el autor"),
     check("precio").isInt().withMessage("El producto no tiene precio"),
     check("stock").isInt().withMessage("Falta aclarar el stock"),
   ],  adminController.create);
