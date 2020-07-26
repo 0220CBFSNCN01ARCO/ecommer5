@@ -71,8 +71,12 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="categoria">Categoría <span>*</span></label>
-                                    <input type="text" class="form-control" id="categoria" name = "categoria" value="" required placeholder="Categoría">
-                                       
+                                    <select class="w-100 categoria" id="categoria" name= "categoria">
+                                        <option value="" selected>Seleccioná una categoría</option>
+                                        <% for (let i=0; i < categoria.length; i++) { %>
+                                            <option value="<%= categoria[i].idcategoria %>"><%= categoria[i].nombre %></option>
+                                        <% } %>
+                                    </select>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="precio">Precio <span>*</span></label>

@@ -4,7 +4,13 @@ const db = require("../database/models")
 
 const adminController = {
     adminProducts : function(req, res){
-           res.render('createProduct')
+      db.Categoria.findAll()
+    .then(function(categoria){
+      return res.render("createProduct", {
+        categoria: categoria
+    });
+    })
+           
     },
     
     create: function(req, res){ 

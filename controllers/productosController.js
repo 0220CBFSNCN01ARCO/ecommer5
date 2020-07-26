@@ -5,16 +5,13 @@ const db = require("../database/models")
 
 const productosController = {
 listado : function(req, res){
-    db.Libro.findAll({
-      include: [
-        {association: "categorias"}
-      ]
-    })
+    db.Libro.findAll()
     .then(function(libros) {
       return res.render("products", {
         libros: libros
     });
     })
+    
     
 },
 detail: function(req, res) {
