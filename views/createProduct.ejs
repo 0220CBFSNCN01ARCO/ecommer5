@@ -52,7 +52,11 @@
                             <% } %>
                         </div>
 
-                        <form method="POST" enctype="multipart/form-data">
+                        <div class="errores">
+                            <ul></ul>
+                        </div>
+
+                        <form class = "createform" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="titulo">Título del libro <span>*</span></label>
@@ -81,7 +85,7 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="descripcion">Descripción <span>*</span></label>
-                                    <textarea name = "descripcion" rows = "5" cols= "72">Escribí acá una breve descripción del libro</textarea>
+                                    <textarea name = "descripcion" id = "descripcion" rows = "5" cols= "72">Escribí acá una breve descripción del libro</textarea>
                                 
                                 </div>
                                
@@ -123,6 +127,7 @@
     <script src="/essence/js/classy-nav.min.js"></script>
     <!-- Active js -->
     <script src="/essence/js/active.js"></script>
+    <script src="/essence/javascript/js-front.js" type = "text/javascript"></script>
 
 </body>
 

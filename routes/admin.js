@@ -16,7 +16,6 @@ const adminController = require("../controllers/adminController");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
-//router.get('/', adminController.adminProducts);
 router.get("/create", //editMiddleware.validationAdmin, 
 adminController.adminProducts);
 
@@ -27,6 +26,7 @@ upload.any(),
     check("autor").isLength({min: 4 }).withMessage("Falta aclarar el autor"),
     check("precio").isInt().withMessage("El producto no tiene precio"),
     check("stock").isInt().withMessage("Falta aclarar el stock"),
+    check("descripcion").isLength({ min: 10 }).withMessage("Falta la descripción del libro")
   ],  adminController.create);
 
 router.get("/edit", //editMiddleware.validationAdmin, 

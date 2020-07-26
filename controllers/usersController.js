@@ -32,9 +32,9 @@ const usersController = {
               cp: req.body.cp,
               email: req.body.email,
               password: bcrypt.hashSync(req.body.password, 10),
-              avatar: req.files[0].filename
+              avatar: req.file.filename
             }).then(() => {
-              res.redirect("/")
+              res.render("/")
 
             }).catch((err) => {
               console.log(err);
@@ -59,8 +59,6 @@ const usersController = {
     let errors = validationResult(req);
 
     console.log(req.body)
-
-    
     if (errors.isEmpty()) {
 
      db.Usuario.findOne({
@@ -78,43 +76,45 @@ const usersController = {
 
       
       req.session.usuarioLogueado = usuario
-       return res.redirect("/users/account")
+      return res.redirect("/users/account")
     //  console.log(req.session.usuarioLogueado)
      // delete req.session.user.password;
      // if(req.session.user && req.session.user.role == 'admin') {
       //  next()
      // }
-  
+     // console.log(req.session.usuarioLogueado);
     
 
        } else if(usuario &&
         !bcrypt.compareSync(req.body.password, usuario.password)){
          console.log(errors.errors)
          res.render("login", {errors: [{msg: "Clave incorrecta"}]})
-       } 
+       }
+
+     
+
       })
 
-      .catch(function(error){
-        res.render("login", {error})
-      })
+    
 
-      
+        .catch(function(error){
+          res.render("login", {error})
+        })
+
         let usersAdmin = {
-        nombre: "Yael Sucaria",
-        email: "ya_sucaria@hotmail.com",
-        password: "lemebel2512",
-        avatar: "user-1594249373228.png"
-    }
-      if(req.body.email == usersAdmin.email && req.body.password == usersAdmin.password) {
-          let usuarioLogueado = usersAdmin;
-         res.render("profileAdmin", {usuarioLogueado});
-            } 
-        if(req.body.email == usersAdmin.email && req.body.password != usersAdmin.password){
-            res.render("login", {errors: [{msg: "Contraseña incorrecta"}]})
-        } 
-
-
-      
+          nombre: "Yael Sucaria",
+          email: "ya_sucaria@hotmail.com",
+          password: "lemebel2512",
+          avatar: "user-1594249373228.png"
+      }
+        if(req.body.email == usersAdmin.email && req.body.password == usersAdmin.password) {
+            let usuarioLogueado = usersAdmin;
+           res.render("profileAdmin", {usuarioLogueado});
+              } 
+          if(req.body.email == usersAdmin.email && req.body.password != usersAdmin.password){
+              res.render("login", {errors: [{msg: "Contraseña incorrecta"}]})
+          } 
+  
 
       } else {
         res.render("login", {errors: errors.errors})
