@@ -38,12 +38,10 @@ if(campoNombre.value == ""){
 } else if(campoNombre.value.length < 4){
     errores.push("El campo Nombre debe tener al menos 4 caracteres")
 }
-//let campoProvincia = document.getElementById("provincia");
-//if(campoProvincia.value == ""){
-  //  errores.push("Tenés que seleccionar una provincia")
-//} else if(campoProvincia.value.length < 5){
-  //  errores.push("El campo de Provincia debe tener al menos 5 caracteres")
-//}
+let campoProvincia = document.getElementById("provincia");
+if(campoProvincia.value == ""){
+   errores.push("Tenés que seleccionar una provincia")
+}
 let campoLocalidad = document.getElementById("localidad");
 if(campoLocalidad.value == ""){
     errores.push("Tenés que poner tu localidad")
@@ -144,10 +142,7 @@ if(campoAutor.value == ""){
 }
 let campoCategoria = document.getElementById("categoria");
 if(campoCategoria.value == ""){
-    errores.push("Tenés que seleccionar una categoría")
-} else if(campoCategoria.value.length < 4){
-    errores.push("La categoría debe tener al menos 4 caracteres")
-
+   errores.push("Tenés que seleccionar una categoría")
 }
 let campoPrecio = document.getElementById("precio");
 if(campoPrecio.value == ""){
