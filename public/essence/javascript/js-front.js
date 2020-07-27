@@ -140,10 +140,10 @@ if(campoAutor.value == ""){
     errores.push("El autor/a debe tener al menos 4 carateres")
 
 }
-let campoCategoria = document.getElementById("categoria");
-if(campoCategoria.value == ""){
-   errores.push("Tenés que seleccionar una categoría")
-}
+//let campoCategoria = document.getElementById("categoria");
+//if(campoCategoria.value == ""){
+//   errores.push("Tenés que seleccionar una categoría")
+//}
 let campoPrecio = document.getElementById("precio");
 if(campoPrecio.value == ""){
     errores.push("Falta agregar el precio del producto")

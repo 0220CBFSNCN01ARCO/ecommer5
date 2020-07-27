@@ -22,7 +22,7 @@ const adminController = {
             db.Libro.create({
                 titulo: req.body.titulo,
                 autor: req.body.autor,
-               // categoria: req.body.categoria,
+                categoria: req.body.categoria,
                 precio: req.body.precio,
                 stock: req.body.stock,
                 descripcion: req.body.descripcion,
