@@ -157,3 +157,7 @@ margin-bottom: 15vh;
     margin-top: 1vh;
    margin-left: 10vw;
 }
+
+.cajaproducto{
+    display: flex; 
+}
