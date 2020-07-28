@@ -7,7 +7,8 @@ const verifyAdmin = function(req, res, next){
       .then(function(usuario){
         if (usuario.rol == 1 && req.body.email == usuario.email && req.body.password == usuario.password) {
             //  res.send("ok")
-            console.log(usuario)
+            req.session.usuarioLogueado = usuario
+            console.log(req.session.usuarioLogueado)
                res.render("profileAdmin", {usuario: usuario});
     
             }else if(req.body.email == usuario.email && req.body.password != usuario.password){

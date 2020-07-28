@@ -71,41 +71,32 @@ const usersController = {
        if(!usuario){
          res.render("login",{errors: [{msg: "No tenemos registrado tu email"}]})
         
-       } else if (usuario.rol == null &&
+       } else {
+
+     if (usuario.rol == null &&
       bcrypt.compareSync(req.body.password, usuario.password)){
 
-       
-      req.session.usuarioLogueado = usuarioALoguearse
-
-      delete req.session.usuarioLogueado.password;
-      console.log(req.session.usuarioLogueado)
-      return res.redirect("/users/account")
    
-  
-     // if(req.session.user && req.session.user.role == 'admin') {
-      //  next()
-     // }
- 
-      
-        } else if(usuario &&
+  req.session.usuarioLogueado = usuarioALoguearse
+
+  delete req.session.usuarioLogueado.password;
+  console.log(req.session.usuarioLogueado)
+  return res.redirect("/users/account")
+
+
+         } else if(usuario &&
         !bcrypt.compareSync(req.body.password, usuario.password)){
          console.log(errors.errors)
          res.render("login", {errors: [{msg: "Clave incorrecta"}]})
        }
 
-     
+    }
 
-      })
-
-    
-
-        .catch(function(error){
+      }).catch(function(error){
           res.render("login", {error})
         })
 
-      
-        
-  
+
 
       } else {
         res.render("login", {errors: errors.errors})
