@@ -67,25 +67,27 @@ const usersController = {
 
       .then(function(usuario){
 
-       console.log(usuario)
+      
        if(!usuario){
          res.render("login",{errors: [{msg: "No tenemos registrado tu email"}]})
         
-       } else if (usuario &&
+       } else if (usuario.rol == null &&
       bcrypt.compareSync(req.body.password, usuario.password)){
 
-      
-      req.session.usuarioLogueado = usuario
+       
+      req.session.usuarioLogueado = usuarioALoguearse
+
+      delete req.session.usuarioLogueado.password;
+      console.log(req.session.usuarioLogueado)
       return res.redirect("/users/account")
-    //  console.log(req.session.usuarioLogueado)
-     // delete req.session.user.password;
+   
+  
      // if(req.session.user && req.session.user.role == 'admin') {
       //  next()
      // }
-     // console.log(req.session.usuarioLogueado);
-    
-
-       } else if(usuario &&
+ 
+      
+        } else if(usuario &&
         !bcrypt.compareSync(req.body.password, usuario.password)){
          console.log(errors.errors)
          res.render("login", {errors: [{msg: "Clave incorrecta"}]})
@@ -101,19 +103,8 @@ const usersController = {
           res.render("login", {error})
         })
 
-        let usersAdmin = {
-          nombre: "Yael Sucaria",
-          email: "ya_sucaria@hotmail.com",
-          password: "lemebel2512",
-          avatar: "user-1594249373228.png"
-      }
-        if(req.body.email == usersAdmin.email && req.body.password == usersAdmin.password) {
-            let usuarioLogueado = usersAdmin;
-           res.render("profileAdmin", {usuarioLogueado});
-              } 
-          if(req.body.email == usersAdmin.email && req.body.password != usersAdmin.password){
-              res.render("login", {errors: [{msg: "Contraseña incorrecta"}]})
-          } 
+      
+        
   
 
       } else {
@@ -132,7 +123,7 @@ const usersController = {
      }
      
    })
-   .then(function(usuario){
+   .then(function(){
     res.render("account", {data: req.session.usuarioLogueado});
     
   })

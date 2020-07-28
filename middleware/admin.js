@@ -1,19 +1,22 @@
+const db = require("../database/models");
+
 const verifyAdmin = function(req, res, next){
-    let usersAdmin = {
-        nombre: "Yael Sucaria",
-        email: "ya_sucaria@hotmail.com",
-        password: "lemebel2512",
-        avatar: "user-1594249373228.png"
-    }
-      if(req.body.email == usersAdmin.email && req.body.password == usersAdmin.password) {
-          let usuarioLogueado = usersAdmin;
-         res.render("profileAdmin", {usuarioLogueado});
-            } 
-        if(req.body.email == usersAdmin.email && req.body.password != usersAdmin.password){
-            res.render("login", {errors: [{msg: "Contraseña incorrecta"}]})
-        } else {
-                next()
-            }       
+    db.Usuario.findOne({
+        where: {email : req.body.email}
+      })
+      .then(function(usuario){
+        if (usuario.rol == 1 && req.body.email == usuario.email && req.body.password == usuario.password) {
+            //  res.send("ok")
+            console.log(usuario)
+               res.render("profileAdmin", {usuario: usuario});
+    
+            }else if(req.body.email == usuario.email && req.body.password != usuario.password){
+                res.render("login", {errors: [{msg: "Contraseña incorrecta"}]})
+            } else {
+                    next()
+                } 
+      })
+         
 };
 
 
