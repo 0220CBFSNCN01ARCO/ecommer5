@@ -31,6 +31,16 @@ detail: function(req, res) {
      .catch(function(error){
        res.send(error)
      })
+   },
+   category: function(req, res){
+
+db.Categoria.findByPk(req.params.idcategoria)
+
+.then(function(libros){
+res.render("productsByCategory", {libros: libros})
+
+})
+
    }
    
    
