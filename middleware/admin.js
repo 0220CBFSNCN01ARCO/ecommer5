@@ -12,7 +12,7 @@ const verifyAdmin = function(req, res, next){
             console.log(req.session.usuarioLogueado)
                res.render("profileAdmin", {usuario: usuario});
     
-            }else if(req.body.email == usuario.email && req.body.password != usuario.password){
+            }else if(usuario.rol == 1 && req.body.email == usuario.email && req.body.password != usuario.password){
                 res.render("login", {errors: [{msg: "Contraseña incorrecta"}]})
            
            
