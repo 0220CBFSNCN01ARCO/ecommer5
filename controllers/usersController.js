@@ -3,6 +3,7 @@ const bcrypt = require("bcrypt");
 const { check, validationResult, body } = require("express-validator");
 let path = require("path");
 const db = require("../database/models");
+const { query } = require("express");
 
 
 const usersController = {
@@ -32,17 +33,14 @@ const usersController = {
               cp: req.body.cp,
               email: req.body.email,
               password: bcrypt.hashSync(req.body.password, 10),
-              avatar: req.body.filename
+              avatar: req.files[0].filename
             }).then(() => {
-              res.render("/account")
+              res.redirect("/users/account")
 
             }).catch((err) => {
               console.log(err);
               return res.send(err)
-            })
-       
-     
-               
+            })   
             
           }
         });
@@ -81,7 +79,7 @@ const usersController = {
 
   delete req.session.usuarioLogueado.password;
   console.log(req.session.usuarioLogueado)
-  return res.redirect("/users/account")
+  return res.redirect("/")
 
 
          } else if(usuario &&
