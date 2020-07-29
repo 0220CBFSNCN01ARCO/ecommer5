@@ -35,7 +35,7 @@ const usersController = {
               password: bcrypt.hashSync(req.body.password, 10),
               avatar: req.files[0].filename
             }).then(() => {
-              res.redirect("/users/account")
+              res.redirect("/")
 
             }).catch((err) => {
               console.log(err);
@@ -79,7 +79,7 @@ const usersController = {
 
   delete req.session.usuarioLogueado.password;
   console.log(req.session.usuarioLogueado)
-  return res.redirect("/")
+  return res.redirect("/users/account")
 
 
          } else if(usuario &&
