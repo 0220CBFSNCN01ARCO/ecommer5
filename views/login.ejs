@@ -34,20 +34,18 @@
                 <div class="col-12 col-md-6">
                     <div class="checkout_details_area clearfix">
 
-                        <div class= "errors">
-                         
-                            <% if (typeof errors != 'undefined') { %>
-                                <P class = "error" style="color:red">ALGO SALIÓ MAL:</P> 
-    
-                                <ul>
-                                    <% for (let i = 0; i < errors.length; i++) { %>
-                                        <li>
-                                            <%=errors[i].msg%>
-                                        </li>
-                                   <% } %>
-                                </ul>
-                            <% } %>
-                        </div>
+                       <% if (typeof errors != 'undefined') { %>
+                            <P class = "error" style="color:red">ALGO SALIÓ MAL:</P> 
+
+                            <ul>
+                                <% for (let i = 0; i < errors.length; i++) { %>
+                                    <li>
+                                        <%=errors[i].msg%>
+                                    </li>
+                               <% } %>
+                            </ul>
+                        <% } %>
+                    </div>
                      
 
 
