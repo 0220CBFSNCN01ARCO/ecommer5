@@ -32,9 +32,9 @@ const usersController = {
               cp: req.body.cp,
               email: req.body.email,
               password: bcrypt.hashSync(req.body.password, 10),
-              avatar: req.file.filename
+              avatar: req.body.filename
             }).then(() => {
-              res.render("/")
+              res.render("/account")
 
             }).catch((err) => {
               console.log(err);
