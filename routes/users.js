@@ -22,7 +22,7 @@ let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 
-router.get("/register", guestMiddleware, usersController.register);
+router.get("/register", usersController.register);
 
 router.post("/register", upload.any(), [
     check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
@@ -48,7 +48,8 @@ router.post("/register", upload.any(), [
 
 router.get("/login", usersController.login);
 
-router.post("/login", adminMiddleware.verifyAdmin, [
+router.post("/login", //adminMiddleware.verifyAdmin, 
+[
    check("email").isEmail().withMessage("Email inválido"),
  check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
 ], usersController.processLogin); 

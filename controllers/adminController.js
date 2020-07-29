@@ -3,6 +3,16 @@ const { check, validationResult, body } = require("express-validator");
 const db = require("../database/models")
 
 const adminController = {
+  profileAdmin : function(req, res){
+
+    db.Usuario.findOne({
+      where: {
+        email: req.session.usuarioLogueado,
+      },
+    }).then(function (usuario) {
+res.render("profileAdmin", {usuario: usuario})
+})
+  },
     adminProducts : function(req, res){
       db.Categoria.findAll()
     .then(function(categoria){
