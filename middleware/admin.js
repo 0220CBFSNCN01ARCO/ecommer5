@@ -5,6 +5,7 @@ const verifyAdmin = function(req, res, next){
         where: {email : req.body.email}
       })
       .then(function(usuario){
+
         if (usuario.rol == 1 && req.body.email == usuario.email && req.body.password == usuario.password) {
             //  res.send("ok")
             req.session.usuarioLogueado = usuario
@@ -13,8 +14,13 @@ const verifyAdmin = function(req, res, next){
     
             }else if(req.body.email == usuario.email && req.body.password != usuario.password){
                 res.render("login", {errors: [{msg: "Contraseña incorrecta"}]})
+           
+           
             } else {
+             
                     next()
+              
+                   
                 } 
       })
          

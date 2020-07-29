@@ -73,7 +73,7 @@ const usersController = {
         
        } else {
 
-     if (usuario.rol == null &&
+     if (usuario &&
       bcrypt.compareSync(req.body.password, usuario.password)){
 
    
