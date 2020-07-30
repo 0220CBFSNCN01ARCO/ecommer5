@@ -14,7 +14,11 @@ res.render("profileAdmin", {usuario: usuario})
 })
   },
     adminProducts : function(req, res){
-      db.Categoria.findAll()
+      db.Categoria.findAll(
+        {
+          include: [{association: "libros"}]
+        }
+      )
     .then(function(categoria){
       return res.render("createProduct", {
         categoria: categoria
