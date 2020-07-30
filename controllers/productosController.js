@@ -24,7 +24,7 @@ detail: function(req, res) {
    
      .then (function(libro) {
        if(!libro) {
-         return res.send('NO EXISTE LIBRO')
+         return res.send('NO EXISTE ESE LIBRO')
        }
      //res.send(libro)
      res.render("productDetail", {libro: libro});

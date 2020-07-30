@@ -9,10 +9,10 @@ const verifyAdmin = function(req, res, next){
         if (usuario.rol == 1 && req.body.email == usuario.email && req.body.password == usuario.password) {
             //  res.send("ok")
             req.session.usuarioLogueado = usuario
-            console.log(req.session.usuarioLogueado)
+            console.log(usuario)
                res.redirect("/admin/profileAdmin")
     
-            }else if(usuario.rol == 1 && req.body.email == usuario.email && req.body.password != usuario.password){
+            }else if(req.body.password != usuario.password){
                 res.render("login", {errors: [{msg: "Contraseña incorrecta"}]})
            
            

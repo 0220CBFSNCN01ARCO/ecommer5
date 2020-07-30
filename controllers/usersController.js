@@ -61,10 +61,12 @@ const usersController = {
       })
 
         .then(function (usuario) {
-          //   if(!usuario){
-          //   res.render("login",{errors: [{msg: "No tenemos registrado tu email"}]})
-         // console.log(usuario)
           
+          if(!usuario){
+           res.render("login",{errors: [{msg: "No tenemos registrado tu email"}]})
+      
+        } else {
+
           if (bcrypt.compare(req.body.password, usuario.password)) {
            
             req.session.usuarioLogueado = req.body.email
@@ -78,10 +80,13 @@ const usersController = {
             }
 
              
-          } else {
+          } else if(!bcrypt.compare(req.body.password, usuario.password)){
             // console.log(errors.errors)
             res.render("login", { errors: [{ msg: "Clave incorrecta" }] });
           }
+
+        }
+          
         })
         .catch(function (error) {
           res.render("login", { error });
