@@ -32,9 +32,8 @@
 }
 
 .inicia{
-    position: relative;
+    margin-top: 3vh;
     margin-left: 1vw;
-    margin-bottom: 10vh;
 }
 
 .error{
@@ -48,8 +47,8 @@
 }
 
 .datos{
-    margin-top: 5vh;
     margin-left: 0vw;
+    
 }
 .promos{
     margin: 10vh;
@@ -156,6 +155,12 @@ margin-bottom: 15vh;
     height: 40%;
     margin-top: 1vh;
    margin-left: 10vw;
+}
+.stopuser{
+    width: 40%;
+    height: 50%;
+   margin-left: 10vw;
+   margin-bottom: 10vh;
 }
 
 .cajaproducto{

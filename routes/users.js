@@ -62,10 +62,10 @@ router.get('/check', function(req, res) {
   }
 })
 
-router.get('/account', //authMiddleware, 
+router.get('/account', authMiddleware, 
 usersController.account)
 
-router.get('/logout', //authMiddleware, 
+router.get('/logout', authMiddleware, 
 usersController.logout)
 
 
