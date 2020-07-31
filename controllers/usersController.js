@@ -96,11 +96,10 @@ const usersController = {
     }
   },
   logout(req, res) {
-    req.session.usuarioLogueado = null
-    req.session.usuarioLoginRol = null
-    //req.session.destroy((err) => {
-      res.redirect("/login");
-    //});
+   // req.session.usuarioLogueado = null
+    //req.session.usuarioLoginRol = null
+    req.session.destroy()
+      res.render("login");
   },
   account: function (req, res) {
     db.Usuario.findOne({

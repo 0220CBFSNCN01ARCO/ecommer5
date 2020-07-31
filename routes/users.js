@@ -54,19 +54,10 @@ router.post("/login", //adminMiddleware.verifyAdmin,
  check("password").isLength({min: 8}).withMessage("La contraseña debe tener al menos 8 caracteres")
 ], usersController.processLogin); 
 
-router.get('/check', function(req, res) {
-  if (req.session.usarioLogueado == undefined) {
-    res.send("No estás logueado");
-  } else {
-    res.send("El usuario logueado es " + req.session.usarioLogueado.email);
-  }
-})
 
-router.get('/account', authMiddleware, 
-usersController.account)
+router.get('/account', authMiddleware, usersController.account)
 
-router.get('/logout', authMiddleware, 
-usersController.logout)
+router.get('/logout', usersController.logout);
 
 
 
