@@ -17,7 +17,7 @@ let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 
-router.get("/profileAdmin", adminController.profileAdmin);
+router.get("/profileAdmin", editMiddleware.validationAdmin, adminController.profileAdmin);
 router.get("/create", editMiddleware.validationAdmin, 
 adminController.adminProducts);
 

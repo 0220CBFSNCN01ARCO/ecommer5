@@ -50,7 +50,7 @@
             <td class = "itemicono">
           
             <form class = "formedit" action = "/admin/edit/<%= libros[i].idlibros %>">
-                <input type = "image" src= "/essence/img/images/lapizedit.png" class= "iconoedit"></input>
+                <input type = "image" src= "/essence/img/images/lapizedit.png" id= "iconoedit" class= "iconoedit"></input>
             </form>
             
                  <form action = "/admin/delete/<%= libros[i].idlibros %>?_method=DELETE" method = "POST">
