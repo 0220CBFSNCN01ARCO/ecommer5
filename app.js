@@ -42,7 +42,7 @@ app.use("/contact", contactRouter);
 app.use("/nosotros", nosotrosRouter);
 app.use("/shipping", shippingRouter);
 app.use("/promociones", promocionesRouter);
-app.use('/api/usuarios', apiUsuariosRouter);
+app.use('/api/users', apiUsuariosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
