@@ -76,10 +76,10 @@ const usersController = {
             if(req.session.usuarioLoginRol == 1){
               res.redirect("/admin/profileAdmin")
             } else {
+              req.session.usuarioLoginRol == 0 
               res.redirect("/users/account");
             }
 
-             
           } else if(!bcrypt.compare(req.body.password, usuario.password)){
             // console.log(errors.errors)
             res.render("login", { errors: [{ msg: "Clave incorrecta" }] });
