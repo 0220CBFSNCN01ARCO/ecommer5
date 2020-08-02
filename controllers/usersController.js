@@ -96,8 +96,7 @@ const usersController = {
     }
   },
   logout(req, res) {
-   // req.session.usuarioLogueado = null
-    //req.session.usuarioLoginRol = null
+
     req.session.destroy()
       res.render("login");
   },
