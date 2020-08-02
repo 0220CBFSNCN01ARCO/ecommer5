@@ -17,6 +17,8 @@ var promocionesRouter = require('./routes/promociones');
 var shippingRouter = require('./routes/shipping');
 var recordameMiddleware = require('./middleware/recordameMiddleware');
 var apiUsuariosRouter = require('./routes/api/usuarios');
+var apiProductosRouter = require('./routes/api/productos');
+
 
 var app = express();
 
@@ -42,7 +44,8 @@ app.use("/contact", contactRouter);
 app.use("/nosotros", nosotrosRouter);
 app.use("/shipping", shippingRouter);
 app.use("/promociones", promocionesRouter);
-app.use('/api/users', apiUsuariosRouter);
+app.use('/api/users/', apiUsuariosRouter);
+app.use('/api/products/', apiProductosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
