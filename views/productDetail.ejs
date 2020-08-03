@@ -23,13 +23,13 @@
                 
             </div>
         </div>
-        
+      
         <!-- Single Product Description -->
         <div class="single_product_desc clearfix">
             <span><%= libro.autor %></span>
-            <a href="cart.html">
+           
                 <h2><%= libro.titulo %></h2>
-            </a>
+            
             <% if(libro.categoria){%>
                 <span> <h3>Categoría: </span> <%= libro.categoria.nombre %> </h3>
            <% } %>
@@ -49,6 +49,8 @@
                 </div>
             </form>
         </div>
+
+    </section>
  
   <!-- ##### Single Product Details Area End ##### -->
 

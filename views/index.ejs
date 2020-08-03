@@ -92,23 +92,27 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
+                    
                     <div class="popular-products-slides owl-carousel">
-
+                        <% for(let i = 0; i < libros.length; i++) { %>
                         <!-- Single Product -->
                         <div class="single-product-wrapper">
+                          
                             <!-- Product Image -->
                             <div class="product-img">
-                                <img  class= "imagenmaspedido"src="/essence/img/images/laeticadelpensamiento.jpg" alt="">
+                              
+                                <img  class= "imagenmaspedido"src="/essence/img/product-img/<%= libros[i].portada %>" alt="">
                                 <!-- Hover Thumb -->
                                
                             </div>
                             <!-- Product Description -->
                             <div class="product-description">
-                                <span>Michel Foucault</span>
+                             
+                                <span><%= libros[i].autor %></span>
                                 <a href="single-product-details.html">
-                                    <h6>La ética del pensamiento</h6>
+                                    <h6><%= libros[i].titulo %></h6>
                                 </a>
-                                <p class="product-price">$1200</p>
+                                <p class="product-price">$<%= libros[i].precio %></p>
 
                                 <!-- Hover Content -->
                                 <div class="hover-content">
@@ -117,92 +121,13 @@
                                         <a href="#" class="btn essence-btn">Agregá al carrito</a>
                                     </div>
                                 </div>
+                          
                             </div>
+                        
                         </div>
-
-                        <!-- Single Product -->
-                        <div class="single-product-wrapper">
-                            <!-- Product Image -->
-                            <div class="product-img">
-                                <img class= "imagenmaspedido" src="/essence/img/images/argentinaelgranlibro.png" alt="">
-                                <!-- Hover Thumb -->
-                                
-                            
-                            </div>
-                            <!-- Product Description -->
-                            <div class="product-description">
-                              
-                                <a href="single-product-details.html">
-                                    <h6>Argentina, el gran libro</h6>
-                                </a>
-                                <p class="product-price">$2450</p>
-
-                                <!-- Hover Content -->
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                        <a href="#" class="btn essence-btn">Agregá al carrito</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Product -->
-                        <div class="single-product-wrapper">
-                            <!-- Product Image -->
-                            <div class="product-img">
-                                <img class= "imagenmaspedido" src="/essence/img/images/laescrituraenelcuerpo.gif" alt="">
-                              
-                            </div>
-                            <!-- Product Description -->
-                            <div class="product-description">
-                                <span>Rita Segato</span>
-                                <a href="single-product-details.html">
-                                    <h6>La escritura en el cuerpo</h6>
-                                </a>
-                                <p class="product-price"><span class="old-price">$1800</span> $1100</p>
-
-                                <!-- Hover Content -->
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                        <a href="#" class="btn essence-btn">Agregá al carrito</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Single Product -->
-                        <div class="single-product-wrapper">
-                            <!-- Product Image -->
-                            <div class="product-img">
-                                <img class= "imagenmaspedido" src="/essence/img/images/unachicacomoella.png" alt="">
-                               
-                                <!-- Product Badge -->
-                                <div class="product-badge new-badge">
-                                    <span>Novedad</span>
-                                </div>
-
-                              
-                            </div>
-                            <!-- Product Description -->
-                            <div class="product-description">
-                                <span>Tanaz Bhathena</span>
-                                <a href="single-product-details.html">
-                                    <h6>Una chica como ella</h6>
-                                </a>
-                                <p class="product-price">$1050</p>
-
-                                <!-- Hover Content -->
-                                <div class="hover-content">
-                                    <!-- Add to Cart -->
-                                    <div class="add-to-cart-btn">
-                                        <a href="#" class="btn essence-btn">Agregá al carrito</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <% } %>
                     </div>
+                
                 </div>
             </div>
         </div>
