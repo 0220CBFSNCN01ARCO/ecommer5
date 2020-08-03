@@ -1,11 +1,8 @@
 const validationAdmin = function(req, res, next){
-    let usersAdmin = {
-        nombre: "Yael Sucaria",
-        email: "ya_sucaria@hotmail.com",
-        avatar: "user-1594249373228.png"
-    }
-let usuarioLogueado;
-    if(req.session.usuarioLogueado == undefined || req.session.usuarioLogueado.email != usersAdmin.email) {
+   
+    if(!req.session.usuarioLoginRol) {
+        console.log(req.session.usuarioLogueado)
+        console.log(req.session.usuarioLoginRol)
         res.render("stopAdmin");
     } else {
         next();

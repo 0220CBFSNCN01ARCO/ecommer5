@@ -15,7 +15,7 @@
     
     <div class = "container col-12">
         <div class = "avataradmin row col-6">
-            <img class = "imgadmin" src = "/essence/img/users-img/<%= usuarioLogueado.avatar %>">
+            <img class = "imgadmin" src = "/essence/img/users-img/<%= usuario.avatar %>">
     
         </div>
     
@@ -23,18 +23,18 @@
     
         
             <div class="row contact-info col-6">
-                <h2>Hola <%= usuarioLogueado.nombre %> !</h2>
+                <h2>Hola <%= usuario.nombre %> !</h2>
     
                 <div class=" mt-5">
-                    <p class = "datosadmin"><strong>Administrador: </strong>  <%= usuarioLogueado.nombre %></p>
-                    <p class = "datosadmin"><strong>Email: </strong><%= usuarioLogueado.email %> </p>
+                    <p class = "datosadmin"><strong>Administrador: </strong>  <%= usuario.nombre %></p>
+                    <p class = "datosadmin"><strong>Email: </strong><%= usuario.email %> </p>
                 </div>
             </div>
                <div class = "editproduct row col-12">
                 <h4 class = "hacer col-12">¿Qué querés hacer?</h4>
                 <a  href="/admin/edit" class="create btn essence-btn">Editar producto </a> <br>
                 <a  href="/admin/create" class="create btn essence-btn">Agregar producto </a> <br>
-                <a  href="/users/login" class="create btn essence-btn">Cerrar Sesión </a> <br>
+                <a  href="/users/logout" class="create btn essence-btn">Cerrar Sesión </a> <br>
 
                </div>
                 
@@ -66,8 +66,7 @@
     <script src="js/classy-nav.min.js"></script>
     <!-- Active js -->
     <script src="js/active.js"></script>
-    <!-- Google Maps -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwuyLRa1uKNtbgx6xAJVmWy-zADgegA2s"></script>
+    
     <script src="js/map-active.js"></script>
 
 </body>

@@ -30,6 +30,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         avatar: {
             type: DataTypes.STRING//(450)
+        },
+        rol: {
+            type: DataTypes.INTEGER//(11)
         }
     }, 
     {

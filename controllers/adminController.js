@@ -3,32 +3,60 @@ const { check, validationResult, body } = require("express-validator");
 const db = require("../database/models")
 
 const adminController = {
+  profileAdmin : function(req, res){
+
+    db.Usuario.findOne({
+      where: {
+        email: req.session.usuarioLogueado,
+      },
+    }).then(function (usuario) {
+res.render("profileAdmin", {usuario: usuario})
+})
+  },
     adminProducts : function(req, res){
-           res.render('createProduct')
+      db.Categoria.findAll(
+        {
+          include: [{association: "libros"}]
+        }
+      )
+    .then(function(categoria){
+      return res.render("createProduct", {
+        categoria: categoria
+    });
+    })
+           
     },
     
     create: function(req, res){ 
-            //let errors = validationResult(req);
+            let errors = validationResult(req);
       
-           // if(errors.isEmpty()){
+            if(errors.isEmpty()){
 
-             var libros = db.Libro.findAll()
-             .then(function(libros){
+          
             db.Libro.create({
                 titulo: req.body.titulo,
                 autor: req.body.autor,
-               // categoria: req.body.categoria,
+                categoria: req.body.categoria,
                 precio: req.body.precio,
                 stock: req.body.stock,
                 descripcion: req.body.descripcion,
                 portada: req.files[0].filename
               }) 
 
-             })
              
-              
-             //.then(function(libros){
-                res.render('products', {libros: libros});
+             .then(function(){
+              db.Libro.findAll()
+              .then(function(libros){
+                return res.render("products", {libros: libros})
+              })
+             })
+             .catch(function(error){
+              res.render("profileAdmin", {error})
+            })
+             
+          } else {
+            res.render("createProduct", {errors: errors.errors})
+          }  
 
         },
         edit: function(req, res){
@@ -51,19 +79,23 @@ const adminController = {
            
         },
         update: function(req, res){
-          db.Libro.update({
+         db.Libro.update({
             titulo: req.body.titulo,
             autor: req.body.autor,
             precio: req.body.precio,
             stock: req.body.stock,
             descripcion: req.body.descripcion,
-            // ACÁ DEBERÍA SER req.file.filename
-            portada: req.body.filename
+            portada: req.files[0].filename
           }, { where: {
               idlibros: req.params.idlibros
           }
         })
-          res.render("editProduct")
+          .then(function(){
+            db.Libro.findAll()
+            .then(function(libros){
+              return res.render("editProduct", {libros: libros})
+            })
+          })
           
         },
         

@@ -35,28 +35,9 @@ h6 {
   font-weight: 700;
   font-family: "Ubuntu", sans-serif; }
 
-p {
-  color: #787878;
-  font-size: 14px;
-  line-height: 2;
-  font-weight: 400; }
 
-a {
-  -webkit-transition: all 500ms ease 0s;
-  transition: all 500ms ease 0s;
-  text-decoration: none;
-  outline: 0 solid transparent;
-  color: #000000;
-  font-weight: 600;
-  font-size: 12px; }
-  a:hover, a:focus {
-    -webkit-transition: all 500ms ease 0s;
-    transition: all 500ms ease 0s;
-    text-decoration: none;
-    outline: 0 solid transparent;
-    color: #000000;
-    font-weight: 600;
-    font-size: 12px; }
+
+
 
 ul,
 ol {
@@ -308,17 +289,17 @@ img {
       .header_area .search-area form {
         height: 40px;
         border-left: none; } }
-    .header_area .search-area form input {
-      border: none;
-      background-color: #ffffff;
-      width: 200px;
-      height: 85px;
-      padding: 0 15px 0 60px;
-      color: #787878;
-      font-size: 14px;
-      font-weight: 500;
-      -webkit-transition-duration: 500ms;
-      transition-duration: 500ms; }
+        .header_area .search-area form input {
+          border: none;
+          background-color: #ffffff;
+          width: 200px;
+          height: 85px;
+          padding: 0 15px 0 60px;
+          color: #787878;
+          font-size: 14px;
+          font-weight: 500;
+          -webkit-transition-duration: 500ms;
+          transition-duration: 500ms; }
       @media only screen and (max-width: 767px) {
         .header_area .search-area form input {
           width: 170px;

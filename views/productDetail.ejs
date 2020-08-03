@@ -17,18 +17,23 @@
 
         <!-- Single Product Thumb -->
         <div class="single_product_thumb clearfix">
-            <div class="product_thumbnail_slides owl-carousel">
-                <img src="/essence/img/product-img/<%= libro.portada %>" alt="">
+            <div >
+                
+                <img class = "imglibrodetail" src="/essence/img/product-img/<%= libro.portada %>" alt="">
                 
             </div>
         </div>
-
+      
         <!-- Single Product Description -->
         <div class="single_product_desc clearfix">
             <span><%= libro.autor %></span>
-            <a href="cart.html">
+           
                 <h2><%= libro.titulo %></h2>
-            </a>
+            
+            <% if(libro.categoria){%>
+                <span> <h3>Categoría: </span> <%= libro.categoria.nombre %> </h3>
+           <% } %>
+           
             <p class="product-price">$ <%= libro.precio %></p>
             <p class="product-desc"><%= libro.descripcion %></p>
 
@@ -39,30 +44,33 @@
                 <!-- Cart & Favourite Box -->
                 <div class="cart-fav-box d-flex align-items-center">
                     <!-- Cart -->
-                    <button type="submit" name="addtocart" value="5" class="btn essence-btn">Agregar al carrito</button>
-                    <!-- Favourite -->
-                    <div class="product-favourite ml-4">
-                        <a href="#" class="favme fa fa-heart"></a>
-                    </div>
+                    <button type="submit" name="addtocart" value="" class="btn essence-btn">Agregar al carrito</button>
+                   
                 </div>
             </form>
         </div>
-        
+
+    </section>
+ 
   <!-- ##### Single Product Details Area End ##### -->
 
-    <!-- ##### Footer Area Start ##### -->
-    <%- include("./partials/footer") %>
-    <!-- ##### Footer Area End ##### -->
+     <!-- ##### Footer Area Start ##### -->
+     <%- include("./partials/footer") %>
+     <!-- ##### Footer Area End ##### -->
+ 
+     <!-- jQuery (Necessary for All JavaScript Plugins) -->
+     <script src="/essence/js/jquery/jquery-2.2.4.min.js"></script>
+     <!-- Popper js -->
+     <script src="/essence/js/popper.min.js"></script>
+     <!-- Bootstrap js -->
+     <script src="/essence/js/bootstrap.min.js"></script>
+     <!-- Plugins js -->
+     <script src="/essence/js/plugins.js"></script>
+     <!-- Classy Nav js -->
+     <script src="/essence/js/classy-nav.min.js"></script>
+     <!-- Active js -->
+     <script src="/essence/js/active.js"></script>
 
-    <!-- jQuery (Necessary for All JavaScript Plugins) -->
-    <script src="js/jquery/jquery-2.2.4.min.js"></script>
-    <!-- Popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- Plugins js -->
-    <script src="js/plugins.js"></script>
-    <!-- Classy Nav js -->
-    <script src="js/classy-nav.min.js"></script>
-    <!-- Active js -->
-    <script src="js/active.js"></script>
+
+   </body>
+ </html>

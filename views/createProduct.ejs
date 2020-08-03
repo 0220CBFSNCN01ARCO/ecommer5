@@ -40,7 +40,7 @@
                         </div>
                         <div>
                             <% if (typeof errors != 'undefined') { %>
-                                <P style="color:red">ALGO PASÓ</P> 
+                                <p class = "error" style="color:red">ALGO PASÓ:</p> 
                         
                                 <ul>
                                     <% for (let i = 0; i < errors.length; i++) { %>
@@ -52,7 +52,11 @@
                             <% } %>
                         </div>
 
-                        <form method="POST" enctype="multipart/form-data">
+                        <div class="errores">
+                            <ul></ul>
+                        </div>
+
+                        <form class = "createform" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="titulo">Título del libro <span>*</span></label>
@@ -67,8 +71,16 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="categoria">Categoría <span>*</span></label>
-                                    <input type="text" class="form-control" id="categoria" name = "categoria" value="" required placeholder="Categoría">
-                                       
+                                    <select class="w-100 categoria" id="categoria" name= "categoria">
+                                        <option value="" selected>Seleccioná una categoría</option>
+                                        <option value = "Humanidades">Humanidades</option>
+                                        <option value = "Ficcion">Ficcion</option>
+                                        <option value = "AAD" >Arte, arquitectura y diseño</option>
+                                        <option value = "Gastronomia">Gastronomia</option>
+                                        <% for (let i=0; i < categoria.length; i++) { %>
+                                            <option value="<%= categoria[i].idcategorias %>"><%= categoria[i].nombre %></option>
+                                        <% } %>
+                                    </select>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="precio">Precio <span>*</span></label>
@@ -81,7 +93,7 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="descripcion">Descripción <span>*</span></label>
-                                    <textarea name = "descripcion" rows = "5" cols= "72">Escribí acá una breve descripción del libro</textarea>
+                                    <textarea name = "descripcion" id = "descripcion" rows = "5" cols= "72">Escribí acá una breve descripción del libro</textarea>
                                 
                                 </div>
                                
@@ -123,6 +135,7 @@
     <script src="/essence/js/classy-nav.min.js"></script>
     <!-- Active js -->
     <script src="/essence/js/active.js"></script>
+    <script src="/essence/javascript/js-front.js" type = "text/javascript"></script>
 
 </body>
 

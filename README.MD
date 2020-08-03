@@ -69,4 +69,4 @@ Formulario de carga de producto (para el administrador).
 ## Link a tablero de trabajo (Trello).
 https://trello.com/b/lyRusPM2/grupo-5-proyecto-integrador
 
-## Diagrama de entidad-relación de su base de datos en formato PDF. (URL: https://drive.google.com/file/d/1CcyyvzYB4fcH1fRMe6oMeFf-CigYd1jB/view?usp=sharing).
+## Diagrama de entidad-relación de su base de datos en formato PDF. (URL: https://drive.google.com/file/d/1VRxtbrSJR4bTsIGtrTBktNeTpYvOLM7i/view?usp=sharing).
