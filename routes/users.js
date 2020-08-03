@@ -59,6 +59,8 @@ router.get('/account', authMiddleware, usersController.account)
 
 router.get('/logout', usersController.logout);
 
+router.get("/success", usersController.success);
+
 
 
 module.exports = router;

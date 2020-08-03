@@ -35,7 +35,7 @@ const usersController = {
             rol: 0,
           })
             .then(() => {
-              res.redirect("/");
+              res.redirect("/users/success");
             })
             .catch((err) => {
               console.log(err);
@@ -47,7 +47,10 @@ const usersController = {
       res.render("register", { errors: errors.errors });
     }
   },
+  success: function(req, res){
+res.render("registerSuccess")
 
+  },
   login: function (req, res) {
     res.render("login");
   },
