@@ -16,13 +16,14 @@ const upload = multer({storage: storage});
 const usersController = require("../controllers/usersController");
 let guestMiddleware = require("../middleware/guestMiddleware");
 let authMiddleware = require("../middleware/authMiddleware");
+let redirectToProfileIfAuthenticated = require('../middleware/redirectToProfileIfAuthenticated')
 //let validationuser = require("../middleware/validationuser")
 let adminMiddleware = require("../middleware/admin");
 let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 
-router.get("/register", usersController.register);
+router.get("/register", redirectToProfileIfAuthenticated, usersController.register);
 
 router.post("/register", upload.any(), [
     check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
@@ -46,7 +47,7 @@ router.post("/register", upload.any(), [
   ], usersController.create);
 
 
-router.get("/login", usersController.login);
+router.get("/login", redirectToProfileIfAuthenticated, usersController.login);
 
 router.post("/login", //adminMiddleware.verifyAdmin, 
 [
