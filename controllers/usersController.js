@@ -47,9 +47,8 @@ const usersController = {
       res.render("register", { errors: errors.errors });
     }
   },
-  success: function(req, res){
-res.render("registerSuccess")
-
+  success: function (req, res) {
+    res.render("registerSuccess");
   },
   login: function (req, res) {
     res.render("login");
@@ -57,39 +56,35 @@ res.render("registerSuccess")
   processLogin: function (req, res) {
     let errors = validationResult(req);
 
-   // console.log(req.body)
+    // console.log(req.body)
     if (errors.isEmpty()) {
-     let usuarioPorLoguearse = db.Usuario.findOne({
+      let usuarioPorLoguearse = db.Usuario.findOne({
         where: { email: req.body.email },
       })
 
         .then(function (usuario) {
-          
-          if(!usuario){
-           res.render("login",{errors: [{msg: "No tenemos registrado tu email"}]})
-      
-        } else {
-
-          if (bcrypt.compare(req.body.password, usuario.password)) {
-           
-            req.session.usuarioLogueado = req.body.email
-            req.session.usuarioLoginRol = usuario.rol
-            console.log("session" + req.session.usuarioLoginRol)
-
-            if(req.session.usuarioLoginRol == 1){
-              res.redirect("/admin/profileAdmin")
-            } else {
-              req.session.usuarioLoginRol == 0 
-              res.redirect("/users/account");
-            }
-
-          } else if(!bcrypt.compare(req.body.password, usuario.password)){
-            // console.log(errors.errors)
-            res.render("login", { errors: [{ msg: "Clave incorrecta" }] });
+          if (!usuario) {
+            return res.render("login", {
+              errors: [{ msg: "No tenemos registrado tu email" }],
+            });
           }
 
-        }
-          
+          if (!bcrypt.compareSync(req.body.password, usuario.password)) {
+            return res.render("login", {
+              errors: [{ msg: "Clave incorrecta" }],
+            });
+          }
+
+          req.session.usuarioLogueado = req.body.email;
+          req.session.usuarioLoginRol = usuario.rol;
+          console.log("session" + req.session.usuarioLoginRol);
+
+          if (req.session.usuarioLoginRol == 1) {
+            res.redirect("/admin/profileAdmin");
+          } else {
+            req.session.usuarioLoginRol == 0;
+            res.redirect("/users/account");
+          }
         })
         .catch(function (error) {
           res.render("login", { error });
@@ -99,9 +94,8 @@ res.render("registerSuccess")
     }
   },
   logout(req, res) {
-
-    req.session.destroy()
-      res.render("login");
+    req.session.destroy();
+    res.render("login");
   },
   account: function (req, res) {
     db.Usuario.findOne({
