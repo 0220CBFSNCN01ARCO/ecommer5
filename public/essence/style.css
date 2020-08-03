@@ -184,4 +184,17 @@ margin-bottom: 15vh;
 .imguser{
     border-radius: 200px;
     border: outset 8px;
+    width: 20vw;
+}
+.infouser{
+top: 10vh;
+margin-left: 25vw;
+margin-bottom: 10vh;
+}
+.actionuser{
+    margin-bottom: 10vh;;
+}
+.haceruser{
+padding-left: 6vw;
+margin-bottom: 5vh;
 }
