@@ -4,13 +4,15 @@ const db = require("../database/models")
 
 
 const productosController = {
+ 
 listado : function(req, res){
     db.Libro.findAll({
       include: [{association: "categoria"}]
     })
     .then(function(libros) {
       return res.render("products", {
-        libros: libros
+        libros: libros, 
+        categoria: categoria
     });
     })
     
@@ -36,7 +38,7 @@ detail: function(req, res) {
    },
    category: function(req, res){
 
-db.Libro.findByPk(req.params.idcategoria)
+db.Libro.findByPk(req.params.idcategorias)
 
 .then(function(libros){
 res.render("productsByCategory", {libros: libros})
