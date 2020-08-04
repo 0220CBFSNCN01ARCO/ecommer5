@@ -11,8 +11,7 @@ listado : function(req, res){
     })
     .then(function(libros) {
       return res.render("products", {
-        libros: libros, 
-        categoria: categoria
+        libros: libros
     });
     })
     
