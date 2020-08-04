@@ -111,8 +111,8 @@ margin-bottom: 15vh;
 }
 .itemedit{
     padding: 1vw;
-    margin-left: 5vw;
-    width: 20vw;
+    margin-left: 3vw;
+    width: 17vw;
 
 }
 .itemnumero{
@@ -130,7 +130,7 @@ margin-bottom: 15vh;
     border-collapse: collapse;
 }
 .itemicono{
-    padding-left: 3vw;
+    padding-left: 1vw;
    
     border-right: none;
 }

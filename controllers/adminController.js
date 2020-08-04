@@ -36,7 +36,7 @@ res.render("profileAdmin", {usuario: usuario})
             db.Libro.create({
                 titulo: req.body.titulo,
                 autor: req.body.autor,
-                categoria: req.body.categoria,
+                idcategorias: Number(req.body.categoria),
                 precio: req.body.precio,
                 stock: req.body.stock,
                 descripcion: req.body.descripcion,
@@ -61,7 +61,11 @@ res.render("profileAdmin", {usuario: usuario})
 
         },
         edit: function(req, res){
-          db.Libro.findAll()
+          db.Libro.findAll(
+            {
+              include: [{association: "categoria"}]
+            }
+          )
           .then(function(libros){
               return res.render("editProduct", {libros: libros})
             })
@@ -93,7 +97,7 @@ res.render("profileAdmin", {usuario: usuario})
          db.Libro.update({
             titulo: req.body.titulo,
             autor: req.body.autor,
-            categoria: Number(req.body.categoria),
+            idcategorias: Number(req.body.categoria),
             precio: req.body.precio,
             stock: req.body.stock,
             descripcion: req.body.descripcion,

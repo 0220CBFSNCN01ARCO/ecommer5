@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `mercadolibrodb`.`libros` (
   `autor` VARCHAR(45) NOT NULL,
   `idcategorias` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`idlibros`),
-  INDEX `fk_libros_categorias1_idx` (`idcategorias` ASC) ,
+  INDEX `fk_libros_categorias1_idx` (`idcategorias` ASC),
   CONSTRAINT `fk_libros_categorias1`
     FOREIGN KEY (`idcategorias`)
     REFERENCES `mercadolibrodb`.`categorias` (`idcategorias`)
@@ -68,7 +68,7 @@ CREATE TABLE IF NOT EXISTS `mercadolibrodb`.`usuarios` (
   `avatar` VARCHAR(450) NOT NULL,
   `rol` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`idusuario`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC))
 ENGINE = InnoDB
 AUTO_INCREMENT = 37
 DEFAULT CHARACTER SET = utf8mb4;
