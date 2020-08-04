@@ -36,7 +36,7 @@ res.render("profileAdmin", {usuario: usuario})
             db.Libro.create({
                 titulo: req.body.titulo,
                 autor: req.body.autor,
-                categoria: Number(req.body.categoria),
+                categoria: req.body.categoria,
                 precio: req.body.precio,
                 stock: req.body.stock,
                 descripcion: req.body.descripcion,
@@ -47,8 +47,8 @@ res.render("profileAdmin", {usuario: usuario})
              .then(function(){
               db.Libro.findAll()
               .then(function(libros){
-                res.send(req.body)
-               // return res.render("products", {libros: libros})
+               // res.send(req.body)
+               return res.render("products", {libros: libros})
               })
              })
              .catch(function(error){

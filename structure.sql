@@ -42,14 +42,14 @@ CREATE TABLE IF NOT EXISTS `mercadolibrodb`.`libros` (
   `autor` VARCHAR(45) NOT NULL,
   `idcategorias` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`idlibros`),
-  INDEX `fk_libros_categorias1_idx` (`idcategorias` ASC),
+  INDEX `fk_libros_categorias1_idx` (`idcategorias` ASC) ,
   CONSTRAINT `fk_libros_categorias1`
     FOREIGN KEY (`idcategorias`)
     REFERENCES `mercadolibrodb`.`categorias` (`idcategorias`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
-AUTO_INCREMENT = 47
+AUTO_INCREMENT = 55
 DEFAULT CHARACTER SET = utf8mb4;
 
 
@@ -62,18 +62,19 @@ CREATE TABLE IF NOT EXISTS `mercadolibrodb`.`usuarios` (
   `email` VARCHAR(45) NOT NULL,
   `direccion` VARCHAR(45) NOT NULL,
   `cp` INT(11) NOT NULL,
-  `password` VARCHAR(45) NOT NULL,
+  `password` VARCHAR(255) NOT NULL,
   `localidad` VARCHAR(45) NOT NULL,
-  `avatar` VARCHAR(450) NULL,
-  `provincia` VARCHAR(45) NULL,
-  `rol` INT(11) NULL,
+  `provincia` VARCHAR(45) NOT NULL,
+  `avatar` VARCHAR(450) NOT NULL,
+  `rol` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`idusuario`),
-  UNIQUE INDEX `email_UNIQUE` (`email` ASC))
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
 ENGINE = InnoDB
-AUTO_INCREMENT = 30
+AUTO_INCREMENT = 37
 DEFAULT CHARACTER SET = utf8mb4;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
