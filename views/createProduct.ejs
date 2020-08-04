@@ -72,11 +72,7 @@
                                 <div class="col-12 mb-3">
                                     <label for="categoria">Categoría <span>*</span></label>
                                     <select class="w-100 categoria" id="categoria" name= "categoria">
-                                        <option value="" selected>Seleccioná una categoría</option>
-                                        <option value = "Humanidades">Humanidades</option>
-                                        <option value = "Ficcion">Ficcion</option>
-                                        <option value = "AAD" >Arte, arquitectura y diseño</option>
-                                        <option value = "Gastronomia">Gastronomia</option>
+                                        
                                         <% for (let i=0; i < categoria.length; i++) { %>
                                             <option value="<%= categoria[i].idcategorias %>"><%= categoria[i].nombre %></option>
                                         <% } %>

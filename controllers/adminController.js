@@ -47,7 +47,8 @@ res.render("profileAdmin", {usuario: usuario})
              .then(function(){
               db.Libro.findAll()
               .then(function(libros){
-                return res.render("products", {libros: libros})
+               // res.send(req.body)
+               return res.render("products", {libros: libros})
               })
              })
              .catch(function(error){
@@ -64,6 +65,8 @@ res.render("profileAdmin", {usuario: usuario})
           .then(function(libros){
               return res.render("editProduct", {libros: libros})
             })
+
+            
             .catch(function(error){
               res.send(error)
             })
@@ -72,16 +75,25 @@ res.render("profileAdmin", {usuario: usuario})
   
             db.Libro.findByPk(req.params.idlibros)
             .then(function(libro){
-              return res.render("updateProduct", {libro: libro})
+
+              db.Categoria.findAll()
+              .then(function(categoria){
+                return res.render("updateProduct", {libro: libro,
+                categoria: categoria})
+              })
+             
             })
+            .catch(function(error){
+              res.send(error)
+            })
+
               //res.send(libro)
-              
-           
         },
         update: function(req, res){
          db.Libro.update({
             titulo: req.body.titulo,
             autor: req.body.autor,
+            categoria: Number(req.body.categoria),
             precio: req.body.precio,
             stock: req.body.stock,
             descripcion: req.body.descripcion,
