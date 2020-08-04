@@ -89,6 +89,9 @@ const usersController = {
         .catch(function (error) {
           res.render("login", { error });
         });
+      if (req.body.recordame != undefined) {
+        res.cookie("recordame", req.body.email, { maxAge: 6000 });
+      }
     } else {
       res.render("login", { errors: errors.errors });
     }
