@@ -58,7 +58,7 @@ const usersController = {
 
     // console.log(req.body)
     if (errors.isEmpty()) {
-      let usuarioPorLoguearse = db.Usuario.findOne({
+     db.Usuario.findOne({
         where: { email: req.body.email },
       })
 
@@ -106,7 +106,8 @@ const usersController = {
         email: req.session.usuarioLogueado,
       },
     }).then(function (data) {
-      res.render("account", { data: data });
+      res.render("account", { data: data,
+      usuario: req.session.usuarioLogueado });
     });
   },
 };

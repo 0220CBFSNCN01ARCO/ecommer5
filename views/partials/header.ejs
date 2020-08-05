@@ -67,8 +67,16 @@
             </div>
         
             <!-- User Login Info -->
-            <div class="user-login-info">
+            <div class="espacioiconologinuser-login-info">
+       
+                <% if (typeof data != 'undefined') { %>
+
+                    <a class = "iconoavatar" href="/users/account"><img  src="/essence/img/users-img/<%= data.avatar %>" alt=""></a>
+                    <% } else { %>
+
                 <a href="/users/login"><img src="/essence/img/core-img/user.svg" alt=""></a>
+
+                <% } %>
             </div>
             <!-- Cart Area -->
             <div class="cart-area">

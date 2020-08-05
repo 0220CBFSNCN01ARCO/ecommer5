@@ -9,8 +9,8 @@ const adminController = {
       where: {
         email: req.session.usuarioLogueado,
       },
-    }).then(function (usuario) {
-res.render("profileAdmin", {usuario: usuario})
+    }).then(function (data) {
+res.render("profileAdmin", {data: data})
 })
   },
     adminProducts : function(req, res){
