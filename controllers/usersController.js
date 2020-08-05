@@ -107,8 +107,8 @@ const usersController = {
         email: req.session.usuarioLogueado.email,
       },
     }).then(function (data) {
-      res.render("account", { data: data,
-      usuario: req.session.usuarioLogueado });
+      res.render("account", { data: data
+       });
     });
   },
   update: function(req, res){

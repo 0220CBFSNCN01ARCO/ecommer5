@@ -21,7 +21,8 @@ res.render("profileAdmin", {data: data})
       )
     .then(function(categoria){
       return res.render("createProduct", {
-        categoria: categoria
+        categoria: categoria,
+        data: req.session.usuarioLogueado
     });
     })
            
