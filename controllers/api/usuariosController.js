@@ -8,11 +8,14 @@ list : function(req, res){
     .then(function(usuarios) {
         for (let i = 0; i < usuarios.lenght; i++) {
             usuarios[i].setDatValue("endpoint", "/api/users/" + usuarios[i].id)
+            if(!usuarios) {
+                return res.status(404).json({ok: false, msg: 'No se encontró el usuario'})
+            }
         }
         let respuesta = {
         meta: {
             status: 200,
-            total: usuarios.lenght,
+            count: usuarios.lenght,
             url: "/api/users"
         },
         data: usuarios
