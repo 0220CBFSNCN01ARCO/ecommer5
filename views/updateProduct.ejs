@@ -52,7 +52,7 @@
                             <% } %>
                         </div>
 
-                        <form action = "/admin/edit/<%= libro.idlibros %>?_method=PUT" method = "POST">
+                        <form action = "/admin/edit/<%= libro.idlibros %>?_method=PUT" method = "POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="titulo">Título del libro <span>*</span></label>

@@ -112,7 +112,21 @@ const usersController = {
        });
     });
   },
-  update: function(req, res){
+update: function(req, res){
+db.Usuario.findOne({
+  where: {
+    idusuario: req.session.usuarioLogueado.idusuario
+  }
+})
+.then(function(usuario){
+  res.render("updateInfoUser", {
+    data: req.session.usuarioLogueado
+  })
+})
+  
+
+},
+  chargeUpdate: function(req, res){
     db.Usuario.update({
       nombre: req.body.nombre,
       localidad: req.body.localidad,
@@ -120,21 +134,21 @@ const usersController = {
       direccion: req.body.direccion,
       cp: req.body.cp,
       email: req.body.email,
-     // password: bcrypt.hashSync(req.body.password, 10),
-     // avatar: req.files[0].filename,
+      password: bcrypt.hashSync(req.body.password, 10),
+      avatar: req.files[0].filename,
       rol: 0
     }, { where: {
-      email: req.session.usuarioLogueado.email
+      idusuario: req.session.usuarioLogueado.idusuario
   }
 })
   .then(function(data){
 db.Usuario.findOne({
   where:{
-    email: req.session.usuarioLogueado.email
+    idusuario: req.session.usuarioLogueado.idusuario
   }
 }).then(function(data){
-  
-  res.render("updateInfoUser", { data: data});
+
+  res.redirect("/users/account")
 })
 
     

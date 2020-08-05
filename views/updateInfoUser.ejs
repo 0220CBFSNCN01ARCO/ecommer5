@@ -54,7 +54,7 @@
                             <ul></ul>
                         </div>
             
-                        <form class = "registeruser" method="POST" enctype="multipart/form-data">
+                        <form action = "/users/update/<%= data.idusuario %>?_method=PUT" class = "registeruser" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label for="nombre">Nombre y apellido<span>*</span></label>
@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="password">Contraseña <span>*</span></label>
-                                    <input type="password" class="form-control" name= "password" required id="password" min="0" value="" placeholder="Contraseña">
+                                    <input type="password" class="form-control" name= "password" required id="password" min="0" value="<%= data.password%>" placeholder="Contraseña">
                                 </div>
                                 <div class="col-12 mb-4">
                                     <label for="avatar">Subí tu foto de perfil</label> <br>

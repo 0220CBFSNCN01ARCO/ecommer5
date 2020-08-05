@@ -86,7 +86,8 @@ res.render("profileAdmin", {data: data})
 
               db.Categoria.findAll()
               .then(function(categoria){
-                return res.render("updateProduct", {libro: libro,
+                return res.render("updateProduct", {
+                libro: libro,
                 categoria: categoria,
                 data: req.session.usuarioLogueado})
               })
@@ -112,14 +113,19 @@ res.render("profileAdmin", {data: data})
           }
         })
           .then(function(){
-            db.Libro.findAll()
+            db.Libro.findAll({
+              include: [{association: "categoria"}]
+            })
             .then(function(libros){
-              return res.render("editProduct", {
+              db.Categoria.findAll()
+              .then(function(categoria){
+                return res.render("editProduct", {
                 libros: libros, 
+                categoria: categoria,
                 data: req.session.usuarioLogueado})
             })
           })
-          
+        })
         },
         
         delete: function(req, res){
