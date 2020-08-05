@@ -111,12 +111,8 @@
                     <!-- Product Image -->
                     <div class="product-img">
                       <a href = "/products/detail/<%= libros[i].idlibros %>">
-                        <img
-                        class="imagenproducto"
-                        src="/essence/img/product-img/<%= libros[i].portada %>"
-                        alt=""/>
-  
-                      </a>
+                        <img class="imagenproducto" src="/essence/img/product-img/<%= libros[i].portada %>" alt=""/>
+                       </a>
                       
                    
                     </div>
@@ -124,7 +120,7 @@
                     <!-- Product Description -->
                     <div class="product-description">
                       <span><%= libros[i].autor %></span>
-                      <a href="/product/detail/<%= libros[i].idlibros %>">
+                      <a href="/products/detail/<%= libros[i].idlibros %>">
                         <h6><%= libros[i].titulo %></h6>
                       </a>
                       <p class="product-price">$<%= libros[i].precio %></p>

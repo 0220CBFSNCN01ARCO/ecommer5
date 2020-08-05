@@ -27,9 +27,11 @@
       </div>
     </div>
 
- <div class="row">
+    <section class="shop_grid_area section-padding-80">
+        <div class="container">
+           <div class="row">
                 <!-- Single Product -->
-
+              
                 <% for(let i = 0; i < libros.length; i++) { %>
                 
                 <!-- Single Product -->
@@ -38,7 +40,7 @@
                   <div class="single-product-wrapper contenedorproducto">
                   
                     <!-- Product Image -->
-                    <div class="product-img">
+                    <div class="productbycategory">
                       <a href = "/products/detail/<%= libros[i].idlibros %>">
                         <img
                         class="imagenproducto"
@@ -59,7 +61,7 @@
                       <p class="product-price">$<%= libros[i].precio %></p>
 
                       <!-- Hover Content -->
-                      <div class="hover-content">
+                      <div class="my-4">
                         <!-- Add to Cart -->
                         <div class="add-to-cart-btn">
                           <a href="#" class="btn essence-btn agregar-carrito">Agregar al carrito</a >
@@ -78,7 +80,9 @@
           
               </div>
 
-
+            </div>
+            </div>
+            </section>
 
     <!-- ##### Breadcumb Area End ##### -->
 
