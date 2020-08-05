@@ -40,13 +40,21 @@ detail: function(req, res) {
    },
    category: function(req, res){
 
-db.Libro.findByPk(req.params.idcategorias)
+db.Libro.findAll({
+  where:{
+    idcategorias: req.params.idcategorias
+  }
+})
+
 
 .then(function(libros){
-res.render("productsByCategory", {
-  libros: libros,
-  data: req.session.usuarioLogueado})
-
+  let categoria = db.Categoria.findByPk(req.params.idcategorias)
+  .then(function(categoria){
+    res.render("productsByCategory", {
+      libros: libros,
+      categoria: categoria,
+      data: req.session.usuarioLogueado})
+  })
 })
 
    }

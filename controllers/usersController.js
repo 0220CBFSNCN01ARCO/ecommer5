@@ -77,6 +77,7 @@ const usersController = {
           }
 
           req.session.usuarioLogueado = usuario;
+        
           req.session.usuarioLoginRol = usuario.rol;
           console.log("session" + req.session.usuarioLoginRol);
 
