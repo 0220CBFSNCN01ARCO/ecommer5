@@ -56,7 +56,9 @@ router.post("/login", //adminMiddleware.verifyAdmin,
 ], usersController.processLogin); 
 
 
-router.get('/account', authMiddleware, usersController.account)
+router.get('/account', authMiddleware, upload.any(), usersController.account);
+
+router.get('/update', authMiddleware, usersController.update);
 
 router.get('/logout', usersController.logout);
 

@@ -110,6 +110,34 @@ const usersController = {
       usuario: req.session.usuarioLogueado });
     });
   },
+  update: function(req, res){
+    db.Usuario.update({
+      nombre: req.body.nombre,
+      localidad: req.body.localidad,
+      provincia: req.body.provincia,
+      direccion: req.body.direccion,
+      cp: req.body.cp,
+      email: req.body.email,
+     // password: bcrypt.hashSync(req.body.password, 10),
+     // avatar: req.files[0].filename,
+      rol: 0
+    }, { where: {
+      email: req.session.usuarioLogueado
+  }
+})
+  .then(function(data){
+db.Usuario.findOne({
+  where:{
+    email: req.session.usuarioLogueado
+  }
+}).then(function(data){
+  
+  res.render("updateInfoUser", { data: data});
+})
+
+    
+  })
+  }
 };
 
 module.exports = usersController;
