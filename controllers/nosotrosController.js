@@ -1,6 +1,8 @@
 const nosotrosController = {
     nosotros: function(req, res){
-        res.render("aboutUs")
+        res.render("aboutUs", {
+            data: req.session.usuarioLogueado
+        })
     }
 }
 

@@ -7,7 +7,8 @@ const index = (req, res) => {
     })
     .then(function(libros) {
         return res.render("index", {
-          libros: libros
+          libros: libros,
+          data: req.session.usuarioLogueado
       });
       })
     

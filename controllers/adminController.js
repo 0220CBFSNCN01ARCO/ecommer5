@@ -48,7 +48,8 @@ res.render("profileAdmin", {data: data})
               db.Libro.findAll()
               .then(function(libros){
                // res.send(req.body)
-               return res.render("products", {libros: libros})
+               return res.render("products", {libros: libros,
+                data: req.session.usuarioLogueado})
               })
              })
              .catch(function(error){
@@ -56,7 +57,8 @@ res.render("profileAdmin", {data: data})
             })
              
           } else {
-            res.render("createProduct", {errors: errors.errors})
+            res.render("createProduct", {errors: errors.errors,
+              data: req.session.usuarioLogueado})
           }  
 
         },
@@ -67,7 +69,8 @@ res.render("profileAdmin", {data: data})
             }
           )
           .then(function(libros){
-              return res.render("editProduct", {libros: libros})
+              return res.render("editProduct", {libros: libros,
+                data: req.session.usuarioLogueado})
             })
 
             
@@ -83,7 +86,8 @@ res.render("profileAdmin", {data: data})
               db.Categoria.findAll()
               .then(function(categoria){
                 return res.render("updateProduct", {libro: libro,
-                categoria: categoria})
+                categoria: categoria,
+                data: req.session.usuarioLogueado})
               })
              
             })
@@ -109,7 +113,9 @@ res.render("profileAdmin", {data: data})
           .then(function(){
             db.Libro.findAll()
             .then(function(libros){
-              return res.render("editProduct", {libros: libros})
+              return res.render("editProduct", {
+                libros: libros, 
+                data: req.session.usuarioLogueado})
             })
           })
           

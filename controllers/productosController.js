@@ -11,7 +11,8 @@ listado : function(req, res){
     })
     .then(function(libros) {
       return res.render("products", {
-        libros: libros
+        libros: libros,
+        data: req.session.usuarioLogueado
     });
     })
     
@@ -28,7 +29,9 @@ detail: function(req, res) {
          return res.send('NO EXISTE ESE LIBRO')
        }
      //res.send(libro)
-     res.render("productDetail", {libro: libro});
+     res.render("productDetail", {
+       libro: libro,
+      data: req.session.usuarioLogueado});
      })
   
      .catch(function(error){
@@ -40,7 +43,9 @@ detail: function(req, res) {
 db.Libro.findByPk(req.params.idcategorias)
 
 .then(function(libros){
-res.render("productsByCategory", {libros: libros})
+res.render("productsByCategory", {
+  libros: libros,
+  data: req.session.usuarioLogueado})
 
 })
 

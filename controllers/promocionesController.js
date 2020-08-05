@@ -1,6 +1,8 @@
 const promocionesController = {
     promociones: function(req, res){
-        res.render("promociones")
+        res.render("promociones", {
+            data: req.session.usuarioLogueado
+        })
     }
 }
 

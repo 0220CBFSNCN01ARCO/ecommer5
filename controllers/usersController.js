@@ -58,6 +58,7 @@ const usersController = {
 
     // console.log(req.body)
     if (errors.isEmpty()) {
+
      db.Usuario.findOne({
         where: { email: req.body.email },
       })
@@ -75,7 +76,7 @@ const usersController = {
             });
           }
 
-          req.session.usuarioLogueado = req.body.email;
+          req.session.usuarioLogueado = usuario;
           req.session.usuarioLoginRol = usuario.rol;
           console.log("session" + req.session.usuarioLoginRol);
 
@@ -103,7 +104,7 @@ const usersController = {
   account: function (req, res) {
     db.Usuario.findOne({
       where: {
-        email: req.session.usuarioLogueado,
+        email: req.session.usuarioLogueado.email,
       },
     }).then(function (data) {
       res.render("account", { data: data,
@@ -122,13 +123,13 @@ const usersController = {
      // avatar: req.files[0].filename,
       rol: 0
     }, { where: {
-      email: req.session.usuarioLogueado
+      email: req.session.usuarioLogueado.email
   }
 })
   .then(function(data){
 db.Usuario.findOne({
   where:{
-    email: req.session.usuarioLogueado
+    email: req.session.usuarioLogueado.email
   }
 }).then(function(data){
   
