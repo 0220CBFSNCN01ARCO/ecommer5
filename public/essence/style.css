@@ -216,7 +216,5 @@ float: left;
 .iconoavatar{
     width: 8vw;
     height: 4vh;
-}
-.espacioiconologin{
-    background-color: red;
+    border-radius: 20%;
 }
