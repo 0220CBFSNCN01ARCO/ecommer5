@@ -7,7 +7,7 @@ const adminController = {
 
     db.Usuario.findOne({
       where: {
-        email: req.session.usuarioLogueado,
+        email: req.session.usuarioLogueado.email,
       },
     }).then(function (data) {
 res.render("profileAdmin", {data: data})
