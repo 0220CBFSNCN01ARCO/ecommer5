@@ -6,8 +6,8 @@ list : function(req, res){
     db.Usuario.findAll({
     })
     .then(function(usuarios) {
-        for (let i = 0; i < usuarios.lenght; i++) {
-            usuarios[i].setDatValue("endpoint", "/api/users/" + usuarios[i].id)
+        for (let i = 0; i < usuarios.length; i++) {
+            usuarios[i].setDataValue("endpoint", "/api/users/" + usuarios[i].idusuario)
             if(!usuarios) {
                 return res.status(404).json({ok: false, msg: 'No se encontró el usuario'})
             }
@@ -15,7 +15,7 @@ list : function(req, res){
         let respuesta = {
         meta: {
             status: 200,
-            count: usuarios.lenght,
+            count: usuarios.length,
             url: "/api/users"
         },
         data: usuarios
@@ -24,7 +24,7 @@ list : function(req, res){
     });
     },
     find: function(req, res) {
-        db.Usuario.findByPk(req.params.id)
+        db.Usuario.findByPk(req.params.idusuario)
         .then(function(usuarios){
 
             res.send(usuarios)

@@ -3,6 +3,6 @@ var router = express.Router();
 var productosAPIController = require("../../controllers/api/productosController")
 
 router.get("/", productosAPIController.list);
-router.get("/:id", productosAPIController.find);
+router.get("/:idlibros", productosAPIController.find);
 
 module.exports = router;

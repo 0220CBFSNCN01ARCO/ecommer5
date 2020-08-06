@@ -4,27 +4,28 @@ const db = require("../../database/models");
 const productosController = {
 list : function(req, res){
     db.Libro.findAll({
+        include: [{association: "categoria"}]
     })
-    .then(function(productos) {
-        for (let i = 0; i < productos.lenght; i++) {
-            productos[i].setDatValue("endpoint", "/api/products" + productos[i].id)
+    .then(function(libros) {
+        for (let i = 0; i < libros.length; i++) {
+            libros[i].setDataValue("endpoint", "/api/products/" + libros[i].idlibros)
         }
         let respuesta = {
         meta: {
             status: 200,
-            total: productos.lenght,
+            total: libros.length,
             url: "/api/products"
         },
-        data: productos
+        data: libros
     };
         res.send(respuesta);
     });
     },
     find: function(req, res) {
-        db.Libro.findByPk(req.params.id)
-        .then(function(productos){
+        db.Libro.findByPk(req.params.idlibros)
+        .then(function(libros){
 
-            res.send(productos)
+            res.send(libros)
         })
     }
 };
