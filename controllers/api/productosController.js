@@ -25,7 +25,7 @@ list : function(req, res){
         db.Libro.findByPk(req.params.idlibros)
         .then(function(libros){
 
-            res.send(libros)
+            res.json(libros)
         })
     }
 };

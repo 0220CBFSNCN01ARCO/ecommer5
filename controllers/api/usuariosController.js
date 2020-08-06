@@ -27,7 +27,7 @@ list : function(req, res){
         db.Usuario.findByPk(req.params.idusuario)
         .then(function(usuarios){
 
-            res.send(usuarios)
+            res.json(usuarios)
         })
     }
 };
