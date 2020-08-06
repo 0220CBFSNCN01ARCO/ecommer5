@@ -10,7 +10,7 @@ const adminController = {
         email: req.session.usuarioLogueado.email,
       },
     }).then(function (data) {
-res.render("profileAdmin", {data: data})
+res.render("account", {data: data})
 })
   },
     adminProducts : function(req, res){
@@ -54,7 +54,7 @@ res.render("profileAdmin", {data: data})
               })
              })
              .catch(function(error){
-              res.render("profileAdmin", {error})
+              res.render("account", {error})
             })
              
           } else {

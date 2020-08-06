@@ -79,6 +79,7 @@ const usersController = {
           req.session.usuarioLogueado = usuario;
         
           req.session.usuarioLoginRol = usuario.rol;
+         
           console.log("session" + req.session.usuarioLoginRol);
 
           if (req.session.usuarioLoginRol == 1) {
@@ -108,8 +109,9 @@ const usersController = {
         email: req.session.usuarioLogueado.email,
       },
     }).then(function (data) {
-      res.render("account", { data: data
-       });
+      res.render("account", {
+         data: data
+        });
     });
   },
 update: function(req, res){
