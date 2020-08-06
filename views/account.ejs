@@ -26,7 +26,12 @@
                 <h2>Hola <%= data.nombre %> !</h2>
     
                 <div class=" mt-5">
-                    <p class = "datosadmin"><strong>Usuario: </strong>  <%= data.nombre %></p>
+                    <% if (data.rol == 1) { %>
+                    <p class = "datosadmin"><strong>Administrador/a: </strong>  <%= data.nombre %></p>
+                    <% } else{ %>
+                        <p class = "datosadmin"><strong>Usuario/a: </strong>  <%= data.nombre %></p>
+                        <% } %>
+                    
                     <p class = "datosadmin"><strong>Email: </strong><%= data.email %> </p>
                     <p class = "datosadmin"><strong>Dirección: </strong><%= data.direccion %> </p>
                     <p class = "datosadmin"><strong>Provincia: </strong><%= data.provincia %> </p>
