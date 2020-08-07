@@ -224,6 +224,12 @@ float: left;
     margin-top: 25vh;
     padding: 40px;
  }
-.titlegandalf{
-    
+.gandalftitle{
+    margin-left: 6vw;
+    margin-bottom: 4vh;
+}
+
+.homebutton{
+    margin-left: 16vw;
+    margin-top: 4vh;
 }
