@@ -15,7 +15,8 @@ router.get("/search/:titulo", productosController.search);
 
 router.get("/orderBy", productosController.orderBy);
 
-router.get("/priceBetween/:idprecio", productosController.priceBetween);
-
+router.get("/priceBetween/1", productosController.priceBetween1);
+router.get("/priceBetween/2", productosController.priceBetween2);
+router.get("/priceBetween/3", productosController.priceBetween3);
 
 module.exports = router;

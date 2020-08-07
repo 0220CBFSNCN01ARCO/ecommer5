@@ -76,7 +76,6 @@ db.Libro.findAll({
         });
 },
 orderBy: function(req, res){
-
   db.Libro.findAll({
     order: [
       ["precio", "ASC"]
@@ -89,8 +88,9 @@ orderBy: function(req, res){
     })
   })
 },
-priceBetween: function(req, res){
-  db.Libro.findAll({
+priceBetween1: function(req, res){
+
+ db.Libro.findAll({
     where: {
      precio: 
      { [Op.between]: [500, 1000] }
@@ -108,6 +108,46 @@ priceBetween: function(req, res){
 
 
 },
+priceBetween2: function(req, res){
+
+  db.Libro.findAll({
+     where: {
+      precio: 
+      { [Op.between]: [1000, 2000] }
+     },
+     order: [
+       ["precio", "ASC"]
+     ]
+   })
+ .then(function(libros){
+   res.render("products", {
+     libros: libros,
+     data: req.session.usuarioLogueado
+   })
+ })
+ 
+ 
+ },
+ priceBetween3: function(req, res){
+
+  db.Libro.findAll({
+     where: {
+      precio: 
+      { [Op.between]: [2000, 3000] }
+     },
+     order: [
+       ["precio", "ASC"]
+     ]
+   })
+ .then(function(libros){
+   res.render("products", {
+     libros: libros,
+     data: req.session.usuarioLogueado
+   })
+ })
+ 
+ 
+ },
    
    
    
