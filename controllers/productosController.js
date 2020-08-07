@@ -70,11 +70,13 @@ let search = req.body.search
             }
         })
         .then(function(libros) {
-
-           return res.render('products', {
-             libros: libros,
-            data: req.session.usuarioLogueado})
-        });
+if(libros == ""){
+  res.render("notFound")
+} else{
+  return res.render('products', {
+    libros: libros,
+   data: req.session.usuarioLogueado})
+}  })
 },
 
 orderBy: function(req, res){

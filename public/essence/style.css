@@ -221,3 +221,8 @@ float: left;
 .productbycategory{
     width: 25vw;
 }
+.notfound{
+    float: left;
+    margin-top: 25vh;
+    padding: 40px;
+ }
