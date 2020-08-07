@@ -57,7 +57,20 @@ db.Libro.findAll({
   })
 })
 
-   }
+   },
+   search: function(req, res){
+
+        db.Libro.findAll({
+            where:{
+                titulo: {[Op.like]: '%' + req.query.titulo + "%"}
+            }
+        })
+        .then(function(libros) {
+
+           return res.render('products', {libros: libros})
+        });
+},
+   
    
    
    }

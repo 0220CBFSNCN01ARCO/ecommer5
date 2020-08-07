@@ -6,6 +6,7 @@ const productosController = require("../controllers/productosController.js");
 router.get("/", productosController.listado);
 router.get("/detail/:idlibros", productosController.detail);
 router.get("/categoria/:idcategorias", productosController.category);
+router.get("/search/?titulo", productosController.search);
 
 
 module.exports = router;
