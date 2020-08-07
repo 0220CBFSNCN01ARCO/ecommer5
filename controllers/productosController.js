@@ -92,9 +92,8 @@ orderBy: function(req, res){
 priceBetween: function(req, res){
   db.Libro.findAll({
     where: {
-     precio: { [Op.between]: [500, 1000] }
-  
-
+     precio: 
+     { [Op.between]: [500, 1000] }
     },
     order: [
       ["precio", "ASC"]
