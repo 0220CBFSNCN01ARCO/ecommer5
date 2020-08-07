@@ -63,14 +63,14 @@ db.Libro.findAll({
 
    },
    search: function(req, res){
-
+let search = req.body.search
         db.Libro.findAll({
             where:{
-                titulo: {[Op.like]: "%"+ req.query.titulo + "%"}
+                titulo: {[Op.like]: "%"+ search + "%"}
             }
         })
         .then(function(libros) {
-res.send(libros)
+
            return res.render('products', {
              libros: libros,
             data: req.session.usuarioLogueado})
