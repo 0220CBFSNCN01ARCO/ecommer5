@@ -9,9 +9,7 @@ router.get("/detail/:idlibros", productosController.detail);
 
 router.get("/categoria/:idcategorias", productosController.category);
 
-router.get("/search/:titulo", productosController.search);
-
-router.get("/search/:titulo", productosController.search);
+router.post("/search/:titulo", productosController.search);
 
 router.get("/orderBy", productosController.orderBy);
 

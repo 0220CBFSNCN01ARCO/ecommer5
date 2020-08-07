@@ -66,15 +66,17 @@ db.Libro.findAll({
 
         db.Libro.findAll({
             where:{
-                titulo: {[Op.like]: '%' + req.body.titulo + "%"}
+                titulo: {[Op.like]: "%"+ req.query.titulo + "%"}
             }
         })
         .then(function(libros) {
-
-           return res.render('products', {libros: libros,
+res.send(libros)
+           return res.render('products', {
+             libros: libros,
             data: req.session.usuarioLogueado})
         });
 },
+
 orderBy: function(req, res){
   db.Libro.findAll({
     order: [
