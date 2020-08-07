@@ -71,7 +71,9 @@ let search = req.body.search
         })
         .then(function(libros) {
 if(libros == ""){
-  res.render("notFound")
+  res.render("notFound", {
+    data: req.session.usuarioLogueado
+  })
 } else{
   return res.render('products', {
     libros: libros,

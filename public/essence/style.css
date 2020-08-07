@@ -150,9 +150,7 @@ margin-bottom: 15vh;
 .itemportada{
     width: 6vw;
 }
-.gandalf{
-    width: 60%;
-    height: 40%;
+.gandalfgif{
     margin-top: 1vh;
    margin-left: 10vw;
 }
@@ -226,3 +224,6 @@ float: left;
     margin-top: 25vh;
     padding: 40px;
  }
+.titlegandalf{
+    
+}
