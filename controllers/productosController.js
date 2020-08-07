@@ -1,7 +1,11 @@
 
 const { check, validationResult, body } = require("express-validator");
 const db = require("../database/models")
-
+var Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+const operatorsAliases = {
+$eq: Op.eq
+}
 
 const productosController = {
  
@@ -62,13 +66,48 @@ db.Libro.findAll({
 
         db.Libro.findAll({
             where:{
-                titulo: {[Op.like]: '%' + req.query.titulo + "%"}
+                titulo: {[Op.like]: '%' + req.body.titulo + "%"}
             }
         })
         .then(function(libros) {
 
-           return res.render('products', {libros: libros})
+           return res.render('products', {libros: libros,
+            data: req.session.usuarioLogueado})
         });
+},
+orderBy: function(req, res){
+
+  db.Libro.findAll({
+    order: [
+      ["precio", "ASC"]
+    ]
+  })
+  .then(function(libros){
+    res.render("products", {
+      libros: libros,
+      data: req.session.usuarioLogueado
+    })
+  })
+},
+priceBetween: function(req, res){
+  db.Libro.findAll({
+    where: {
+     precio: { [Op.between]: [500, 1000] }
+  
+
+    },
+    order: [
+      ["precio", "ASC"]
+    ]
+  })
+.then(function(libros){
+  res.render("products", {
+    libros: libros,
+    data: req.session.usuarioLogueado
+  })
+})
+
+
 },
    
    
