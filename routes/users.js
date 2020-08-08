@@ -61,7 +61,7 @@ router.get('/account', authMiddleware, upload.any(), usersController.account);
 router.get('/update/:idusuario', authMiddleware, usersController.update);
 
 router.put('/update/:idusuario', authMiddleware, upload.any(), [
-  check("nombre").isLength().withMessage("Me falta tu nombre y apellido"),
+  check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
   check("provincia").isLength().withMessage("Te faltó la provincia"),
   check("localidad").isLength({min: 4}).withMessage("Te faltó la localidad"),
   check("direccion").isLength({min: 5}).withMessage("No completaste tu dirección"),
