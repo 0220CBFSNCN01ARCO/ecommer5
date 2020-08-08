@@ -35,7 +35,7 @@ window.addEventListener("load", function(){
 
         let errores = [];
 
-let campoNombre = document.getElementById("camponombre");
+let campoNombre = document.getElementById("nombre");
 if(campoNombre.value == ""){
     errores.push("Tenés que completar tu nombre y apellido")
 } else if(campoNombre.value.length < 4){

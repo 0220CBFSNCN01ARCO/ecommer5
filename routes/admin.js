@@ -37,8 +37,13 @@ adminController.edit);
 router.get("/edit/:idlibros", editMiddleware.validationAdmin, 
 adminController.select);
 
-router.put("/edit/:idlibros", editMiddleware.validationAdmin, upload.any(), 
-adminController.update);
+router.put("/edit/:idlibros", editMiddleware.validationAdmin, upload.any(), [
+  check("titulo").isLength({ min: 4 }).withMessage("Falta el título del libro"),
+  check("autor").isLength({min: 4 }).withMessage("Falta aclarar el autor"),
+  check("precio").isInt().withMessage("El producto no tiene precio"),
+  check("stock").isInt().withMessage("Falta aclarar el stock"),
+  check("descripcion").isLength({ min: 10 }).withMessage("Falta la descripción del libro")
+], adminController.update);
 
 router.delete("/delete/:idlibros", editMiddleware.validationAdmin, 
 adminController.delete);

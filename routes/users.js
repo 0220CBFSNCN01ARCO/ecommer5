@@ -26,11 +26,11 @@ let fs = require("fs");
 router.get("/register", redirectToProfileIfAuthenticated, usersController.register);
 
 router.post("/register", upload.any(), [
-    check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
+    check("nombre").isLength({min: 4}).withMessage("Tenés que completar tu nombre y apellido"),
     check("provincia").isLength().withMessage("Te faltó la provincia"),
     check("localidad").isLength({min: 4}).withMessage("Te faltó la localidad"),
-    check("direccion").isLength({min: 5}).withMessage("Y la dirección?"),
-    check("cp").isInt({min: 4}).withMessage("Sin codigo postal no te encuentro"),
+    check("direccion").isLength({min: 5}).withMessage("Tenés que completar tu dirección"),
+    check("cp").isInt({min: 4}).withMessage("Falta tu código postal"),
     check("email").isEmail()
     // VALIDACIÓN CUSTOM, PARA CHEQUEAR EN BASE DE DATOS
     /*
@@ -60,7 +60,16 @@ router.get('/account', authMiddleware, upload.any(), usersController.account);
 
 router.get('/update/:idusuario', authMiddleware, usersController.update);
 
-router.put('/update/:idusuario', authMiddleware, upload.any(), usersController.chargeUpdate);
+router.put('/update/:idusuario', authMiddleware, upload.any(), [
+  check("nombre").isLength().withMessage("Me falta tu nombre y apellido"),
+  check("provincia").isLength().withMessage("Te faltó la provincia"),
+  check("localidad").isLength({min: 4}).withMessage("Te faltó la localidad"),
+  check("direccion").isLength({min: 5}).withMessage("No completaste tu dirección"),
+  check("cp").isInt({min: 4}).withMessage("Falta el código postal de tu domicilio"),
+  check("email").isEmail().withMessage("Falta tu email"),
+  check("password").isLength({min: 8}).withMessage("La contraseña debe tener 8 caracteres como mínimo") 
+
+], usersController.chargeUpdate);
 
 router.get('/logout', usersController.logout);
 
