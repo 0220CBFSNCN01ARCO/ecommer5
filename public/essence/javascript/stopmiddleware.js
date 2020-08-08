@@ -5,7 +5,7 @@ window.onload = function(){
 return respuesta.json()
     })
     .then(function(informacion){
-console.log(informacion.data);
+ 
 for(let i = 0; i < informacion.data.length; i++){
     let gif = "<img src=" + informacion.data[i].images.original.url + ">"
     document.querySelector("ul").innerHTML += "<li>" + gif + "</li>"
