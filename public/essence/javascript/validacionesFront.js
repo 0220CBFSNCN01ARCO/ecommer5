@@ -162,4 +162,28 @@ campoDireccionActualizacion.addEventListener("change", function (e){
     
     }
 })
+campoEmailActualizacion.addEventListener("change", function (e){
+    if(campoEmailActualizacion.value == " "){
+        let mensajeMail = "Tenés que escribir tu mail"
+        e.preventDefault();
+        document.querySelector(".ulmailactualizacion").innerHTML += "<li>" + mensajeMail + "</li>"
+    }else if(campoEmailActualizacion.value.length < 8){
+        let mensajeExtensionMail = "Tu mail está incompleto"
+        e.preventDefault();
+        document.querySelector(".ulmailactualizacion").innerHTML += "<li>" + mensajeExtensionMail + "</li>"
+    
+    }
+})
+campoPasswordActualizacion.addEventListener("change", function (e){
+    if(campoPasswordActualizacion.value == " "){
+        let mensajePasword = "Tenés que completar tu contraseña"
+        e.preventDefault();
+        document.querySelector(".ulpassword").innerHTML += "<li>" + mensajePasword + "</li>"
+    }else if(campoPasswordActualizacion.value.length < 8){
+        let mensajeExtensionPassword = "La contraseña debe tener al menos 8 caracteres"
+        e.preventDefault();
+        document.querySelector(".ulpasswordactualizacion").innerHTML += "<li>" + mensajeExtensionPassword + "</li>"
+    
+    }
+})
 })
