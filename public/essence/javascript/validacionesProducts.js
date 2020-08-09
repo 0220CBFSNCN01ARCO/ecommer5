@@ -43,7 +43,7 @@ campoPrecio.addEventListener("change", function (e){
         let mensajePrecio = "Falta el precio del libro"
         e.preventDefault();
         document.querySelector(".ulprecio").innerHTML += "<li>" + mensajePrecio + "</li>"
-    }else if(campoPrecio.value.length < 100){
+    }else if(campoPrecio.value.length < 3){
         let mensajeExtensionPrecio = "El precio del libro debe ser mayor a 100"
         e.preventDefault();
         document.querySelector(".ulprecio").innerHTML += "<li>" + mensajeExtensionPrecio + "</li>"

@@ -15,7 +15,7 @@ campoNombre.addEventListener("change", function (e){
         let mensajeNombre = "Tenés que poner tu nombre y apellido"
         e.preventDefault();
         document.querySelector(".ulnombre").innerHTML += "<li>" + mensajeNombre + "</li>"
-    }else if(campoNombre.value.length < 8){
+    }else if(campoNombre.value.length < 4){
         let mensajeExtensionNombre = "Tu nombre y/o apellido están incompletos"
         e.preventDefault();
         document.querySelector(".ulnombre").innerHTML += "<li>" + mensajeExtensionNombre + "</li>"
@@ -23,8 +23,8 @@ campoNombre.addEventListener("change", function (e){
     }
 })
 
-campoProvincia.addEventListener("change", function (e){
-    if(campoProvincia.value == " "){
+campoProvincia.addEventListener("focus", function (e){
+    if(campoProvincia.value == "0" || campoProvincia.value == ""){
         let mensajeProvincia = "Tenés que seleccionar tu provincia"
         e.preventDefault();
         document.querySelector(".ulprovincia").innerHTML += "<li>" + mensajeProvincia + "</li>"

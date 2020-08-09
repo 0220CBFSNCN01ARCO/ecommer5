@@ -25,14 +25,22 @@
     </div>
  
 <div class = "container tablalibros">
-    <% for(let i = 0; i < libros.length; i++) { %>
-<table class= "celdaslibros row col-12">
+
+<table class= "celdaslibros col-12 table">
     <thead>
+
      <tr>
-      
+    <th class = "itemportada">Portada</th>
+      <th scope="col">Título</th>
+      <th scope="col">Autor</th>
+      <th scope="col">Categoría</th>
+      <th scope="col">Precio</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Acción</th>
      </tr>
 
     </thead>
+    <% for(let i = 0; i < libros.length; i++) { %>
     <tbody>
         <tr>
             
@@ -51,22 +59,21 @@
             <td class = "itemnumero"><%= libros[i].stock%></td>
             <td class = "itemicono">
           
-            <form class = "formedit" action = "/admin/edit/<%= libros[i].idlibros %>">
-                <input type = "image" src= "/essence/img/images/lapizedit.png" id= "iconoedit" class= "iconoedit"></input>
-            </form>
-            
-                 <form action = "/admin/delete/<%= libros[i].idlibros %>?_method=DELETE" method = "POST">
-                    <input type = "image" src= "/essence/img/images/delete.png" class= "iconodelete"></input>
+           
+
+                <a href= "/admin/edit/<%= libros[i].idlibros %>"><i class="far fa-edit"></i></a>
                 
-            </form>
+                <a href= "/admin/delete/<%= libros[i].idlibros %>?_method=DELETE"><i class="fas fa-trash-alt"></i></a>
+            
+                
          
                 
         </td>
         </tr>
     </tbody>
-    
+    <% } %>
 </table>
-<% } %>
+
 </div>
 
 

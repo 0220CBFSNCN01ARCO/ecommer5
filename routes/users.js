@@ -62,7 +62,7 @@ router.get('/update/:idusuario', authMiddleware, usersController.update);
 
 router.put('/update/:idusuario', authMiddleware, upload.any(), [
   check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
-  check("provincia").isLength().withMessage("Te faltó la provincia"),
+  check("provincia").isLength({min: 4}).withMessage("Te faltó la provincia"),
   check("localidad").isLength({min: 4}).withMessage("Te faltó la localidad"),
   check("direccion").isLength({min: 5}).withMessage("No completaste tu dirección"),
   check("cp").isInt({min: 4}).withMessage("Falta el código postal de tu domicilio"),

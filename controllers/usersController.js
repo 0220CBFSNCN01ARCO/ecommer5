@@ -121,6 +121,7 @@ db.Usuario.findOne({
   }
 })
 .then(function(usuario){
+  console.log(req.session.usuarioLogueado)
   res.render("updateInfoUser", {
     data: req.session.usuarioLogueado
   })

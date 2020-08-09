@@ -96,10 +96,13 @@ res.render("account", {data: data})
             .catch(function(error){
               res.send(error)
             })
-
+        //    let categoria = db.Categoria.findAll()
+          //  let libroSeleccionado = db.Libro.findByPk(req.params.idlibros)
+        //    Promise.all([categoria, libroSeleccionado])
               //res.send(libro)
         },
         update: function(req, res){
+
          db.Libro.update({
             titulo: req.body.titulo,
             autor: req.body.autor,
@@ -112,20 +115,8 @@ res.render("account", {data: data})
               idlibros: req.params.idlibros
           }
         })
-          .then(function(){
-            db.Libro.findAll({
-              include: [{association: "categoria"}]
-            })
-            .then(function(libros){
-              db.Categoria.findAll()
-              .then(function(categoria){
-                return res.render("editProduct", {
-                libros: libros, 
-                categoria: categoria,
-                data: req.session.usuarioLogueado})
-            })
-          })
-        })
+          .then( res.redirect("/admin/edit") )
+
         },
         
         delete: function(req, res){

@@ -20,13 +20,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER//(11)
         },
         password: {
-            type: DataTypes.STRING//(45)
+            type: DataTypes.STRING
+            
         },
         localidad: {
             type: DataTypes.STRING//(45)
         },
         provincia: {
-            type: DataTypes.STRING//(45)
+            type: DataTypes.STRING,
+            allowNull: false
         },
         avatar: {
             type: DataTypes.STRING//(450)
