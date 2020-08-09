@@ -108,15 +108,23 @@ window.addEventListener("load", function(){
 
 
 campoNombreActualizacion.addEventListener("change", function (e){
-    if(campoNombre.value == " "){
-        let mensajeNombre = "Tenés que poner tu nombre y apellido"
+    if(campoNombreActualizacion.value == " "){
+        let mensajeNombreActualizacion = "Tenés que poner tu nombre y apellido"
         e.preventDefault();
-        document.querySelector(".ulnombre").innerHTML += "<li>" + mensajeNombre + "</li>"
-    }else if(campoNombre.value.length < 8){
+        document.querySelector(".ulnombreactualizacion").innerHTML += "<li>" + mensajeNombreActualizacion + "</li>"
+    }else if(campoNombreActualizacion.value.length < 8){
         let mensajeExtensionNombre = "Tu nombre y/o apellido están incompletos"
         e.preventDefault();
-        document.querySelector(".ulnombre").innerHTML += "<li>" + mensajeExtensionNombre + "</li>"
+        document.querySelector(".ulnombreactualizacion").innerHTML += "<li>" + mensajeExtensionNombre + "</li>"
     
     }
 })
+campoProvinciaActualizacion.addEventListener("change", function (e){
+    if(campoProvinciaActualizacion.value == " "){
+        let mensajeProvinciaActualizacion = "Tenés que seleccionar tu provincia"
+        e.preventDefault();
+        document.querySelector(".ulprovinciaactualizacion").innerHTML += "<li>" + mensajeProvinciaActualizacion + "</li>"
+    }
+})
+
 })
