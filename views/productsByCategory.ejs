@@ -20,18 +20,104 @@
         <div class="row h-100 align-items-center">
           <div class="col-12">
             <div class="page-title text-center">
-    <h2>Libros de <%= categoria.nombre%></h2>
+              <h2>Libros de <%= categoria.nombre%></h2>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- ##### Breadcumb Area End ##### -->
 
+    <!-- ##### Shop Grid Area Start ##### -->
     <section class="shop_grid_area section-padding-80">
-        <div class="container">
-           <div class="row">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-4 col-lg-3">
+            <div class="shop_sidebar_area">
+              <!-- ##### Single Widget ##### -->
+              <div class="widget catagory mb-50">
+                <!-- Widget Title -->
+                <h6 class="widget-title mb-30">Categorías</h6>
+
+                <!--  Catagories  -->
+                <div class="catagories-menu">
+                  <ul id="menu-content2" class="menu-content collapse show">
+                    <!-- Single Item -->
+
+                    <li data-toggle="collapse" data-target="#clothing">
+                      <a href="/products/categoria/1">Humanidades</a>
+                      
+                    </li>
+                    <!-- Single Item -->
+                    <li
+                      data-toggle="collapse"
+                      data-target="#ficcion"
+                      class="collapsed"
+                    >
+                      <a href="/products/categoria/6">Ficción</a>
+                    </li>
+                    <!-- Single Item -->
+                    <li
+                      data-toggle="collapse"
+                      data-target="#accessories"
+                      class="collapsed"
+                    >
+                      <a href="/products/categoria/7">Arte, arquitectura y diseño</a>
+                    </li>
+                    <li
+                    data-toggle="collapse"
+                    data-target="#accessories"
+                    class="collapsed"
+                  >
+                    <a href="/products/categoria/8">Gastronomía</a>
+                  </li>
+                  </ul>
+                </div>
+
+                <div>
+
+                  <h6 class="widget-title mb-30 my-5">Ordenar por precio</h6>
+                 <a href= "/products/orderBy">MENOR A MAYOR</a> 
+
+                </div>
+
+
+                <div>
+
+                  <h6 class="widget-title mb-30 my-5">Filtrar por precio</h6>
+                 <a href= "/products/priceBetween/1">ENTRE $500 A $1000</a> <br>
+                 <a href= "/products/priceBetween/2">ENTRE $1000 A $2000</a> <br>
+                 <a href= "/products/priceBetween/3">ENTRE $2000 A $2500</a> <br>
+
+                </div>
+              </div>
+
+
+              <!-- ##### Single Widget ##### -->
+
+              <!-- ##### Single Widget ##### -->
+              <div class="widget brands mb-50">
+                <!-- Widget Title 2 -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-8 col-lg-9">
+            <div class="shop_grid_product_area">
+              <div class="row">
+                <div class="col-12">
+                  <div
+                    class="product-topbar d-flex align-items-center justify-content-between"
+                  >
+                  
+                    <!-- Sorting -->
+                 
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
                 <!-- Single Product -->
-              
                 <% for(let i = 0; i < libros.length; i++) { %>
                 
                 <!-- Single Product -->
@@ -40,14 +126,10 @@
                   <div class="single-product-wrapper contenedorproducto">
                   
                     <!-- Product Image -->
-                    <div class="productbycategory">
+                    <div class="product-img">
                       <a href = "/products/detail/<%= libros[i].idlibros %>">
-                        <img
-                        class="imagenproducto"
-                        src="/essence/img/product-img/<%= libros[i].portada %>"
-                        alt=""/>
-  
-                      </a>
+                        <img class="imagenproducto" src="/essence/img/product-img/<%= libros[i].portada %>" alt=""/>
+                       </a>
                       
                    
                     </div>
@@ -61,7 +143,7 @@
                       <p class="product-price">$<%= libros[i].precio %></p>
 
                       <!-- Hover Content -->
-                      <div class="my-4">
+                      <div class="hover-content">
                         <!-- Add to Cart -->
                         <div class="add-to-cart-btn">
                           <a href="#" class="btn essence-btn agregar-carrito">Agregar al carrito</a >
@@ -74,21 +156,18 @@
                   </div>
                
                 </div>
+          
+                
 
           
                 <% } %>
-          
               </div>
-
+              
             </div>
-            </div>
-            </section>
-
-    <!-- ##### Breadcumb Area End ##### -->
-
-    <!-- ##### Shop Grid Area Start ##### -->
-    <section class="shop_grid_area section-padding-80">
-      
+        
+          </div>
+        </div>
+      </div>
     </section>
     <!-- ##### Shop Grid Area End ##### -->
 
