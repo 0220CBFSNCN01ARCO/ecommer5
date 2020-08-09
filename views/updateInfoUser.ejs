@@ -64,7 +64,7 @@
                                 
                                 <div class="col-12 mb-3">
                                     <label for="provincia">Provincia <span>*</span></label>
-                                    <select class="w-100 provincia" id="provincia" name= "provincia">
+                                    <select class="w-100 provincia" id="campoprovincia" name= "provincia">
                                         <option value="" selected>Seleccioná tu provincia</option>
                                         <option value = "Córdoba">Córdoba</option>
                                         <option value = "Buenos Aires">Buenos Aires</option>
@@ -92,30 +92,30 @@
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="localidad">Localidad <span>*</span></label>
-                                    <input type="text" class="form-control" name= "localidad" id="localidad" value="<%= data.localidad%>" required placeholder="Localidad">
+                                    <input type="text" class="form-control" name= "localidad" id="campolocalidad" value="<%= data.localidad%>" required placeholder="Localidad">
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="direccion">Dirección <span>*</span></label>
-                                    <input type="text" class="form-control mb-3" id="direccion" name= "direccion" value="<%= data.direccion%>" required placeholder="Calle y número">
+                                    <input type="text" class="form-control mb-3" id="campodireccion" name= "direccion" value="<%= data.direccion%>" required placeholder="Calle y número">
                                 
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="cp">Código Postal <span>*</span></label>
-                                    <input type="number" class="form-control" name= "cp" id="cp" value="<%= data.cp%>" required placeholder="Código Postal">
+                                    <input type="number" class="form-control" name= "cp" id="campocp" value="<%= data.cp%>" required placeholder="Código Postal">
                                 </div>
                               
             
                                 <div class="col-12 mb-4">
                                     <label for="email">Email <span>*</span></label>
-                                    <input type="email" class="form-control" name= "email" id="email" value="<%= data.email%>" required placeholder="Email">
+                                    <input type="email" class="form-control" name= "email" id="campoemail" value="<%= data.email%>" required placeholder="Email">
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="password">Contraseña <span>*</span></label>
-                                    <input type="password" class="form-control" name= "password" required id="password" min="0" value="" placeholder="Contraseña">
+                                    <input type="password" class="form-control" name= "password" required id="campopassword" min="0" value="" placeholder="Contraseña">
                                 </div>
                                 <div class="col-12 mb-4">
                                     <label for="avatar">Subí tu foto de perfil</label> <br>
-                                    <input type="file" name= "avatar" id="avatar" value="<%= data.nombre%>">
+                                    <input type="file" name= "avatar" id="campoavatar" value="<%= data.nombre%>">
                                 </div>
                                 <div class="col-12">
                                     
