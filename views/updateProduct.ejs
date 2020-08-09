@@ -57,13 +57,19 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="titulo">Título del libro <span>*</span></label>
                                     <input type="text" class="form-control" id="titulo" name = "titulo" value="<%= libro.titulo %>" >
+                                <ul class = "ultitulo"  style="color:red">
+
+                                </ul>
+                                
                                 </div>
                               
                                 
                                 <div class="col-12 mb-3">
                                     <label for="autor">Autor/a <span>*</span></label>
                                     <input type="text" class="form-control" id="autor" name = "autor" value="<%= libro.autor %>" >
-                                       
+                                    <ul class = "ulautor"  style="color:red">
+
+                                    </ul>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="categoria">Categoría <span>*</span></label>
@@ -73,21 +79,33 @@
                                         
                                             <option value="<%= categoria[i].idcategorias %>"><%= categoria[i].nombre %></option>
                                         <% } %>
+
+                                        <ul class = "ulcategoria"  style="color:red">
+
+                                        </ul>
                                     </select>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="precio">Precio <span>*</span></label>
                                     <input type="text" class="form-control" name= "precio" id="precio" value="<%= libro.precio %>" >
+                                    <ul class = "ulprecio"  style="color:red">
+
+                                    </ul>
+                               
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="stock">Stock <span>*</span></label>
                                     <input type="text" class="form-control mb-3" id="stock" name= "stock" value="<%= libro.stock %>" >
-                                
+                                    <ul class = "ulstock"  style="color:red">
+
+                                    </ul>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="descripcion">Descripción <span>*</span></label>
                                     <textarea name = "descripcion" rows = "5" cols= "72" value = "<%= libro.descripcion %>"><%= libro.descripcion %></textarea>
-                                
+                                    <ul class = "uldescripcion"  style="color:red">
+
+                                    </ul>
                                 </div>
                                
                                 <div class="col-12 mb-4">
@@ -129,6 +147,8 @@
     <script src="/essence/js/classy-nav.min.js"></script>
     <!-- Active js -->
     <script src="/essence/js/active.js"></script>
+
+    <script src="/essence/javascript/validacionesProducts.js" type = "text/javascript"></script>
 
 </body>
 

@@ -36,18 +36,7 @@ campoAutor.addEventListener("change", function (e){
     }
 })
 
-campoCategoria.addEventListener("change", function (e){
-    if(campoCategoria.value == " "){
-        let mensajeCategoria = "Tenés que seleccionar una categoría"
-        e.preventDefault();
-        document.querySelector(".ulcategoria").innerHTML += "<li>" + mensajeCategoria + "</li>"
-    }else if(campoCategoria.value.length < 8){
-        let mensajeExtensionCategoria = "El nombre de tu localidad está incompleto"
-        e.preventDefault();
-        document.querySelector(".ulcategoria").innerHTML += "<li>" + mensajeExtensionCategoria + "</li>"
-    
-    }
-})
+
 
 campoPrecio.addEventListener("change", function (e){
     if(campoPrecio.value == " "){
@@ -88,3 +77,5 @@ campoDescripcion.addEventListener("change", function (e){
 
 
 })
+
+
