@@ -107,7 +107,7 @@ res.render("account", {data: data})
             precio: req.body.precio,
             stock: req.body.stock,
             descripcion: req.body.descripcion,
-            portada: req.files[0].filename
+            portada: req.files[0].filename,
           }, { where: {
               idlibros: req.params.idlibros
           }
