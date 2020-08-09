@@ -23,7 +23,7 @@ let { check, validationResult, body } = require("express-validator");
 let fs = require("fs");
 
 
-router.get("/register", redirectToProfileIfAuthenticated, usersController.register);
+router.get("/register", guestMiddleware, usersController.register);
 
 router.post("/register", upload.any(), [
     check("nombre").isLength({min: 4}).withMessage("Tenés que completar tu nombre y apellido"),
