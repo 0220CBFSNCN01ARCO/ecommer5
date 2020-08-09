@@ -14,18 +14,8 @@ window.addEventListener("load", function(){
         
         })
     })
-        //validación de edición en vista editProduct al clickear en botón de edición
-
-    window.addEventListener("load", function(){
-        let iconoEdit = document.querySelector(".iconoedit")
-        iconoEdit.addEventListener("click", function(e){
-            let confirmEdit = confirm("¿Estás seguro de querer editar este producto?")
-
-            if(confirmEdit == false){
-                e.preventDefault()
-            }
-        })
-    })
+        
+  
 
 //validación de campos de formulario de registración de usuario
 window.addEventListener("load", function(){

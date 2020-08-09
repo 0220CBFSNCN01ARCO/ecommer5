@@ -136,16 +136,14 @@ margin-bottom: 15vh;
 }
 .iconoedit{
     padding-right: 1vw;
-    padding-left: 1vw;
     margin-bottom: 2vh;
 }
 .iconodelete{
     margin-left: 1vw;
 }
 .portadaedit{
-    width: 6vw;
-    height: 20vh;
-    margin-right: 1vw;
+    width: 4vw;
+    height: 10vh;
 }
 .itemportada{
     width: 6vw;
@@ -223,6 +221,9 @@ float: left;
     float: left;
     margin-top: 25vh;
     padding: 40px;
+ }
+ .imgnotfound{
+    float: left;
  }
 .gandalftitle{
     margin-left: 8vw;
