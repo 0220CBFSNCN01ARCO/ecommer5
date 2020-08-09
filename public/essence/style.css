@@ -196,19 +196,22 @@ margin-bottom: 2vh;
 }
 .containersuccess{
     overflow: hidden;
+    height: 100vh;
+    padding: 10vh;
 }
 .registersuccess{
-    margin-top: 10vh;
-    margin-bottom: 10vh;
-    width: 30vw;
-float: left;
-
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    float: left;
 }
 .graciasregistro{
    float: left;
-   margin-top: 30vh;
-   padding: 40px;
+   margin-top: 10vh;
+   padding-left: 3vw;
 }
+
+
+
 .iconoavatar{
     width: 8vw;
     height: 4vh;
@@ -217,13 +220,22 @@ float: left;
 .productbycategory{
     width: 25vw;
 }
+.containernotfound{
+    overflow: hidden;
+    height: 110vh;
+    width: 100vw;
+    padding: 10vh;
+}
 .notfound{
+    margin-top: 5vh;
     float: left;
-    margin-top: 25vh;
-    padding: 40px;
  }
+
+
  .imgnotfound{
     float: left;
+    margin-top: 5vh;
+    padding-left: 3vw;
  }
 .gandalftitle{
     margin-left: 8vw;
