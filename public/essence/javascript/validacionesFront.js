@@ -37,7 +37,7 @@ campoLocalidad.addEventListener("change", function (e){
         let mensajeLocalidad = "Tenés que completar tu localidad"
         e.preventDefault();
         document.querySelector(".ullocalidad").innerHTML += "<li>" + mensajeLocalidad + "</li>"
-    }else if(campoLocalidad.value.length < 8){
+    }else if(campoLocalidad.value.length < 2){
         let mensajeExtensionLoc = "El nombre de tu localidad está incompleto"
         e.preventDefault();
         document.querySelector(".ullocalidad").innerHTML += "<li>" + mensajeExtensionLoc + "</li>"
@@ -62,7 +62,7 @@ campoDireccion.addEventListener("change", function (e){
         let mensajeDireccion = "Tenés que escribir tu dirección"
         e.preventDefault();
         document.querySelector(".uldireccion").innerHTML += "<li>" + mensajeDireccion + "</li>"
-    }else if(campoDireccion.value.length < 8){
+    }else if(campoDireccion.value.length < 4){
         let mensajeExtensionDireccion = "Tu domicilio está incompleto"
         e.preventDefault();
         document.querySelector(".uldireccion").innerHTML += "<li>" + mensajeExtensionDireccion + "</li>"
@@ -74,7 +74,7 @@ campoEmail.addEventListener("change", function (e){
         let mensajeMail = "Tenés que escribir tu mail"
         e.preventDefault();
         document.querySelector(".ulmail").innerHTML += "<li>" + mensajeMail + "</li>"
-    }else if(campoEmail.value.length < 8){
+    }else if(campoEmail.value.length < 6){
         let mensajeExtensionMail = "Tu mail está incompleto"
         e.preventDefault();
         document.querySelector(".ulmail").innerHTML += "<li>" + mensajeExtensionMail + "</li>"
@@ -112,7 +112,7 @@ campoNombreActualizacion.addEventListener("change", function (e){
         let mensajeNombreActualizacion = "Tenés que poner tu nombre y apellido"
         e.preventDefault();
         document.querySelector(".ulnombreactualizacion").innerHTML += "<li>" + mensajeNombreActualizacion + "</li>"
-    }else if(campoNombreActualizacion.value.length < 8){
+    }else if(campoNombreActualizacion.value.length < 4){
         let mensajeExtensionNombre = "Tu nombre y/o apellido están incompletos"
         e.preventDefault();
         document.querySelector(".ulnombreactualizacion").innerHTML += "<li>" + mensajeExtensionNombre + "</li>"
@@ -131,7 +131,7 @@ campoLocalidadActualizacion.addEventListener("change", function (e){
         let mensajeLocalidad = "Tenés que completar tu localidad"
         e.preventDefault();
         document.querySelector(".ullocalidadactualizacion").innerHTML += "<li>" + mensajeLocalidad + "</li>"
-    }else if(campoLocalidadActualizacion.value.length < 8){
+    }else if(campoLocalidadActualizacion.value.length < 3){
         let mensajeExtensionLoc = "El nombre de tu localidad está incompleto"
         e.preventDefault();
         document.querySelector(".ullocalidadactualizacion").innerHTML += "<li>" + mensajeExtensionLoc + "</li>"
@@ -155,7 +155,7 @@ campoDireccionActualizacion.addEventListener("change", function (e){
         let mensajeDireccion = "Tenés que escribir tu dirección"
         e.preventDefault();
         document.querySelector(".uldireccionactualizacion").innerHTML += "<li>" + mensajeDireccion + "</li>"
-    }else if(campoDireccionActualizacion.value.length < 8){
+    }else if(campoDireccionActualizacion.value.length < 4){
         let mensajeExtensionDireccion = "Tu domicilio está incompleto"
         e.preventDefault();
         document.querySelector(".uldireccionactualizacion").innerHTML += "<li>" + mensajeExtensionDireccion + "</li>"
@@ -167,7 +167,7 @@ campoEmailActualizacion.addEventListener("change", function (e){
         let mensajeMail = "Tenés que escribir tu mail"
         e.preventDefault();
         document.querySelector(".ulmailactualizacion").innerHTML += "<li>" + mensajeMail + "</li>"
-    }else if(campoEmailActualizacion.value.length < 8){
+    }else if(campoEmailActualizacion.value.length < 6){
         let mensajeExtensionMail = "Tu mail está incompleto"
         e.preventDefault();
         document.querySelector(".ulmailactualizacion").innerHTML += "<li>" + mensajeExtensionMail + "</li>"
