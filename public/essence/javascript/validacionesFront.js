@@ -94,7 +94,29 @@ campoPassword.addEventListener("change", function (e){
     }
 })
 
-
-
 })
+// Validaciones update de usuario. 
+window.addEventListener("load", function(){
+    let campoNombreActualizacion = document.getElementById("nombre");
+    let campoProvinciaActualizacion = document.getElementById("provincia");
+    let campoLocalidadActualizacion = document.getElementById("localidad");
+    let campoDireccionActualizacion = document.getElementById("direccion");
+    let campoCpActualizacion = document.getElementById("cp");
+    let campoEmailActualizacion = document.getElementById("email");
+    let campoPasswordActualizacion = document.getElementById("password");
 
+
+
+campoNombreActualizacion.addEventListener("change", function (e){
+    if(campoNombre.value == " "){
+        let mensajeNombre = "Tenés que poner tu nombre y apellido"
+        e.preventDefault();
+        document.querySelector(".ulnombre").innerHTML += "<li>" + mensajeNombre + "</li>"
+    }else if(campoNombre.value.length < 8){
+        let mensajeExtensionNombre = "Tu nombre y/o apellido están incompletos"
+        e.preventDefault();
+        document.querySelector(".ulnombre").innerHTML += "<li>" + mensajeExtensionNombre + "</li>"
+    
+    }
+})
+})
