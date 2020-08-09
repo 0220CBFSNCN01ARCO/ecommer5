@@ -126,5 +126,17 @@ campoProvinciaActualizacion.addEventListener("change", function (e){
         document.querySelector(".ulprovinciaactualizacion").innerHTML += "<li>" + mensajeProvinciaActualizacion + "</li>"
     }
 })
+campoLocalidadActualizacion.addEventListener("change", function (e){
+    if(campoLocalidadActualizacion.value == " "){
+        let mensajeLocalidad = "Tenés que completar tu localidad"
+        e.preventDefault();
+        document.querySelector(".ullocalidadactualizacion").innerHTML += "<li>" + mensajeLocalidad + "</li>"
+    }else if(campoLocalidadActualizacion.value.length < 8){
+        let mensajeExtensionLoc = "El nombre de tu localidad está incompleto"
+        e.preventDefault();
+        document.querySelector(".ullocalidadactualizacion").innerHTML += "<li>" + mensajeExtensionLoc + "</li>"
+    
+    }
+})
 
 })
