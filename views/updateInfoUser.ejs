@@ -59,6 +59,10 @@
                                 <div class="col-md-6 mb-3">
                                     <label for="nombre">Nombre y apellido<span>*</span></label>
                                     <input type="text" class="form-control" id="camponombre" name = "nombre" value="<%= data.nombre%>" required placeholder="Nombre y apellido">
+                                    <ul class = "ulnombreactualizacion" style="color:red">
+
+                                    </ul>
+                                    
                                 </div>
                               
                                 
@@ -89,29 +93,47 @@
                                         <option value = "Neuquén">Neuquen</option>
                                         <option value = "Río Negro">Rio Negro</option>
                                     </select>
+                                    <ul class = "ulprovinciaactualizacion" style="color:red">
+
+                                    </ul>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="localidad">Localidad <span>*</span></label>
                                     <input type="text" class="form-control" name= "localidad" id="campolocalidad" value="<%= data.localidad%>" required placeholder="Localidad">
+                                    <ul class = "ullocalidadactualizacion" style="color:red">
+
+                                    </ul>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="direccion">Dirección <span>*</span></label>
                                     <input type="text" class="form-control mb-3" id="campodireccion" name= "direccion" value="<%= data.direccion%>" required placeholder="Calle y número">
+                                    <ul class = "uldireccionactualizacion" style="color:red">
+
+                                    </ul>
                                 
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="cp">Código Postal <span>*</span></label>
                                     <input type="number" class="form-control" name= "cp" id="campocp" value="<%= data.cp%>" required placeholder="Código Postal">
+                                    <ul class = "ulcpactualizacion" style="color:red">
+
+                                    </ul>
                                 </div>
                               
             
                                 <div class="col-12 mb-4">
                                     <label for="email">Email <span>*</span></label>
                                     <input type="email" class="form-control" name= "email" id="campoemail" value="<%= data.email%>" required placeholder="Email">
+                                    <ul class = "ulmailactualizacion" style="color:red">
+
+                                    </ul>
                                 </div>
                                 <div class="col-12 mb-3">
                                     <label for="password">Contraseña <span>*</span></label>
                                     <input type="password" class="form-control" name= "password" required id="campopassword" min="0" value="" placeholder="Contraseña">
+                                    <ul class = "ulpasswordactualizacion" style="color:red">
+
+                                    </ul>
                                 </div>
                                 <div class="col-12 mb-4">
                                     <label for="avatar">Subí tu foto de perfil</label> <br>
