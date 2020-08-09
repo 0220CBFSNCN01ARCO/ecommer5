@@ -138,5 +138,28 @@ campoLocalidadActualizacion.addEventListener("change", function (e){
     
     }
 })
-
+campoCpActualizacion.addEventListener("change", function (e){
+    if(campoCpActualizacion.value == " "){
+        let mensajeCp = "Falta tu código postal"
+        e.preventDefault();
+        document.querySelector(".ulcpactualizacion").innerHTML += "<li>" + mensajeCp + "</li>"
+    }else if(campoCpActualizacion.value.length < 4){
+        let mensajeExtensionCp = "El código postal debe tener al menor 4 números"
+        e.preventDefault();
+        document.querySelector(".ulcpactualizacion").innerHTML += "<li>" + mensajeExtensionCp + "</li>"
+    
+    }
+})
+campoDireccionActualizacion.addEventListener("change", function (e){
+    if(campoDireccionActualizacion.value == " "){
+        let mensajeDireccion = "Tenés que escribir tu dirección"
+        e.preventDefault();
+        document.querySelector(".uldireccionactualizacion").innerHTML += "<li>" + mensajeDireccion + "</li>"
+    }else if(campoDireccionActualizacion.value.length < 8){
+        let mensajeExtensionDireccion = "Tu domicilio está incompleto"
+        e.preventDefault();
+        document.querySelector(".uldireccionactualizacion").innerHTML += "<li>" + mensajeExtensionDireccion + "</li>"
+    
+    }
+})
 })
