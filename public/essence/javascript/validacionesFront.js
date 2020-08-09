@@ -97,13 +97,13 @@ campoPassword.addEventListener("change", function (e){
 })
 // Validaciones update de usuario. 
 window.addEventListener("load", function(){
-    let campoNombreActualizacion = document.getElementById("nombre");
-    let campoProvinciaActualizacion = document.getElementById("provincia");
-    let campoLocalidadActualizacion = document.getElementById("localidad");
-    let campoDireccionActualizacion = document.getElementById("direccion");
-    let campoCpActualizacion = document.getElementById("cp");
-    let campoEmailActualizacion = document.getElementById("email");
-    let campoPasswordActualizacion = document.getElementById("password");
+    let campoNombreActualizacion = document.getElementById("camponombre");
+    let campoProvinciaActualizacion = document.getElementById("campoprovincia");
+    let campoLocalidadActualizacion = document.getElementById("campolocalidad");
+    let campoDireccionActualizacion = document.getElementById("campodireccion");
+    let campoCpActualizacion = document.getElementById("campocp");
+    let campoEmailActualizacion = document.getElementById("campoemail");
+    let campoPasswordActualizacion = document.getElementById("campopassword");
 
 
 
