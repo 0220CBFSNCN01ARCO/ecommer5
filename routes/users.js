@@ -60,7 +60,7 @@ router.get('/account', authMiddleware, upload.any(), usersController.account);
 
 router.get('/update/:idusuario', authMiddleware, usersController.update);
 
-router.put('/update/:idusuario', authMiddleware, upload.any(), [
+router.put('/update/:idusuario', upload.any(), [
   check("nombre").isLength({min: 4}).withMessage("Me falta tu nombre y apellido"),
   check("provincia").isLength({min: 4}).withMessage("Te faltó la provincia"),
   check("localidad").isLength({min: 4}).withMessage("Te faltó la localidad"),
@@ -69,7 +69,7 @@ router.put('/update/:idusuario', authMiddleware, upload.any(), [
   check("email").isEmail().withMessage("Falta tu email"),
   check("password").isLength({min: 8}).withMessage("La contraseña debe tener 8 caracteres como mínimo") 
 
-], usersController.chargeUpdate);
+],authMiddleware, usersController.chargeUpdate);
 
 router.get('/logout', usersController.logout);
 
