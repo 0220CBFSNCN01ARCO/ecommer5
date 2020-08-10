@@ -24,16 +24,16 @@
               <% if (typeof order != 'undefined') { %>
                 <h2>Precio: de menor a mayor</h2>
 <%} else if(typeof between1 != 'undefined'){%>
-  <h2>Precio: entre $500 a $1000</h2>
+  <h2 class = "titulobanner">Precio: entre $500 a $1000</h2>
   <%} else if(typeof between2 != 'undefined'){%>
-    <h2>Precio: entre $1000 a $2000</h2>
+    <h2 class= "titulobanner">Precio: entre $1000 a $2000</h2>
     <%} else if(typeof between3 != 'undefined'){%>
-      <h2>Precio: entre $2000 a $2500</h2>
+      <h2 class = "titulobanner">Precio: entre $2000 a $2500</h2>
       <%} else if(typeof search != 'undefined'){%>
-        <h2>Resultados para tu búsqueda: <i style="color:red">"<%= search %>"</i></h2>
+        <h2 class = "titulobanner">Resultados para tu búsqueda: <i style="color:red">"<%= search %>"</i></h2>
 
   <%} else {%>
-  <h2>Nuestro catálogo</h2>
+  <h2 class = "titulobanner">Nuestro catálogo</h2>
   <%}%>
 
 
