@@ -268,7 +268,7 @@ height: 60vh;
 
 @media (max-width: 460px){
     .cuadropromo{
-        height: 23vh;
+        height: 15vh;
         width: 23vw;
     }
 .carruselpromo{
@@ -294,4 +294,12 @@ height: 60vh;
     bottom: 2vh;
     font-size: xx-small;
 }
+.imgpromoindex{
+    width: 14vw;
+    height: 10vh;
+}
+}
+
+.datosadminhola{
+    margin-left: 1vw;
 }
