@@ -91,7 +91,8 @@ orderBy: function(req, res){
   .then(function(libros){
     res.render("products", {
       libros: libros,
-      data: req.session.usuarioLogueado
+      data: req.session.usuarioLogueado,
+      order: "Precio: de menor a mayor"
     })
   })
 },
@@ -109,7 +110,8 @@ priceBetween1: function(req, res){
 .then(function(libros){
   res.render("products", {
     libros: libros,
-    data: req.session.usuarioLogueado
+    data: req.session.usuarioLogueado,
+    between1: "Entre 500 a 1000"
   })
 })
 
@@ -129,7 +131,8 @@ priceBetween2: function(req, res){
  .then(function(libros){
    res.render("products", {
      libros: libros,
-     data: req.session.usuarioLogueado
+     data: req.session.usuarioLogueado,
+     between2: "Entre 1000 a 2000"
    })
  })
  
@@ -149,7 +152,8 @@ priceBetween2: function(req, res){
  .then(function(libros){
    res.render("products", {
      libros: libros,
-     data: req.session.usuarioLogueado
+     data: req.session.usuarioLogueado,
+     between3: "Entre 2000 a 2500"
    })
  })
  
