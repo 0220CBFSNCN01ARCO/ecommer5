@@ -13,7 +13,7 @@
     border-bottom-style: inset;
 }
 .imagenmaspedido{
-    height: 75vh;
+    height: 65vh;
 }
 .imagenproducto{
     height: 67vh;;
@@ -192,6 +192,9 @@ margin-bottom: 10vh;
 padding-left: 0vw;
 margin-bottom: 2vh;
 }
+.accionuser{
+    float: inline-start;
+}
 .containersuccess{
     overflow: hidden;
     height: 100vh;
@@ -243,4 +246,21 @@ margin-bottom: 2vh;
 .homebutton{
     margin-left: 16vw;
     margin-top: 4vh;
+}
+.imgcarrito{
+    margin-left: 10vw;
+    border-right: black;
+}
+.containercarrito{
+  border-right: solid;
+height: 60vh;
+}
+.infocarrito{
+    padding-left: 5vw;
+    height: 60vh;
+    margin-top: 20vh;
+
+}
+.textcart{
+    font-size: medium;
 }

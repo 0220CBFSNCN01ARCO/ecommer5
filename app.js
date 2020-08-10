@@ -11,6 +11,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require("./routes/admin");
 var productRouter = require('./routes/product');
+var cartRouter =  require('./routes/cart');
 var contactRouter = require('./routes/contact');
 var nosotrosRouter = require('./routes/nosotros');
 var promocionesRouter = require('./routes/promociones');
@@ -40,12 +41,14 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/admin', adminRouter);
 app.use('/products', productRouter);
+app.use('/cart', cartRouter);
 app.use("/contact", contactRouter);
 app.use("/nosotros", nosotrosRouter);
 app.use("/shipping", shippingRouter);
 app.use("/promociones", promocionesRouter);
 app.use('/api/users', apiUsuariosRouter);
 app.use('/api/products', apiProductosRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

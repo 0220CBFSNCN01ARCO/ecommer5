@@ -14,18 +14,18 @@
     <!-- ##### Right Side Cart End ##### -->
     
     <div class = "container col-12">
-        <div class = "avataradmin row col-6">
+        <div class = "avataradmin row col-3">
             <img class = "imguser" src = "/essence/img/users-img/<%= data.avatar %>">  
     
         </div>
     
-        <div class="infouser row contact-area d-flex align-items-center">
+        <div class="infouser row contact-area d-flex align-items-center col-10">
     
         
-            <div class="row contact-info col-6">
+            <div class="row contact-info col-4">
                 <h2>Hola <%= data.nombre %> !</h2>
     
-                <div class=" mt-5">
+                <div class=" mt-5 col-12">
                     <% if (data.rol == 1) { %>
                     <p class = "datosadmin"><strong>Administrador/a: </strong>  <%= data.nombre %></p>
                     <% } else{ %>
@@ -39,21 +39,22 @@
                     <p class = "datosadmin"><strong>Código Postal: </strong><%= data.cp %> </p>
                 </div>
             </div>
-        <div class = "actionuser row col-12">
-         <h4 class = "haceruser col-12">¿Qué querés hacer?</h4>
+        <div class = "actionuser row col-5 my-5">
+        
 
          <% if (data.rol == 0) { %>
 
-         <a  href="/products" class="create btn essence-btn mx-1">Ver productos </a> <br>
-         <a  href="/users/update/<%= data.idusuario %>" class="create btn essence-btn mx-1">Actualizar datos </a> <br>
+         <a  href="/products" class="botonuser create btn essence-btn mx-1 col-12">Ver productos </a> <br>
+         <a  href="/cart" class="botonuser create btn essence-btn mx-1 col-12">Ver mi carrito </a> <br>
+         <a  href="/users/update/<%= data.idusuario %>" class="botonuser create btn essence-btn mx-1 col-12">Actualizar datos </a> <br>
 
          <% } else if(data.rol == 1){ %>
 
-            <a  href="/admin/edit" class="create btn essence-btn mx-1">Editar producto </a> <br>
-            <a  href="/admin/create" class="create btn essence-btn mx-1">Agregar producto </a> <br>
+            <a  href="/admin/edit" class="create btn essence-btn mx-1 col-12">Editar producto </a> <br>
+            <a  href="/admin/create" class="create btn essence-btn mx-1 col-12">Agregar producto </a> <br>
 
             <% } %>
-         <a  href="/users/logout" class="create btn essence-btn mx-1">Cerrar Sesión </a> <br>
+         <a  href="/users/logout" class="create btn essence-btn mx-1 col-12">Cerrar Sesión </a> <br>
        
 
         </div>
