@@ -183,10 +183,10 @@ margin-bottom: 15vh;
 .infouser{
 top: 10vh;
 margin-left: 25vw;
-margin-bottom: 10vh;
+margin-bottom: 20vh;
 }
 .actionuser{
-    margin-bottom: 10vh;;
+    margin-bottom: 10vh;
 }
 .haceruser{
 padding-left: 0vw;
@@ -263,4 +263,7 @@ height: 60vh;
 }
 .textcart{
     font-size: medium;
+}
+.carruselpromo{
+    height: 90vh;
 }
