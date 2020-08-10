@@ -25,6 +25,22 @@ list : function(req, res){
         res.send(respuesta);
     });
     },
+countByCategory: function(req, res){
+db.Categoria.findAll({
+    include: [{association: "libros"}]
+})
+.then(function(categorias){
+    for (let i = 0; i < categorias.length; i++) {
+        categorias[i].setDataValue("endpoint", "/api/products/" + categorias[i].nombre)
+    }
+})
+
+
+
+
+},
+
+
     find: function(req, res) {
         db.Libro.findByPk(req.params.idlibros)
         .then(function(libros){
