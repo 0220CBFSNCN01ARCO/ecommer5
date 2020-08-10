@@ -14,12 +14,14 @@
     <!-- ##### Right Side Cart End ##### -->
     
     <div class = "container col-12">
+
+
         <div class = "avataradmin row col-3">
             <img class = "imguser" src = "/essence/img/users-img/<%= data.avatar %>">  
     
         </div>
     
-        <div class="infouser row contact-area d-flex align-items-center col-10">
+        <div class="infouser row contact-area d-flex align-items-center col-9">
     
         
             <div class="row contact-info col-4">
@@ -45,7 +47,7 @@
          <% if (data.rol == 0) { %>
 
          <a  href="/products" class="botonuser create btn essence-btn mx-1 col-12">Ver productos </a> <br>
-         <a  href="/cart" class="botonuser create btn essence-btn mx-1 col-12">Ver mi carrito </a> <br>
+         <a  href="/users/cart" class="botonuser create btn essence-btn mx-1 col-12">Ver mi carrito </a> <br>
          <a  href="/users/update/<%= data.idusuario %>" class="botonuser create btn essence-btn mx-1 col-12">Actualizar datos </a> <br>
 
          <% } else if(data.rol == 1){ %>

@@ -75,6 +75,8 @@ router.get('/logout', usersController.logout);
 
 router.get("/success", usersController.success);
 
+router.get("/cart", authMiddleware, usersController.cart);
+
 
 
 module.exports = router;

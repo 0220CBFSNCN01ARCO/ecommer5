@@ -156,7 +156,20 @@ db.Usuario.findOne({
 
     
   })
-  }
+  },
+  cart: function(req, res){
+
+    db.Libro.findAll({
+        limit: 1
+    })
+    .then(function(libro) {
+        return res.render("cart", {
+          libro: libro,
+          data: req.session.usuarioLogueado
+      });
+      })
+}
+
 };
 
 module.exports = usersController;
