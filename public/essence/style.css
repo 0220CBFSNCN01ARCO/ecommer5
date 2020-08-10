@@ -65,9 +65,7 @@ margin-bottom: 20vh;
 .terminos{
     font-size: x-small;
 }
-.datosadmin{
-    font-weight: bolder;
-}
+
 .infoadmin{
 position: relative;
 margin-left: 20vw;
@@ -266,4 +264,34 @@ height: 60vh;
 }
 .carruselpromo{
     height: 90vh;
+}
+
+@media (max-width: 460px){
+    .cuadropromo{
+        height: 23vh;
+        width: 23vw;
+    }
+.carruselpromo{
+    height: 50vh;
+}
+.datosadmin{
+    font-size: smaller;
+}
+.datosadminhola{
+    font-size: medium;
+    margin-top: 8vh;
+    margin-left: 4vw;
+}
+.containerdata{
+    margin-top: 7vh;
+    bottom: 10vh;
+}
+.actionuser{
+    right: 13vw;
+    bottom: 15vh;
+}
+.botonuser{
+    bottom: 2vh;
+    font-size: xx-small;
+}
 }

@@ -24,10 +24,10 @@
         <div class="infouser row contact-area d-flex align-items-center col-10">
     
         
-            <div class="row  col-12 col-sm-6 col-md-4 col-xl-5">
-                <h2>Hola <%= data.nombre %> !</h2>
+            <div class= "containerdata row col-12 col-sm-6 col-md-4 col-xl-5">
+                <h2 class= "datosadminhola">Hola <%= data.nombre %> !</h2>
     
-                <div class=" mt-5 col-12">
+                <div class=" mt-3 col-12">
                     <% if (data.rol == 1) { %>
                     <p class = "datosadmin"><strong>Administrador/a: </strong>  <%= data.nombre %></p>
                     <% } else{ %>
@@ -52,11 +52,11 @@
 
          <% } else if(data.rol == 1){ %>
 
-            <a  href="/admin/edit" class="create btn essence-btn mx-1 my-2 col-8">Editar producto </a> <br>
-            <a  href="/admin/create" class="create btn essence-btn mx-1 my-2 col-8">Agregar producto </a> <br>
+            <a  href="/admin/edit" class="botonuser create btn essence-btn mx-1 my-2 col-8">Editar producto </a> <br>
+            <a  href="/admin/create" class="botonuser create btn essence-btn mx-1 my-2 col-8">Agregar producto </a> <br>
 
             <% } %>
-         <a  href="/users/logout" class="create btn essence-btn mx-1 my-2 col-8">Cerrar Sesión </a> <br>
+         <a  href="/users/logout" class="botonuser create btn essence-btn mx-1 my-2 col-8">Cerrar Sesión </a> <br>
        
 
         </div>
