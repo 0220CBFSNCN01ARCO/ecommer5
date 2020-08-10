@@ -78,7 +78,9 @@ if(libros == ""){
 } else{
   return res.render('products', {
     libros: libros,
-   data: req.session.usuarioLogueado})
+   data: req.session.usuarioLogueado,
+   search: search
+  })
 }  })
 },
 
