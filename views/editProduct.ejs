@@ -30,7 +30,7 @@
     <thead>
 
      <tr>
-    <th class = "itemportada">Portada</th>
+    <th scope="col">Portada</th>
       <th scope="col">Título</th>
       <th scope="col">Autor</th>
       <th scope="col">Categoría</th>
@@ -61,7 +61,7 @@
           
            
 
-                <a class = "iconedit" href= "/admin/edit/<%= libros[i].idlibros %>"><i class=" iconoedit far fa-edit"></i></a>
+                <a class = "iconedit" href= "/admin/edit/<%= libros[i].idlibros %>" alt = "Editar"><i class=" iconoedit far fa-edit"></i></a>
                 
                 <a class = "icondelete" style="color:red" href= "/admin/delete/<%= libros[i].idlibros %>?_method=DELETE"><i class="iconodelete fas fa-trash-alt"></i></a>
             
