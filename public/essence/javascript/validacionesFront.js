@@ -187,3 +187,56 @@ campoPasswordActualizacion.addEventListener("change", function (e){
     }
 })
 })
+
+
+window.addEventListener("load", function(){
+
+    let login = document.querySelector("form.loginuser");
+   login.addEventListener("submit", function(e){
+
+        let erroreslogin = [];
+
+let campoEmail = document.getElementById("email");
+if(campoEmail.value == ""){
+    erroreslogin.push("Tenés que poner tu email para entrar")
+}
+let campoPassword = document.getElementById("password");
+if(campoPassword.value == ""){
+    erroreslogin.push("Tenés que poner tu contraseña para entrar")
+}
+
+
+})
+
+})
+
+window.addEventListener("load", function(){
+    let campoLoginMail = document.getElementById("email");
+    let campoLoginPassword = document.getElementById("password");
+
+
+    campoLoginMail.addEventListener("change", function (e){
+        if(campoLoginMail.value == " "){
+            let mensajeLoginMail = "Tenés que escribir tu email"
+            e.preventDefault();
+            document.querySelector(".ulemaillogin").innerHTML += "<li>" + mensajeLoginMail + "</li>"
+        }else if(campoLoginMail.value.length < 6){
+            let mensajeExtensionLoginMail = "Tu email está incompleto"
+            e.preventDefault();
+            document.querySelector(".ulemaillogin").innerHTML += "<li>" + mensajeExtensionLoginMail + "</li>"
+        
+        }
+    })
+    if(campoLoginPassword.value == " "){
+        let mensajeLoginPassword = "Tenés que escribir tu contraseña para entrar"
+        e.preventDefault();
+        document.querySelector(".ulpasswordlogin").innerHTML += "<li>" + mensajeLoginPassword + "</li>"
+    }else if(campoLoginPassword.value.length < 8){
+        let mensajeExtensionLoginPassword = "La clave debe tener al menos 8 caracteres"
+        e.preventDefault();
+        document.querySelector(".ulpasswordlogin").innerHTML += "<li>" + mensajeExtensionLoginPassword + "</li>"
+    
+    }
+
+    
+})
